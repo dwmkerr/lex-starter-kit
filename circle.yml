@@ -1,0 +1,27 @@
+machine:
+    node:
+        version: 6
+    environment:
+        PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+
+dependencies:
+    pre:
+        - sudo apt-get update; sudo apt-get install jq
+    override:
+        - yarn
+    cache_directories:
+        - ~/.cache/yarn
+
+test:
+    override:
+        - yarn test
+
+deployment:
+    release:
+        tag: /v[0-9]+(\.[0-9]+)*/
+        commands:
+            - make release
+    test:
+        branch: master
+        commands:
+            - make deploy
