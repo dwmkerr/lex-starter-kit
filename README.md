@@ -1,8 +1,19 @@
 # lex-boilerplate
 
+## Dependencies
+
+- [The AWS CLI](https://aws.amazon.com/cli/) - make sure you are logged in!
+- [Terraform](https://www.terraform.io/intro/getting-started/install.html) - for quick infra setup.
+
 ## Initial setup
 
-You will require an S3 bucket to upload your lambda function to, and a policy to attach to the lambda function. These are configured in the makefile.
+You'll need some basic AWS infrastructure (a bucket and policy). Set it up with:
+
+```bash
+make infra-up
+```
+
+Now that the policy and bucket is setup, you can create the lambda functions:
 
 ```bash
 make setup

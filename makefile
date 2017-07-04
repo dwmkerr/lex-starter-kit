@@ -27,3 +27,11 @@ release: deploy
 deploy: build upload update
 
 setup: build upload create
+
+# Creates the infrastructure required.
+infra-up:
+	(cd infra; terraform apply)
+
+# Destoys the infrastructure.
+infra-down:
+	(cd infra; terraform destroy)
