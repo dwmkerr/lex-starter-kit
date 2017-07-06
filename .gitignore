@@ -38,4 +38,5 @@ jspm_packages
 
 *.zip
 functions/**/templates/**/*.html
-.tfstate*
+*.tfstate*
+
