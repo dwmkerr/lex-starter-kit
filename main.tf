@@ -13,7 +13,7 @@ provider "aws" {
 
 # A bucket which'll hold the lambda function code.
 resource "aws_s3_bucket" "bucket-lambda-lex" {
-  bucket = "lex-boilerplate"
+  bucket = "oscarbot"
   # Anyone can read the bucket.
   acl    = "public-read"
 
