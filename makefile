@@ -3,6 +3,9 @@ BUCKET := oscarbot_dave
 build:
 	cd functions/oscarbot && yarn install && zip -r ../../oscarbot.zip .
 
+test:
+	cd functions/oscarbot && yarn && npm test
+
 upload:
 	aws s3 cp oscarbot.zip s3://$(BUCKET)/functions/oscarbot.zip
 

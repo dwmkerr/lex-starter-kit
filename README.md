@@ -29,7 +29,7 @@ Now setup the bot. This step cannot yet be automated as there are no Terraform r
 
 ## Environment Variables
 
-The following environment variables must be set.
+The following environment variables must be set, for normal execution and for tests.
 
 | Variable | Usage |
 |----------|-------|

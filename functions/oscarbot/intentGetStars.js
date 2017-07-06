@@ -1,5 +1,5 @@
 const config = require('./config');
-const dialogActions = require('utils/dialogActions');
+const dialogActions = require('./utils/dialogActions');
 const login = require('./utils/github/login');
 const query = require('./utils/github/query');
 

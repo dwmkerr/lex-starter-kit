@@ -1,8 +1,0 @@
-{
-	"scripts": {
-		"test": "ava"
-	},
-  "dependencies": {
-    "ava": "^0.20.0"
-  }
-}
