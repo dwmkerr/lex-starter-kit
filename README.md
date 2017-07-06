@@ -1,8 +1,8 @@
 # lex-boilerplate
 
-Boilerplate project for [The AWS Chatbot Challenge](https://aws.amazon.com/events/chatbot-challenge/).
+Oscarbot project for [The AWS Chatbot Challenge](https://aws.amazon.com/events/chatbot-challenge/).
 
-The Slack Channel is: https://dmlex.slack.com
+The Slack Channel is: https://oscar-bot.slack.com
 
 ## Dependencies
 
@@ -10,17 +10,16 @@ The Slack Channel is: https://dmlex.slack.com
 - [Terraform](https://www.terraform.io/intro/getting-started/install.html) - for quick infra setup.
 
 ## Initial setup
-
-First build the lambda function code:
-
-```bash
-make build
-```
-
 You'll need some basic AWS infrastructure (a bucket and policy). Set it up with:
 
 ```bash
 make infra-up
+```
+
+You will now need to build the lambda function, upload to S3 and create the lambda function in AWS. Set this up with:
+
+```bash
+make setup
 ```
 
 Now setup the bot. This step cannot yet be automated as there are no Terraform resources available for Lex.
