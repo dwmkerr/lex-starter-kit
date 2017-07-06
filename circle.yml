@@ -10,7 +10,7 @@ dependencies:
 
 test:
     override:
-        - cd functions/oscarbar; npm install; npm test; 
+        - make test
 
 deployment:
     release:
