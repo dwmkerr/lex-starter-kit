@@ -6,6 +6,11 @@ variable "region" {
   default = "us-east-1"
 }
 
+variable "bucket-name" {
+  description = "The name of the S3 bucket to use."
+  default = "oscarbot"
+}
+
 #  Setup the core provider information.
 provider "aws" {
   region  = "${var.region}"
@@ -13,8 +18,7 @@ provider "aws" {
 
 # A bucket which'll hold the lambda function code.
 resource "aws_s3_bucket" "bucket-lambda-lex" {
-  bucket = "oscarbot"
-  # Anyone can read the bucket.
+  bucket = "${var.bucket-name}"
   acl    = "public-read"
 
   tags {
@@ -72,20 +76,7 @@ resource "aws_iam_policy_attachment" "attach-invoke-lambda-function-to-lambda" {
   policy_arn = "${aws_iam_policy.policy-invoke-lambda-function.arn}"
 }
 
-# The variables we output. Just enough to point to the bucket and reference
-# the role.
-
-# The region.
-output "region" {
-  value = "${var.region}"
-}
-
 # The role ARN for the lambda function.
 output "role" {
   value = "${aws_iam_role.role-lambda-lex.arn}"
-}
-
-# The S3 bucket name.
-output "bucket" {
-  value = "${aws_s3_bucket.bucket-lambda-lex.bucket}"
 }
