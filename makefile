@@ -40,3 +40,14 @@ infra-up:
 # Destoys the infrastructure.
 infra-down:
 	terraform destroy
+
+# Work in progress. Creates the slots, intents and bot.
+bot:
+	aws lex-models put-slot-type \
+		--region us-east-1 \
+		--name IssueTitle \
+		--cli-input-json file://lex/slots/Oscar.IssueTitle.json
+	aws lex-models put-slot-type \
+		--region us-east-1 \
+		--name IssueContent \
+		--cli-input-json file://lex/slots/Oscar.IssueContent.json

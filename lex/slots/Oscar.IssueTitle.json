@@ -1,0 +1,7 @@
+{
+    "enumerationValues": [{
+        "value": "Something is broken"
+    }],
+    "name": "Oscar.IssueTitle",
+    "description": "The title of the issue"
+}

@@ -1,0 +1,7 @@
+{
+    "enumerationValues": [{
+        "value": "When I try to do something, it doesn't work"
+    }],
+    "name": "Oscar.IssueContent",
+    "description": "The content of the issue"
+}

@@ -1,0 +1,20 @@
+{
+  "currentIntent": {
+    "slots": {
+      "IssueTitle": "Something is broken",
+      "IssueContent": "There is a glitch in the matrix"
+    },
+    "name": "OpenIssue",
+    "confirmationStatus": "None"
+  },
+  "bot": {
+    "alias": "$LATEST",
+    "version": "$LATEST",
+    "name": "OscarBot"
+  },
+  "userId": "Dave",
+  "invocationSource": "DialogCodeHook",
+  "outputDialogMode": "Text",
+  "messageVersion": "1.0",
+  "sessionAttributes": {}
+}
