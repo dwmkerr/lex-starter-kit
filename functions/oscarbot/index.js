@@ -34,13 +34,13 @@ function handler(event, context, callback) {
 		return callback(null, dialogActions.delegate(sessionAttributes, event.currentIntent.slots))
 	}
 
-	const handler = INTENT_HANDLERS[intentName];
+	const intentHandler = INTENT_HANDLERS[intentName];
 
-	if (!handler) {
+	if (!intentHandler) {
 		throw new Error(`Intent name not recognised`);
 	}
 
-	handler.handler(event, context, callback);
+	intentHandler.handler(event, context, callback);
 }
 
 module.exports = {
