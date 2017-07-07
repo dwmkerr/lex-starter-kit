@@ -27,7 +27,17 @@ Now setup the bot. This step cannot yet be automated as there are no Terraform r
 1. Go the [Lex Console Bot Create Page](https://console.aws.amazon.com/lex/home?region=us-east-1#bot-create:). US East is the only supported region.
 2. Choose 'Custom Bot', with a sensible name. 'Child Directed' is 'No'. Hit 'Create'.
 
+## Environment Variables
+
+The following environment variables must be set.
+
+| Variable | Usage |
+|----------|-------|
+| `GITHUB_USERNAME` | The GitHub user to login as when performing queries. |
+| `GITHUB_PASSWORD` | The GitHub password to login with when performing queries. |
+
 ## Deploying
+
 Running the following will update the function code on AWS.
 
 ```bash
