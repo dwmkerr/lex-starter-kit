@@ -1,8 +1,5 @@
 {
   "currentIntent": {
-    "slots": {
-      "ProjectName": "angular-modal-service"
-    },
     "name": "GetStars",
     "confirmationStatus": "None"
   },
