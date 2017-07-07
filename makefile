@@ -1,4 +1,4 @@
-BUCKET := oscarbot_dave
+BUCKET := oscarbot
 
 build:
 	cd functions/oscarbot && yarn install && zip -r ../../oscarbot.zip .
