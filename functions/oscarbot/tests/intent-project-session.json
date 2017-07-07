@@ -1,0 +1,18 @@
+{
+  "currentIntent": {
+    "name": "GetStars",
+    "confirmationStatus": "None"
+  },
+  "bot": {
+    "alias": "$LATEST",
+    "version": "$LATEST",
+    "name": "OscarBot"
+  },
+  "userId": "Dave",
+  "invocationSource": "DialogCodeHook",
+  "outputDialogMode": "Text",
+  "messageVersion": "1.0",
+  "sessionAttributes": {
+    "ProjectName": "angular-modal-service"
+  }
+}
