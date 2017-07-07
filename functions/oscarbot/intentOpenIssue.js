@@ -17,7 +17,6 @@ function handler(event, context, callback) {
 
     github.login(config.GITHUB_USERNAME, config.GITHUB_PASSWORD)
       .then((token) => {
-        debugger;
         github.post(token, `/repos/mindmelting/lex-boilerplate/issues`, {
           title: issueTitle,
           body: issueContent
