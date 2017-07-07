@@ -14,8 +14,5 @@
   "userId": "Dave",
   "invocationSource": "DialogCodeHook",
   "outputDialogMode": "Text",
-  "messageVersion": "1.0",
-  "sessionAttributes": {
-    "ProjectName": "angular-modal-service"
-  }
+  "messageVersion": "1.0"
 }

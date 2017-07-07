@@ -12,22 +12,22 @@ upload:
 create:
 	aws lambda create-function \
 		--region us-east-1 \
-		--function-name intentGetStars \
+		--function-name intentOscarBot \
 		--runtime nodejs6.10 \
-		--handler intentGetStars.handler \
+		--handler index.handler \
 		--role `terraform output role`\
 		--code S3Bucket=$(BUCKET),S3Key=functions/oscarbot.zip
 
 update:
 	aws lambda update-function-code \
     --region us-east-1 \
-    --function-name intentGetStars \
+    --function-name intentOscarBot \
     --s3-bucket $(BUCKET) \
     --s3-key functions/oscarbot.zip
 
 release: deploy
-	VERSION=$$(aws lambda publish-version --region us-east-1 --function-name intentGetStars | jq -r .Version); \
-	aws lambda update-alias --function-name intentGetStars --region us-east-1 --function-version $$VERSION --name PROD
+	VERSION=$$(aws lambda publish-version --region us-east-1 --function-name intentOscarBot | jq -r .Version); \
+	aws lambda update-alias --function-name intentOscarBot --region us-east-1 --function-version $$VERSION --name PROD
 
 deploy: build upload update
 
