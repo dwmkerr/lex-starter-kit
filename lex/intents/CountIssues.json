@@ -1,8 +1,8 @@
 {
-    "name": "GetStars", 
+    "name": "CountIssues", 
     "sampleUtterances": [
-        "How many stars does the project have",
-        "How many stars dose {Repository} have"
+        "How many issues does the project have",
+        "How many issues does {Repository} have"
     ], 
     "slots": [
         {

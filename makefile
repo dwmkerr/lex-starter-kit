@@ -62,10 +62,21 @@ bot:
 		--region us-east-1 \
 		--name OpenIssue \
 		--cli-input-json file://lex/intents/GetStars.json
+	# Allow the intents access to the lambda function.
+	aws lambda add-permission --region us-east-1 \
+		--function-name intentOscarBot \
+		--statement-id LexOscar-CountIssues \
+		--action lambda:InvokeFunction \
+		--principal lex.amazonaws.com \
+		--source-arn "arn:aws:lex:us-east-1:160696617623:intent:CountIssues:*"
 	aws lex-models put-intent \
 		--region us-east-1 \
 		--name OpenIssue \
 		--cli-input-json file://lex/intents/OpenIssue.json
+	aws lex-models put-intent \
+		--region us-east-1 \
+		--name CountIssues \
+		--cli-input-json file://lex/intents/CountIssues.json
 
 bot-down:
 	aws lex-models delete-slot-type --region us-east-1 --name Repository
