@@ -51,9 +51,9 @@ make deploy
 
 ## Chatting
 
-### Open an Issue
-
-You can open an issue. Try "can I open an issue?".
+- How many stars does my project have?
+- How many issues does my project have?
+- Can you open an issue for me?
 
 ## Useful Reading
 
