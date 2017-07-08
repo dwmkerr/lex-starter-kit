@@ -1,7 +1,7 @@
 {
     "enumerationValues": [{
-        "value": "When I try to do something, it doesn't work"
+        "value": "dwmkerr/angular-modal-service"
     }],
-    "name": "Oscar.IssueContent",
-    "description": "The content of the issue"
+    "name": "Oscar.ProjectName",
+    "description": "The project name, including the user or organisation."
 }

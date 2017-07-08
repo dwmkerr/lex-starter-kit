@@ -48,9 +48,18 @@ infra-down:
 bot:
 	aws lex-models put-slot-type \
 		--region us-east-1 \
+		--name ProjectName \
+		--cli-input-json file://lex/slots/Oscar.ProjectName.json
+	aws lex-models put-slot-type \
+		--region us-east-1 \
 		--name IssueTitle \
 		--cli-input-json file://lex/slots/Oscar.IssueTitle.json
 	aws lex-models put-slot-type \
 		--region us-east-1 \
 		--name IssueContent \
 		--cli-input-json file://lex/slots/Oscar.IssueContent.json
+	aws lex-models put-intent \
+		--region us-east-1 \
+		--name OpenIssue \
+		--cli-input-json file://lex/intents/OpenIssue.json
+

@@ -5,7 +5,7 @@ const github = require('./utils/github');
 function elicitSlot(event, slotName, message, callback) {
   return callback(null,
     dialogActions.elicitSlot(event.sessionAttributes, 
-      event.currentIntent.name, event.currentIntent.slots, slotName, message));
+      event.currentIntent.name, event.currentIntent.slots, slotName, { contentType: 'PlainText', content: message } ));
 }
 
 function handler(event, context, callback) {
@@ -25,7 +25,7 @@ function handler(event, context, callback) {
 
           //  Create the response.
           console.log(`Result is: ${result}`);
-          const url = result.url;
+          const url = result.html_url;
           const response = `I opened the issue for you, it's at ${url}`;
 
           callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {
