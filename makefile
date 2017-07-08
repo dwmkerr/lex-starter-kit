@@ -3,6 +3,9 @@ BUCKET := oscarbot
 build:
 	cd functions/oscarbot && yarn install && zip -r ../../oscarbot.zip .
 
+lint:
+	cd functions/oscarbot && yarn && npm run lint
+
 test:
 	cd functions/oscarbot && yarn && npm test
 

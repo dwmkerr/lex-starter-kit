@@ -2,7 +2,6 @@ const assert = require('assert');
 const { handler } = require('./index');
 const intentProject = require('./tests/intent-project.json');
 const intentProjectSlot = require('./tests/intent-project-slot.json');
-const intentProjectSession = require('./tests/intent-project-session.json');
 
 describe('Core', () => {
   it('Should elicit a response from user for project', (done) => {

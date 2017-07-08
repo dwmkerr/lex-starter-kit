@@ -1,4 +1,4 @@
-const request = require('request-promise-native')
+const request = require('request-promise-native');
 
 /**
  * Run a graphql query against github, using the provided tokens.
@@ -22,6 +22,6 @@ function query(token, query, variables = {}) {
   };
   
   return request(options);
-};
+}
 
 module.exports = query;
