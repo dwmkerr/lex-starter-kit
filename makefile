@@ -87,6 +87,16 @@ bot:
 		--region us-east-1 \
 		--name CountIssues \
 		--cli-input-json file://lex/intents/CountIssues.json
+	aws lambda add-permission --region us-east-1 \
+		--function-name intentOscarBot \
+		--statement-id LexOscar-ThreeLaws \
+		--action lambda:InvokeFunction \
+		--principal lex.amazonaws.com \
+		--source-arn "arn:aws:lex:us-east-1:160696617623:intent:ThreeLaws:*"
+	aws lex-models put-intent \
+		--region us-east-1 \
+		--name ThreeLaws \
+		--cli-input-json file://lex/intents/conversational/ThreeLaws.json
 
 bot-down:
 	aws lex-models delete-slot-type --region us-east-1 --name Repository
