@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha -t 30000 '**.spec.js'",
-    "test:debug": "mocha --inspect -t 30000 '**.spec.js'"
+    "test": "mocha -t 10000 '**.spec.js'",
+    "test:debug": "mocha --inspect --inspect-brk -t 10000 '**.spec.js'"
   },
   "dependencies": {
     "request": "^2.81.0",

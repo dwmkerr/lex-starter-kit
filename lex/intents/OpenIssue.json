@@ -1,0 +1,70 @@
+{
+    "name": "OpenIssue", 
+    "sampleUtterances": [
+        "I would like to open an issue"
+    ], 
+    "slots": [
+        {
+            "slotType": "ProjectName", 
+            "name": "ProjectName", 
+            "slotConstraint": "Required", 
+            "valueElicitationPrompt": {
+                "maxAttempts": 2, 
+                "messages": [
+                    {
+                        "content": "e.g. What city?", 
+                        "contentType": "PlainText"
+                    }
+                ]
+            }, 
+            "priority": 1, 
+            "slotTypeVersion": "1", 
+            "sampleUtterances": []
+        }, 
+        {
+            "slotType": "IssueTitle", 
+            "name": "IssueTitle", 
+            "slotConstraint": "Required", 
+            "valueElicitationPrompt": {
+                "maxAttempts": 2, 
+                "messages": [
+                    {
+                        "content": "e.g. What city?", 
+                        "contentType": "PlainText"
+                    }
+                ]
+            }, 
+            "priority": 2, 
+            "slotTypeVersion": "1", 
+            "sampleUtterances": []
+        }, 
+        {
+            "slotType": "IssueContent", 
+            "name": "IssueContent", 
+            "slotConstraint": "Required", 
+            "valueElicitationPrompt": {
+                "maxAttempts": 2, 
+                "messages": [
+                    {
+                        "content": "e.g. What city?", 
+                        "contentType": "PlainText"
+                    }
+                ]
+            }, 
+            "priority": 3, 
+            "slotTypeVersion": "1", 
+            "sampleUtterances": []
+        }
+    ], 
+    "dialogCodeHook": {
+        "uri": "arn:aws:lambda:us-east-1:160696617623:function:intentOpenIssue", 
+        "messageVersion": "1.0"
+    }, 
+    "fulfillmentActivity": {
+        "type": "CodeHook", 
+        "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:160696617623:function:intentOpenIssue", 
+            "messageVersion": "1.0"
+        }
+    }
+}

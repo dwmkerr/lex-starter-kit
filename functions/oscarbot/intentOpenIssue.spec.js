@@ -9,7 +9,7 @@ describe('intentOpenIssue', () => {
     handler(openIssue, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'ElicitSlot');
       assert.equal(response.dialogAction.slotToElicit, 'IssueTitle');
-      assert(response.dialogAction.message.match(/title/));
+      assert(response.dialogAction.message.content.match(/title/));
       done();
     });
   });
@@ -18,7 +18,7 @@ describe('intentOpenIssue', () => {
     handler(openIssueWithTitle, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'ElicitSlot');
       assert.equal(response.dialogAction.slotToElicit, 'IssueContent');
-      assert(response.dialogAction.message.match(/description/));
+      assert(response.dialogAction.message.content.match(/description/));
       done();
     });
   });

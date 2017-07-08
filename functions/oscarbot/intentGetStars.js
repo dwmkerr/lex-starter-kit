@@ -5,6 +5,7 @@ const query = require('./utils/github/query');
 
 function handler(event, context, callback) {
   const projectName = event.sessionAttributes.ProjectName;
+
   const username = config.GITHUB_USERNAME;
   const password = config.GITHUB_PASSWORD;
   console.log(`Logging in with credentials ${username}:${password}`);

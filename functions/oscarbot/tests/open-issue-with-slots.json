@@ -16,5 +16,7 @@
   "invocationSource": "DialogCodeHook",
   "outputDialogMode": "Text",
   "messageVersion": "1.0",
-  "sessionAttributes": {}
+  "sessionAttributes": {
+    "ProjectName": "dwmkerr/spaceinvaders"
+  }
 }
