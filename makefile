@@ -69,6 +69,16 @@ bot:
 		--action lambda:InvokeFunction \
 		--principal lex.amazonaws.com \
 		--source-arn "arn:aws:lex:us-east-1:160696617623:intent:CountIssues:*"
+	aws lambda add-permission --region us-east-1 \
+		--function-name intentOscarBot \
+		--statement-id LexOscar-DescribeLastCommit \
+		--action lambda:InvokeFunction \
+		--principal lex.amazonaws.com \
+		--source-arn "arn:aws:lex:us-east-1:160696617623:intent:DescribeLastCommit:*"
+	aws lex-models put-intent \
+		--region us-east-1 \
+		--name DescribeLastCommit \
+		--cli-input-json file://lex/intents/DescribeLastCommit.json
 	aws lex-models put-intent \
 		--region us-east-1 \
 		--name OpenIssue \

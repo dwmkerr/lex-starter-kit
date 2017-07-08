@@ -1,10 +1,12 @@
 const validateSession = require('./validateSession');
 const intentCountIssues = require('./intentCountIssues');
+const intentDescribeLastCommit = require('./intentDescribeLastCommit');
 const intentGetStars = require('./intentGetStars');
 const intentOpenIssue = require('./intentOpenIssue');
 
 const INTENT_HANDLERS = {
   CountIssues: intentCountIssues,
+  DescribeLastCommit: intentDescribeLastCommit,
   GetStars: intentGetStars,
   OpenIssue: intentOpenIssue
 };

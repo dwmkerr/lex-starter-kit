@@ -54,6 +54,8 @@ make deploy
 - How many stars does my project have?
 - How many issues does my project have?
 - Can you open an issue for me?
+- What was the last commit on my project?
+- What was the last commit on dwmkerr/effective-shell?
 
 ## Useful Reading
 
