@@ -29,7 +29,7 @@ function checkConfirmationStatus(event, callback) {
       }, {
         text: 'No',
         value: 'No'
-      }])))
+      }])));
   }
 }
 
