@@ -1,7 +1,7 @@
 {
   "currentIntent": {
     "slots": {
-      "ProjectName": "angular-modal-service"
+      "ProjectName": "dwmkerr/angular-modal-service"
     },
     "name": "GetStars",
     "confirmationStatus": "None"

@@ -15,14 +15,54 @@ describe('validateSession', () => {
     });
   });
 
-  it('Should ensure the ProjectName is moved into a session variable', () => {
-    const validated = validateSession(intentProjectSlot, null, null);
-    assert.equal(validated, true);
-    assert.equal(intentProjectSlot.sessionAttributes.ProjectName, 'angular-modal-service');
+  it('Should ensure that a valid PojectName is moved into a session variable', (done) => {
+    validateSession(intentProjectSlot, null, null)
+      .then((validated) => {
+        assert.equal(validated, true);
+        assert.equal(intentProjectSlot.sessionAttributes.ProjectName, 'dwmkerr/angular-modal-service');
+        done();
+      });
   });
 
-  it('Should pass validation when the intent session variable is present', () => {
-    const validated = validateSession(intentProjectSession, null, null);
-    assert.equal(validated, true);
+  it('should not allow an invalid project name format', (done) => {
+    //  Get the project intent, and set an invalid project name.
+    const newIntent = Object.assign({}, intentProject, {
+      currentIntent: {
+        slots: {
+          ProjectName: 'norepo'
+        }
+      }
+    });
+    validateSession(newIntent, null, (err, response) => {
+      assert.equal(response.dialogAction.type, 'ElicitSlot');
+      assert.equal(response.dialogAction.slotToElicit, 'ProjectName');
+      assert(response.dialogAction.message.content.match(/doesn't look like a valid repo name/));
+      done();
+    });
+  });
+
+  it('should not validate a non-existent project', (done) => {
+    //  Get the project intent, and set an invalid project name.
+    const newIntent = Object.assign({}, intentProject, {
+      currentIntent: {
+        slots: {
+          ProjectName: 'nouser/norepo'
+        }
+      }
+    });
+    validateSession(newIntent, null, (err, response) => {
+      assert.equal(response.dialogAction.type, 'ElicitSlot');
+      assert.equal(response.dialogAction.slotToElicit, 'ProjectName');
+      assert(response.dialogAction.message.content.match(/I couldn't find/));
+      done();
+    });
+  });
+
+  it('Should pass validation when the intent session variable is present', (done) => {
+    validateSession(intentProjectSession, null, null)
+      .then((validated) => {
+        assert.equal(validated, true);
+        done();
+      });
   });
 });
