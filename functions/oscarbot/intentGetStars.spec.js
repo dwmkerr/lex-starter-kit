@@ -1,6 +1,5 @@
 const assert = require('assert');
 const { handler } = require('./intentGetStars');
-const getStars = require('./tests/get-stars.json');
 const getStarsWithSlots = require('./tests/get-stars-with-slots.json');
 
 describe('intentGetStars', () => {

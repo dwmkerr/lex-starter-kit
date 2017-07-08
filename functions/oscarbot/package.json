@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "lint": "eslint .",
     "test": "mocha -t 30000 '**.spec.js'",
     "test:debug": "mocha --inspect -t 30000 '**.spec.js'"
   },
@@ -12,6 +13,7 @@
     "request-promise-native": "^1.0.4"
   },
   "devDependencies": {
+    "eslint": "^4.1.1",
     "mocha": "^3.4.2"
   }
 }

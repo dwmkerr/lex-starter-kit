@@ -1,4 +1,4 @@
-const request = require('request-promise-native')
+const request = require('request-promise-native');
 const config = require('../../config');
 /**
  * login to github as a user.
@@ -8,10 +8,10 @@ const config = require('../../config');
  * @returns - A promise which resolves with the login token or rejects with an error.
  */
 function login(username, password) {
-  if (!username) throw new Error(`'username' cannot be null`);
-  if (!password) throw new Error(`'password' cannot be null`);
+  if (!username) throw new Error('\'username\' cannot be null');
+  if (!password) throw new Error('\'password\' cannot be null');
 
-  const auth = new Buffer(`${username.trim()}:${password.trim()}`).toString('base64')
+  const auth = new Buffer(`${username.trim()}:${password.trim()}`).toString('base64');
 
   const options = {
     url: 'https://api.github.com/authorizations',
@@ -33,11 +33,11 @@ function login(username, password) {
 
   return request.post(options)
     .then(response => {
-       if (response.statusCode < 400) {
-         return response.body.token;
-       } else {
-         throw new Error(response.body.message);
-       }
+      if (response.statusCode < 400) {
+        return response.body.token;
+      } else {
+        throw new Error(response.body.message);
+      }
     });
 }
 
