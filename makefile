@@ -48,18 +48,26 @@ infra-down:
 bot:
 	aws lex-models put-slot-type \
 		--region us-east-1 \
-		--name ProjectName \
-		--cli-input-json file://lex/slots/Oscar.ProjectName.json
+		--name Repository \
+		--cli-input-json file://lex/slots/Repository.json
 	aws lex-models put-slot-type \
 		--region us-east-1 \
 		--name IssueTitle \
-		--cli-input-json file://lex/slots/Oscar.IssueTitle.json
+		--cli-input-json file://lex/slots/IssueTitle.json
 	aws lex-models put-slot-type \
 		--region us-east-1 \
 		--name IssueContent \
-		--cli-input-json file://lex/slots/Oscar.IssueContent.json
+		--cli-input-json file://lex/slots/IssueContent.json
+	aws lex-models put-intent \
+		--region us-east-1 \
+		--name OpenIssue \
+		--cli-input-json file://lex/intents/GetStars.json
 	aws lex-models put-intent \
 		--region us-east-1 \
 		--name OpenIssue \
 		--cli-input-json file://lex/intents/OpenIssue.json
 
+bot-down:
+	aws lex-models delete-slot-type --region us-east-1 --name Repository
+	aws lex-models delete-slot-type --region us-east-1 --name IssueTitle
+	aws lex-models delete-slot-type --region us-east-1 --name IssueContent
