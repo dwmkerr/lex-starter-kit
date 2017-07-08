@@ -1,0 +1,7 @@
+{
+    "enumerationValues": [{
+        "value": "There is something going wrong in the matrix, is there anyone who can help me?"
+    }],
+    "name": "IssueContent",
+    "description": "The content of the issue."
+}

@@ -1,0 +1,8 @@
+{
+    "enumerationValues": [{
+        "value": "dwmkerr/angular-modal-service",
+        "value": "mindmelting/lex-boilerplate"
+    }],
+    "name": "Repository",
+    "description": "The name of the repository."
+}

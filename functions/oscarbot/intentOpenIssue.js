@@ -9,6 +9,7 @@ function elicitSlot(event, slotName, message, callback) {
 }
 
 function handler(event, context, callback) {
+  const repository = event.sessionAttributes.Repository;
   const issueTitle = event.currentIntent.slots.IssueTitle;
   const issueContent = event.currentIntent.slots.IssueContent;
 
@@ -17,7 +18,7 @@ function handler(event, context, callback) {
 
   github.login(config.GITHUB_USERNAME, config.GITHUB_PASSWORD)
     .then((token) => {
-      github.post(token, '/repos/mindmelting/lex-boilerplate/issues', {
+      github.post(token, `/repos/${repository}/issues`, {
         title: issueTitle,
         body: issueContent
       })

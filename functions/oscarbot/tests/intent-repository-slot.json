@@ -1,7 +1,7 @@
 {
   "currentIntent": {
     "slots": {
-      "ProjectName": "dwmkerr/angular-modal-service"
+      "Repository": "dwmkerr/angular-modal-service"
     },
     "name": "GetStars",
     "confirmationStatus": "None"

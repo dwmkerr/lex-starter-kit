@@ -4,7 +4,10 @@ const login = require('./utils/github/login');
 const query = require('./utils/github/query');
 
 function handler(event, context, callback) {
-  const projectName = event.sessionAttributes.ProjectName;
+  const repository = event.sessionAttributes.Repository;
+  const repoParts = repository.split('/');
+  const owner = repoParts[0];
+  const name = repoParts[1];
 
   const username = config.GITHUB_USERNAME;
   const password = config.GITHUB_PASSWORD;
@@ -14,7 +17,7 @@ function handler(event, context, callback) {
       console.log(`Logged in successfully, token: ${token}`);
       query(token, `
         query { 
-          repository(owner: "dwmkerr", name: "${projectName}") {
+          repository(owner: "${owner}", name: "${name}") {
             name
             stargazers { totalCount }
           }
