@@ -1,5 +1,3 @@
-const intentGetStars = require('./intentGetStars');
-const intentOpenIssue = require('./intentOpenIssue');
 const dialogActions = require('./utils/dialogActions');
 
 const PROJECT_SLOT = 'ProjectName';
