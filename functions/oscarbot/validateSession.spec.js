@@ -2,6 +2,7 @@ const assert = require('assert');
 const validateSession = require('./validateSession');
 const intentRepository = require('./tests/intent-repository.json');
 const intentRepositorySlot = require('./tests/intent-repository-slot.json');
+const intentRepositoryQuestionSlot = require('./tests/intent-repository-question-slot.json');
 const intentRepositorySession = require('./tests/intent-repository-session.json');
 
 
@@ -20,6 +21,15 @@ describe('validateSession', () => {
       .then((validated) => {
         assert.equal(validated, true);
         assert.equal(intentRepositorySlot.sessionAttributes.Repository, 'dwmkerr/angular-modal-service');
+        done();
+      });
+  });
+
+  it('Should ensure that a valid PojectName with question mark is moved into a session variable', (done) => {
+    validateSession(intentRepositoryQuestionSlot, null, null)
+      .then((validated) => {
+        assert.equal(validated, true);
+        assert.equal(intentRepositoryQuestionSlot.sessionAttributes.Repository, 'dwmkerr/angular-modal-service');
         done();
       });
   });
