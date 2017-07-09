@@ -5,6 +5,17 @@ const dialogActions = require('./utils/dialogActions');
 const REPOSITORY_SLOT = 'Repository';
 
 /**
+ * formatRepositoryName - Formats respoitory name to strip a trailing question
+    mark which could get inserted into the slot
+ *
+ * @param repoName - The repository name from the slot.
+ * @returns - A formatted repository name
+ */
+function formatRepositoryName(repoName) {
+  return /.*\?/.test(repoName) ? repoName.slice(0, -1) : repoName;
+}
+
+/**
  * validateSession - Ensures that we have sufficient session data. Will initiate
    dialog actions to get session data if needed.
  *
@@ -20,7 +31,7 @@ function validateSession(event, context, callback) {
     const sessionAttributes = event.sessionAttributes || {};
     const sessionRepositoryName = sessionAttributes[REPOSITORY_SLOT];
     const slots = event.currentIntent.slots || {};
-    const slotRepositoryName = slots[REPOSITORY_SLOT];
+    const slotRepositoryName = slots[REPOSITORY_SLOT] && formatRepositoryName(slots[REPOSITORY_SLOT]);
     
     //  If we have a project name in the session, set it into the slot.
     //  At this point, the caller can continue. We will never store an invalid
