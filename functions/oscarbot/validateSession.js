@@ -12,7 +12,7 @@ const REPOSITORY_SLOT = 'Repository';
  * @returns - A formatted repository name
  */
 function formatRepositoryName(repoName) {
-  return /.*\?/.test(repoName) ? repoName.slice(0, -1) : repoName;
+  return /.*\?$/.test(repoName) ? repoName.slice(0, -1) : repoName;
 }
 
 /**
