@@ -1,4 +1,5 @@
 const validateSession = require('./validateSession');
+const snappyResponse = require('./snappyResponse');
 const intentCountIssues = require('./intentCountIssues');
 const intentDescribeLastCommit = require('./intentDescribeLastCommit');
 const intentGetStars = require('./intentGetStars');
@@ -12,6 +13,9 @@ const INTENT_HANDLERS = {
 };
 
 function handler(event, context, callback) {
+  //  If we can reply with a snappy response, we are done.
+  if (snappyResponse(event, context, callback)) return;
+
   //  Validate the event. This will elicit session variables as needed.
   validateSession(event, context, callback)
     .then((valid) => {

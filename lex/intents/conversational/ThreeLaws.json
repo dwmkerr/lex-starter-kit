@@ -1,0 +1,16 @@
+{
+    "name": "ThreeLaws", 
+    "sampleUtterances": [
+        "Do you obey the three laws of robotics",
+        "Do you obey Asimov's laws",
+        "Do you obey Asimov's three laws"
+    ], 
+    "slots": [],
+    "fulfillmentActivity": {
+        "type": "CodeHook", 
+        "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:160696617623:function:intentOscarBot", 
+            "messageVersion": "1.0"
+        }
+    }
+}

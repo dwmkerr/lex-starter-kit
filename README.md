@@ -57,6 +57,16 @@ make deploy
 - What was the last commit on my project?
 - What was the last commit on dwmkerr/effective-shell?
 
+## Developer Guide
+
+### Snappy Responses
+
+If you want to provide some simple flavour text or a one-line response to a statement, you can use the [`snappyResponses.js`](./functions/oscarbot/snappyResponses.js) file.
+
+Please note that even a one-line response will still need an intent. Put these intents in the [intents/conversational](./intents/conversational) folder to distinguish them from functional intents.
+
+It is possible that intents are limited, and it is the case that a large number of intents can actually make it harder to determine intent, so be careful to to add too many.
+
 ## Useful Reading
 
 - https://docs.aws.amazon.com/lex/latest/dg/slack-bot-association.html
