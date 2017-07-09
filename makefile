@@ -46,6 +46,7 @@ infra-down:
 
 # Work in progress. Creates the slots, intents and bot.
 bot:
+	# Add slot types
 	aws lex-models put-slot-type \
 		--region us-east-1 \
 		--name Repository \
@@ -58,10 +59,6 @@ bot:
 		--region us-east-1 \
 		--name IssueContent \
 		--cli-input-json file://lex/slots/IssueContent.json
-	aws lex-models put-intent \
-		--region us-east-1 \
-		--name OpenIssue \
-		--cli-input-json file://lex/intents/GetStars.json
 	# Allow the intents access to the lambda function.
 	aws lambda add-permission --region us-east-1 \
 		--function-name intentOscarBot \
@@ -75,6 +72,23 @@ bot:
 		--action lambda:InvokeFunction \
 		--principal lex.amazonaws.com \
 		--source-arn "arn:aws:lex:us-east-1:160696617623:intent:DescribeLastCommit:*"
+	aws lambda add-permission --region us-east-1 \
+		--function-name intentOscarBot \
+		--statement-id LexOscar-ThreeLaws \
+		--action lambda:InvokeFunction \
+		--principal lex.amazonaws.com \
+		--source-arn "arn:aws:lex:us-east-1:160696617623:intent:ThreeLaws:*"
+	aws lambda add-permission --region us-east-1 \
+		--function-name intentOscarBot \
+		--statement-id LexOscar-TopIssues \
+		--action lambda:InvokeFunction \
+		--principal lex.amazonaws.com \
+		--source-arn "arn:aws:lex:us-east-1:160696617623:intent:TopIssues:*"
+	# Add Intents to Lex
+	aws lex-models put-intent \
+		--region us-east-1 \
+		--name OpenIssue \
+		--cli-input-json file://lex/intents/GetStars.json
 	aws lex-models put-intent \
 		--region us-east-1 \
 		--name DescribeLastCommit \
@@ -87,16 +101,14 @@ bot:
 		--region us-east-1 \
 		--name CountIssues \
 		--cli-input-json file://lex/intents/CountIssues.json
-	aws lambda add-permission --region us-east-1 \
-		--function-name intentOscarBot \
-		--statement-id LexOscar-ThreeLaws \
-		--action lambda:InvokeFunction \
-		--principal lex.amazonaws.com \
-		--source-arn "arn:aws:lex:us-east-1:160696617623:intent:ThreeLaws:*"
 	aws lex-models put-intent \
 		--region us-east-1 \
 		--name ThreeLaws \
 		--cli-input-json file://lex/intents/conversational/ThreeLaws.json
+	aws lex-models put-intent \
+		--region us-east-1 \
+		--name TopIssues \
+		--cli-input-json file://lex/intents/TopIssues.json
 
 bot-down:
 	aws lex-models delete-slot-type --region us-east-1 --name Repository
