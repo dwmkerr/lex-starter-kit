@@ -61,7 +61,6 @@ function validateSession(event, context, callback) {
     const sessionRepositoryName = sessionAttributes[REPOSITORY_SLOT];
     const slots = event.currentIntent.slots || {};
     const slotRepositoryName = slots[REPOSITORY_SLOT] && formatRepositoryName(slots[REPOSITORY_SLOT]);
-    console.log(`SLOT REPO NAME: ${slotRepositoryName}`);
     //  If we have a project name in the session, set it into the slot.
     //  At this point, the caller can continue. We will never store an invalid
     //  project in the session, so we can assume the project is validated and
@@ -89,7 +88,7 @@ function validateSession(event, context, callback) {
       // session, if so pop it in the sessionAttribute as our current repo
       // and continue
       if (repositoryHasBeenValidated(sessionAttributes, slotRepositoryName)) {
-        event.sessionAttributes[REPOSITORY_SLOT] = slotRepositoryName
+        event.sessionAttributes[REPOSITORY_SLOT] = slotRepositoryName;
         return resolve(true);
       }
 
