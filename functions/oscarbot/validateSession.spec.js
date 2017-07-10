@@ -16,7 +16,7 @@ describe('validateSession', () => {
     });
   });
 
-  it('Should ensure that a valid PojectName is moved into a session variable', (done) => {
+  it('Should ensure that a valid ProjectName is moved into a session variable', (done) => {
     validateSession(intentRepositorySlot, null, null)
       .then((validated) => {
         assert.equal(validated, true);
@@ -25,7 +25,7 @@ describe('validateSession', () => {
       });
   });
 
-  it('Should ensure that a valid PojectName with question mark is moved into a session variable', (done) => {
+  it('Should ensure that a valid ProjectName with question mark is moved into a session variable', (done) => {
     validateSession(intentRepositoryQuestionSlot, null, null)
       .then((validated) => {
         assert.equal(validated, true);
@@ -72,6 +72,50 @@ describe('validateSession', () => {
     validateSession(intentRepositorySession, null, null)
       .then((validated) => {
         assert.equal(validated, true);
+        done();
+      });
+  });
+
+  it('If slot repository is different from session repository, replace into session variable', (done) => {
+    const newIntent = Object.assign({}, intentRepositorySession, {
+      currentIntent: {
+        slots: {
+          Repository: 'mindmelting/lex-boilerplate'
+        }
+      }
+    });
+    validateSession(newIntent, null, null)
+      .then((validated) => {
+        assert.equal(validated, true);
+        assert.equal(newIntent.sessionAttributes.Repository, 'mindmelting/lex-boilerplate');
+        done();
+      });
+  });
+
+  it('Should update repository into validatedRepositories array', (done) => {
+    validateSession(intentRepositorySlot, null, null)
+      .then((validated) => {
+        assert.equal(validated, true);
+        assert.equal(intentRepositorySlot.sessionAttributes.validatedRepositories, 'dwmkerr/angular-modal-service');
+        done();
+      });
+  });
+
+  it('Should add repository into validatedRepositories array', (done) => {
+    const newIntent = Object.assign({}, intentRepositorySession, {
+      currentIntent: {
+        slots: {
+          Repository: 'mindmelting/lex-boilerplate'
+        }
+      },
+      sessionAttributes: {
+        validatedRepositories: 'dwmkerr/angular-modal-service'
+      }
+    });
+    validateSession(newIntent, null, null)
+      .then((validated) => {
+        assert.equal(validated, true);
+        assert.equal(newIntent.sessionAttributes.validatedRepositories, 'dwmkerr/angular-modal-service,mindmelting/lex-boilerplate');
         done();
       });
   });
