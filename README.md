@@ -56,6 +56,7 @@ make deploy
 - Can you open an issue for me?
 - What was the last commit on my project?
 - What was the last commit on dwmkerr/effective-shell?
+- What are the issues for my project?
 
 ## Developer Guide
 
