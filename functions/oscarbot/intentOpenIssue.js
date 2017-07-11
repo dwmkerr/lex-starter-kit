@@ -43,7 +43,7 @@ function handler(event, context, callback) {
 
   if (checkConfirmationStatus(event, callback)) return;
 
-  github.login(config.GITHUB_USERNAME, config.GITHUB_PASSWORD)
+  github.login(config.GITHUB_USERNAME, config.GITHUB_PASSWORD, event)
     .then((token) => {
       github.post(token, `/repos/${repository}/issues`, {
         title: issueTitle,

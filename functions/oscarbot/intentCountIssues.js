@@ -11,7 +11,7 @@ function handler(event, context, callback) {
 
   const username = config.GITHUB_USERNAME;
   const password = config.GITHUB_PASSWORD;
-  login(username, password)
+  login(username, password, event)
     .then((token) => {
       console.log(`Logged in successfully, token: ${token}`);
       query(token, `
