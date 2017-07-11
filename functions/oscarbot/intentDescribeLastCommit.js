@@ -6,7 +6,7 @@ const github = require('./utils/github');
 function handler(event, context, callback) {
   const repository = event.sessionAttributes.Repository;
 
-  github.login(config.GITHUB_USERNAME, config.GITHUB_PASSWORD)
+  github.login(config.GITHUB_USERNAME, config.GITHUB_PASSWORD, event)
     .then((token) => {
       github.get(token, `/repos/${repository}/commits`)
         .then((result) => {

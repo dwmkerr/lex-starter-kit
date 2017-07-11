@@ -104,7 +104,7 @@ function validateSession(event, context, callback) {
       }
 
       //  We'd better validate the project name before we continue.
-      github.login(config.GITHUB_USERNAME, config.GITHUB_PASSWORD)
+      github.login(config.GITHUB_USERNAME, config.GITHUB_PASSWORD, event)
         .then((token) => {
           return github.get(token, `/repos/${slotRepositoryName}`);
         })
