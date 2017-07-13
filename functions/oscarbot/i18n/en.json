@@ -9,6 +9,6 @@
 	"topIssuesResponse": "OK, here we go! The top issues for ${projectName} are: ${issueText}",
 	"threeLaws": "I only have the CPU to support two of the three laws at any one time.",
 	"repoFormatIncorrect": "Woah, I can’t seem to find ${slotRepositoryName}, I’m picky with spelling, could you type it again? It helps if you include the owner, such as ‘twbs/bootstrap",
-	"repoNotFound": "I just had a old persons moment and couldn’t find the ${slotRepositoryName} repository. If it’s private I may not have access, otherwise I may just not looking for the right thing can you help me out by ensuring the name is formatted as ‘user/project’",
+	"repoNotFound": "I had a good search but couldn’t find the ${slotRepositoryName} repository. If it’s private I may not have access, otherwise I may just not looking for the right thing can you help me out by ensuring the name is formatted as ‘user/project’",
 	"projectNamePrompt": "Hi! what is the project name you want to find out about?"
 }
