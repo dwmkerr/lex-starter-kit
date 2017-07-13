@@ -4,10 +4,55 @@ Oscarbot project for [The AWS Chatbot Challenge](https://aws.amazon.com/events/c
 
 The Slack Channel is: https://oscar-bot.slack.com
 
+# Talking to Oscar
+
+The quickest way to try out Oscar is to request an invite to the [OscarBot Slack Channel](https://oscar-bot.slack.com).
+
+Oscar can provide all sorts of information about repositories, as well as doing things like opening issues. Some example interations are:
+
+TODO
+
+There is a complete list at:
+
+TODO
+
+# Developer Guide
+
+This diagram shows the key steps for setup and development:
+
+- ![Setup & Development Guide Diagram](./docs/setup-and-develop-commands.png)
+
+## Environment Setup
+
+Install:
+
+- [The AWS CLI](https://aws.amazon.com/cli/)
+- [jq](https://stedolan.github.io/jq/download/)
+
+Ensure you are logged into the AWS CLI as a user with permissions to create Lambda Functions, Buckets, Roles, Policies and Lex Models.
+
+Set the following environment variables:
+
+| Variable | Usage |
+|----------|-------|
+| `OSCAR_BUCKET` | A name to use for the S3 bucket for Oscar. This must be unique across AWS, so try something like `oscarbot-<your name>` |
+| `OSCAR_GITHUB_USERNAME` | The GitHub user to login as when performing queries. |
+| `OSCAR_GITHUB_PASSWORD` | The GitHub password to login with when performing queries. |
+
+You can now call:
+
+```bash
+make setup
+```
+
+Which will build the lambda function, bucket and policies.
+
+
 ## Dependencies
 
-- [The AWS CLI](https://aws.amazon.com/cli/) - make sure you are logged in!
 - [Terraform](https://www.terraform.io/intro/getting-started/install.html) - for quick infra setup.
+
+# 
 
 ## Initial setup
 
@@ -27,10 +72,6 @@ make deploy
 
 The following environment variables must be set, for normal execution and for tests.
 
-| Variable | Usage |
-|----------|-------|
-| `GITHUB_USERNAME` | The GitHub user to login as when performing queries. |
-| `GITHUB_PASSWORD` | The GitHub password to login with when performing queries. |
 
 ## Deploying
 
