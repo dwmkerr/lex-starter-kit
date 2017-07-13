@@ -2,6 +2,7 @@ const config = require('./config');
 const dialogActions = require('./utils/dialogActions');
 const login = require('./utils/github/login');
 const query = require('./utils/github/query');
+const i18n = require('./i18n');
 
 function handler(event, context, callback) {
   const repository = event.sessionAttributes.Repository;
@@ -35,7 +36,10 @@ function handler(event, context, callback) {
           const issueText = issues.reduce((a, b) => {
             return `${a} \n ${b.title} - ${b.url}`;
           }, '');
-          const response = `${projectName} top issues: ${issueText}`;
+          const response = i18n('topIssuesResponse', {
+            projectName,
+            issueText
+          });
 
           callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {
             contentType: 'PlainText',

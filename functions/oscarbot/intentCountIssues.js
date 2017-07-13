@@ -2,6 +2,7 @@ const config = require('./config');
 const dialogActions = require('./utils/dialogActions');
 const login = require('./utils/github/login');
 const query = require('./utils/github/query');
+const i18n = require('./i18n');
 
 function handler(event, context, callback) {
   const repository = event.sessionAttributes.Repository;
@@ -28,7 +29,10 @@ function handler(event, context, callback) {
           const data = JSON.parse(result).data;
           const projectName = data.repository.name;
           const issues = data.repository.issues.totalCount;
-          const response = `${projectName} has ${issues} open issues`;
+          const response = i18n('countIssuesResponse', {
+            projectName,
+            issues
+          });
 
           callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {
             contentType: 'PlainText',

@@ -2,6 +2,7 @@ const moment = require('moment');
 const config = require('./config');
 const dialogActions = require('./utils/dialogActions');
 const github = require('./utils/github');
+const i18n = require('./i18n');
 
 function handler(event, context, callback) {
   const repository = event.sessionAttributes.Repository;
@@ -26,7 +27,13 @@ function handler(event, context, callback) {
           const date = commit.commit.author.date;
           const fromNow = moment(date).fromNow();
 
-          const response = `The last commit on ${repository} was by ${author} ${fromNow} with the message '${message}'`;
+          const response = i18n('describeLastCommitResponse', {
+            repository,
+            author,
+            fromNow,
+            message
+          });
+
           return callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {
             contentType: 'PlainText',
             content: response
