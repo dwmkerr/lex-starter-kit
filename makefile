@@ -114,3 +114,6 @@ bot-down:
 	aws lex-models delete-slot-type --region us-east-1 --name Repository
 	aws lex-models delete-slot-type --region us-east-1 --name IssueTitle
 	aws lex-models delete-slot-type --region us-east-1 --name IssueContent
+
+cli:
+	cd oscar-cli; npm build; npm link;
