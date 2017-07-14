@@ -1,7 +1,8 @@
 const dialogActions = require('./utils/dialogActions');
+const i18n = require('./i18n');
 
 const responses = {
-  ThreeLaws: 'I only have the CPU to support two of the three laws at any one time.'
+  ThreeLaws: i18n('threeLaws')
 };
 
 function snappyResponse(event, context, callback) {
