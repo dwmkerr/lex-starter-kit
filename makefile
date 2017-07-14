@@ -60,6 +60,10 @@ destroy:
 cli:
 	cd oscar-cli; npm build; npm link;
 
+# Utility to show all utterances.
+utterances:
+	for file in "./lex/intents/*.json"; do cat $$file | jq .sampleUtterances[]; done
+
 check-dependencies:
 ifndef OSCAR_BUCKET
 	$(error "Environment variable $$OSCAR_BUCKET must be set.")
