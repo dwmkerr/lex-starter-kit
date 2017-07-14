@@ -1,4 +1,5 @@
 {
+	"countOpenPRsResponse": "${projectName} has ${openPullRequests} open pull requests.",
 	"countIssuesResponse": "Jay-Z has 99 problems but ${projectName} only has ${issues}!",
 	"describeLastCommitResponse": "${author} was the most recent person to comment ${fromNow} on ${repository} and they said ${message}",
 	"getStarsResponse": "If ${projectName} keeps stealing all the stars, the night sky will soon be empty! It currently has ${stars} stars",

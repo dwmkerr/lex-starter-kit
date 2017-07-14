@@ -1,6 +1,7 @@
 const validateSession = require('./validateSession');
 const snappyResponse = require('./snappyResponse');
 const intentCountIssues = require('./intentCountIssues');
+const intentCountOpenPRs = require('./intentCountOpenPRs');
 const intentDescribeLastCommit = require('./intentDescribeLastCommit');
 const intentGetStars = require('./intentGetStars');
 const intentOpenIssue = require('./intentOpenIssue');
@@ -8,6 +9,7 @@ const intentTopIssues = require('./intentTopIssues');
 
 const INTENT_HANDLERS = {
   CountIssues: intentCountIssues,
+  CountOpenPRs: intentCountOpenPRs,
   DescribeLastCommit: intentDescribeLastCommit,
   GetStars: intentGetStars,
   OpenIssue: intentOpenIssue,
