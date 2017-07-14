@@ -4,46 +4,48 @@ Oscarbot project for [The AWS Chatbot Challenge](https://aws.amazon.com/events/c
 
 The Slack Channel is: https://oscar-bot.slack.com
 
-## Dependencies
+# Talking to Oscar
 
-- [The AWS CLI](https://aws.amazon.com/cli/) - make sure you are logged in!
-- [Terraform](https://www.terraform.io/intro/getting-started/install.html) - for quick infra setup.
+The quickest way to try out Oscar is to request an invite to the [OscarBot Slack Channel](https://oscar-bot.slack.com).
 
-## Initial setup
+Oscar can provide all sorts of information about repositories, as well as doing things like opening issues. Some example interations are:
 
-You'll need some basic AWS infrastructure (a bucket and policy). Set it up with:
+TODO
 
-```bash
-make infra-up
-```
+There is a complete list at:
 
-You will now need to build the lambda function, upload to S3 and create the lambda function in AWS. Set this up with:
+TODO
+
+# Developer Guide
+
+This diagram shows the key steps for setup and development:
+
+![Setup & Development Guide Diagram](./docs/setup-and-develop-commands.png)
+
+## Environment Setup
+
+Install:
+
+- [The AWS CLI](https://aws.amazon.com/cli/)
+- [jq](https://stedolan.github.io/jq/download/)
+
+Ensure you are logged into the AWS CLI as a user with permissions to create Lambda Functions, Buckets, Roles, Policies and Lex Models.
+
+Set the following environment variables:
+
+| Variable | Usage |
+|----------|-------|
+| `OSCAR_BUCKET` | A name to use for the S3 bucket for Oscar. This must be unique across AWS, so try something like `oscarbot-<your name>` |
+| `OSCAR_GITHUB_USERNAME` | The GitHub user to login as when performing queries. |
+| `OSCAR_GITHUB_PASSWORD` | The GitHub password to login with when performing queries. |
+
+You can now call:
 
 ```bash
 make setup
 ```
 
-Now setup the bot. This step cannot yet be automated as there are no Terraform resources available for Lex.
-
-1. Go the [Lex Console Bot Create Page](https://console.aws.amazon.com/lex/home?region=us-east-1#bot-create:). US East is the only supported region.
-2. Choose 'Custom Bot', with a sensible name. 'Child Directed' is 'No'. Hit 'Create'.
-
-## Environment Variables
-
-The following environment variables must be set, for normal execution and for tests.
-
-| Variable | Usage |
-|----------|-------|
-| `GITHUB_USERNAME` | The GitHub user to login as when performing queries. |
-| `GITHUB_PASSWORD` | The GitHub password to login with when performing queries. |
-
-## Deploying
-
-Running the following will update the function code on AWS.
-
-```bash
-make deploy
-```
+Which will build the lambda function, bucket and policies.
 
 ## Circle CI
 
@@ -58,9 +60,7 @@ make deploy
 - What was the last commit on dwmkerr/effective-shell?
 - What are the issues for my project?
 
-## Developer Guide
-
-### Snappy Responses
+## Snappy Responses
 
 If you want to provide some simple flavour text or a one-line response to a statement, you can use the [`snappyResponses.js`](./functions/oscarbot/snappyResponses.js) file.
 
