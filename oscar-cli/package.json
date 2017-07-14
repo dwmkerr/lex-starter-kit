@@ -1,0 +1,25 @@
+{
+  "name": "oscar-cli",
+  "version": "0.1.0",
+  "description": "A lovely CLI for Oscar 🤖",
+  "main": "index.js",
+  "bin": {
+    "oscar": "./bin/oscar.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mindmelting/lex-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mindmelting/lex-boilerplate/issues"
+  },
+  "homepage": "https://github.com/mindmelting/lex-boilerplate#readme",
+  "dependencies": {
+    "chalk": "^2.0.1"
+  }
+}

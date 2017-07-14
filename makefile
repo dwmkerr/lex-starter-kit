@@ -57,6 +57,9 @@ destroy:
 	aws iam delete-role --role-name "$(FUNCTION)-role" || true
 	aws s3 rb s3://$(OSCAR_BUCKET) --force || true
 
+cli:
+	cd oscar-cli; npm build; npm link;
+
 check-dependencies:
 ifndef OSCAR_BUCKET
 	$(error "Environment variable $$OSCAR_BUCKET must be set.")

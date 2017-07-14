@@ -1,6 +1,7 @@
 const config = require('./config');
 const github = require('./utils/github');
 const dialogActions = require('./utils/dialogActions');
+const i18n = require('./i18n');
 
 const REPOSITORY_SLOT = 'Repository';
 
@@ -94,7 +95,8 @@ function validateSession(event, context, callback) {
 
       //  We can check the format first.
       else if (!/(.+)\/(.+)/.test(slotRepositoryName)) {
-        const message = `'${slotRepositoryName}' doesn't look like a valid repo name, can you type it again? Don't forget to include the owner, such as 'twbs/bootstrap'.`;
+        const message = i18n('repoFormatIncorrect', { slotRepositoryName });
+
         callback(null, dialogActions.elicitSlot(sessionAttributes, 
           event.currentIntent.name, event.currentIntent.slots, REPOSITORY_SLOT, {
             contentType: 'PlainText',
@@ -121,7 +123,7 @@ function validateSession(event, context, callback) {
         .catch((err) => {
           //  If the repo couldn't be found, let the user know.
           if(err.statusCode == 404) {
-            const message = `I'm sorry, I couldn't find a GitHub repo called ${slotRepositoryName}. Can you make sure I have access to the repo if it is private, ensure the name is in the format 'user/project' and type it again?`;
+            const message = i18n('repoNotFound', { slotRepositoryName });
             callback(null, dialogActions.elicitSlot(sessionAttributes, 
               event.currentIntent.name, event.currentIntent.slots, REPOSITORY_SLOT, {
                 contentType: 'PlainText',
@@ -140,7 +142,7 @@ function validateSession(event, context, callback) {
       callback(null, dialogActions.elicitSlot(sessionAttributes, 
         event.currentIntent.name, event.currentIntent.slots, REPOSITORY_SLOT, {
           contentType: 'PlainText',
-          content: 'What is the project name?'
+          content: i18n('projectNamePrompt')
         }));
       return resolve(false);
     }

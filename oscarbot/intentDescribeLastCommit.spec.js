@@ -11,7 +11,7 @@ describe('intentDescribeLastCommit', () => {
 
     handler(input, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'Close');
-      assert(response.dialogAction.message.content.match(/last commit on dwmkerr\/sharpgl was/));
+      assert(response.dialogAction.message.content.match(/was the most recent person to comment/));
       done();
     });
   });
