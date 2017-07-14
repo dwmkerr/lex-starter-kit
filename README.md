@@ -20,7 +20,7 @@ TODO
 
 This diagram shows the key steps for setup and development:
 
-- ![Setup & Development Guide Diagram](./docs/setup-and-develop-commands.png)
+![Setup & Development Guide Diagram](./docs/setup-and-develop-commands.png)
 
 ## Environment Setup
 
