@@ -6,6 +6,7 @@ const intentDescribeLastCommit = require('./intentDescribeLastCommit');
 const intentGetStars = require('./intentGetStars');
 const intentOpenIssue = require('./intentOpenIssue');
 const intentTopIssues = require('./intentTopIssues');
+const intentWhatProjectsAmIWorkingOn = require('./intentWhatProjectsAmIWorkingOn');
 
 const INTENT_HANDLERS = {
   CountIssues: intentCountIssues,
@@ -13,7 +14,8 @@ const INTENT_HANDLERS = {
   DescribeLastCommit: intentDescribeLastCommit,
   GetStars: intentGetStars,
   OpenIssue: intentOpenIssue,
-  TopIssues: intentTopIssues
+  TopIssues: intentTopIssues,
+  WhatProjectsAmIWorkingOn: intentWhatProjectsAmIWorkingOn
 };
 
 function handler(event, context, callback) {

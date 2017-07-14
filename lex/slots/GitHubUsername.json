@@ -1,0 +1,14 @@
+{
+    "enumerationValues": [{
+        "value": "dwmkerr",
+        "value": "mindmelting",
+        "value": "nodejs",
+        "value": "glennjones",
+        "value": "hapijs",
+        "value": "facebook",
+        "value": "mgonto",
+        "value": "sahat"
+    }],
+    "name": "GitHubUsername",
+    "description": "A GitHub username."
+}
