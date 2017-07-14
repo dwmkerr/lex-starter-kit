@@ -78,6 +78,8 @@ Here are some commands you can run to help work with the project:
 | `make setup` | Sets up your AWS resources. First time setup only. |
 | `make deploy` | Deploys the code, slots and intents. |
 | `make utterances` | Helper to print out all supported utterances. Useful when building docs. |
+| `npm run test:debug` | Runs tests with the Chrome Inspector. |
+| `npm run coverage` | Runs tests, generating a coverage report. | 
 
 ## The CLI
 
