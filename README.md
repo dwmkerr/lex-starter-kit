@@ -47,40 +47,6 @@ make setup
 
 Which will build the lambda function, bucket and policies.
 
-
-## Dependencies
-
-- [Terraform](https://www.terraform.io/intro/getting-started/install.html) - for quick infra setup.
-
-# 
-
-## Initial setup
-
-You'll need some basic AWS infrastructure (a bucket and policy). Set it up with:
-
-```bash
-make aws
-```
-
-You will now need to build the lambda function, upload to S3 and create the lambda function in AWS. Set this up with:
-
-```bash
-make deploy
-```
-
-## Environment Variables
-
-The following environment variables must be set, for normal execution and for tests.
-
-
-## Deploying
-
-Running the following will update the function code on AWS.
-
-```bash
-make deploy
-```
-
 ## Circle CI
 
 `circle.yml` will build changes on master and deploy to AWS (make sure you have set the Circle AWS key in the console)
@@ -94,9 +60,7 @@ make deploy
 - What was the last commit on dwmkerr/effective-shell?
 - What are the issues for my project?
 
-## Developer Guide
-
-### Snappy Responses
+## Snappy Responses
 
 If you want to provide some simple flavour text or a one-line response to a statement, you can use the [`snappyResponses.js`](./functions/oscarbot/snappyResponses.js) file.
 
