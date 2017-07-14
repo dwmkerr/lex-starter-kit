@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
+    "coverage": "nyc npm test",
     "test": "mocha -t 10000 '**/*.spec.js'",
     "test:debug": "mocha --inspect --inspect-brk -t 10000 '**.spec.js'"
   },
@@ -15,6 +16,7 @@
   },
   "devDependencies": {
     "eslint": "^4.1.1",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.3"
   }
 }
