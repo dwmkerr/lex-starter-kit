@@ -24,7 +24,7 @@ describe('intentOpenIssue', () => {
   });
 
   //  This is disabled by default otherwise we get lots of issues added to the repo.
-  xit.only('should be able to open an issue', (done) => {
+  xit('should be able to open an issue', (done) => {
 
     //  Take the test event, and set its confirmation status.
     const event = Object.assign({}, openIssueWithSlots);
