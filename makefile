@@ -50,6 +50,10 @@ deploy: build
 	ACCOUNT_ID=`aws sts get-caller-identity --output text --query 'Account'`; \
 	./scripts/deploy-intents.sh deploy-intents "$(REGION)" "$(FUNCTION)" $$ACCOUNT_ID "lex/intents/**.json"
 
+# Updates and publishes your bot. Can take a while. Run after 'make deploy'.
+publish:
+	./scripts/deploy-bot.sh deploy-bot "$(REGION)" "lex/bot/OscarBot.json"
+
 # Destroys some resources. Still work in progress for others.
 destroy:
 	aws lambda delete-function --function-name $(FUNCTION) || true
