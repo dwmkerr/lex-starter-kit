@@ -59,7 +59,7 @@ function cli() {
   rl.on('line', (line) => {
 
     //  Create the command.
-    const command = `aws lex-runtime post-text --bot-name Oscar --bot-alias Dev --user-id "${userName}" --input-text "${line}"`;
+    const command = `aws lex-runtime post-text --bot-name oscarbot --bot-alias Dev --user-id "${userName}" --input-text "${line}"`;
 
     //  Excecute the command.
     executeCommand(command)
