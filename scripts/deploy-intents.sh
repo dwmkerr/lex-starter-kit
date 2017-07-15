@@ -47,11 +47,9 @@ function deploy-intents() {
         SLOTTYPES=`cat $intentFile | jq -r ".slots[].slotType"`
         for SLOTTYPE in $SLOTTYPES; do
 
-            echo "Intent uses slot type '$SLOTTYPE'. Getting latest published version..."
-
             # Get the versions, rip out the version number of the most recent one.
             SLOTTYPEVERSION=`aws lex-models get-slot-type-versions --name $SLOTTYPE --region $region | jq -r ".slotTypes[-1].version"`
-            echo "The latest version of '$SLOTTYPE' is '$SLOTTYPEVERSION'..."
+            echo "Updating $intentName slot $SLOTTYPE to latest version ($SLOTTYPEVERSION)..."
 
             # Replace the version number in the slot type.
             cp $intentFile.temp $intentFile.temp2
@@ -63,7 +61,7 @@ function deploy-intents() {
 
         # Check to see if we have the intent already.
         LATEST_VERSION=`aws lex-models get-intent-versions --name $intentName --region $region | jq -r '.intents[0].version | select (.!=null)'`
-        
+
         # Now update or create the intent, as required.
         if [ $LATEST_VERSION ]; then
             echo "Found version '$LATEST_VERSION', updating..."

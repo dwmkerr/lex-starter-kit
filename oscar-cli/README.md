@@ -36,5 +36,3 @@ The CLI uses the [debug](https://www.npmjs.com/package/debug) module. To get ext
 ```bash
 DEBUG=oscar oscar
 ```
-
-
