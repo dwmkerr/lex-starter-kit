@@ -26,6 +26,14 @@
         }, 
         {
             "intentVersion": "$LATEST", 
+            "intentName": "WhatAreMyMostPopularProjects"
+        },
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "WhatCanIAskYou"
+        },
+        {
+            "intentVersion": "$LATEST", 
             "intentName": "WhatProjectsAmIWorkingOn"
         }
     ], 

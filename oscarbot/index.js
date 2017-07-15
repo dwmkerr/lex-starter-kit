@@ -6,6 +6,7 @@ const intentDescribeLastCommit = require('./intentDescribeLastCommit');
 const intentGetStars = require('./intentGetStars');
 const intentOpenIssue = require('./intentOpenIssue');
 const intentTopIssues = require('./intentTopIssues');
+const intentWhatAreMyMostPopularProjects = require('./intentWhatAreMyMostPopularProjects');
 const intentWhatCanIAskYou = require('./intentWhatCanIAskYou');
 const intentWhatProjectsAmIWorkingOn = require('./intentWhatProjectsAmIWorkingOn');
 
@@ -16,6 +17,7 @@ const INTENT_HANDLERS = {
   GetStars: intentGetStars,
   OpenIssue: intentOpenIssue,
   TopIssues: intentTopIssues,
+  WhatAreMyMostPopularProjects: intentWhatAreMyMostPopularProjects,
   WhatCanIAskYou: intentWhatCanIAskYou,
   WhatProjectsAmIWorkingOn: intentWhatProjectsAmIWorkingOn
 };
