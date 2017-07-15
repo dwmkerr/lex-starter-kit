@@ -40,7 +40,7 @@ function deploy-intents() {
         # we use the correct function.
         # I'm so, so sorry I have to do this.
         lambdaFunc="arn:aws:lambda:$region:$accountNo:function:$functionName"
-        cat $intentFile | jq --arg l "$lambdaFunc" '.fulfillmentActivity.codeHook.uri |= $l | .dialogCodeHook.uri |= $l' > $intentFile.temp
+        cat $intentFile | jq --arg l "$lambdaFunc" '(select(.fulfillmentActivity != null) .fulfillmentActivity.codeHook.uri |= $l) | (select(.dialogCodeHook != null) .dialogCodeHook.uri |= $l)' > $intentFile.temp
 
         # Now more shenanigans. Go through each slottype and replace '$VERSION'
         # with the latest published version. Urgh.
