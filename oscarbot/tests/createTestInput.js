@@ -1,7 +1,7 @@
 function createTestInput(options) {
   return {
     currentIntent: {
-      slots: options.slots,
+      slots: Object.assign({}, options.slots), // make sure we've always got an object, even if it is empty.
       name: options.intent,
       confirmationStatus: 'None'
     },

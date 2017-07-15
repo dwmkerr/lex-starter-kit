@@ -1,6 +1,8 @@
 {
   "currentIntent": {
-    "slots": {},
+    "slots": {
+      "Repository": null
+    },
     "name": "GetStars",
     "confirmationStatus": "None"
   },

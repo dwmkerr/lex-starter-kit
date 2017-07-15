@@ -1,5 +1,6 @@
 {
-	"whatProjectsAmIWorkingOnResponse": "You own ${myReposCount} repositories and have contributed to ${contributedReposCount} repositories.",
+    "whatCanIAskYouResponse": "You can ask me things like:\n${utterancesList}",
+    "whatProjectsAmIWorkingOnResponse": "You own ${myReposCount} repositories and have contributed to ${contributedReposCount} repositories.",
 	"countOpenPRsResponse": "${projectName} has ${openPullRequests} open pull requests.",
 	"countIssuesResponse": "Jay-Z has 99 problems but ${projectName} only has ${issues}!",
 	"describeLastCommitResponse": "${author} was the most recent person to comment ${fromNow} on ${repository} and they said ${message}",

@@ -46,8 +46,8 @@ function setRepositoryValidated(sessionAttributes, repositoryName) {
 }
 
 /**
- * validateSession - Ensures that we have sufficient session data. Will initiate
-   dialog actions to get session data if needed.
+ * Ensures that we have a valid repository slot. Uses the session if available,
+ if not elicits a repository, checks it and then sets it into the session.
  *
  * @param event - The lex event.
  * @param context - The lex context.
@@ -56,7 +56,7 @@ function setRepositoryValidated(sessionAttributes, repositoryName) {
    dialog should continue, false if data needs to be elicited and the caller
    should return.
  */
-function validateSession(event, context, callback) {
+function validateRepositorySlot(event, context, callback) {
   return new Promise((resolve, reject) => {
     const sessionAttributes = event.sessionAttributes || {};
     const sessionRepositoryName = sessionAttributes[REPOSITORY_SLOT];
@@ -147,6 +147,30 @@ function validateSession(event, context, callback) {
       return resolve(false);
     }
   });
+}
+
+/**
+ * validateSession - Ensures that we have sufficient session data. Will initiate
+   dialog actions to get session data if needed.
+ *
+ * @param event - The lex event.
+ * @param context - The lex context.
+ * @param callback - The lex callback.
+ * @returns - A promise which resolves with true if the session is valid and 
+   dialog should continue, false if data needs to be elicited and the caller
+   should return.
+ */
+function validateSession(event, context, callback) {
+  //  Validate some basic event data.
+  if (!event.currentIntent) throw new Error('Events must always contain a \'currentIntent\'');
+  if (!event.currentIntent.slots) throw new Error('Events must always contain a \'slots\' field, even if it is empty');
+
+  //  If there is a need for a repository slot, ensure we have a valid repo.
+  if (event.currentIntent.slots && event.currentIntent.slots.hasOwnProperty(REPOSITORY_SLOT))
+    return validateRepositorySlot(event, context, callback);
+
+  //  The session is looking good.
+  return Promise.resolve(true);
 }
 
 module.exports = validateSession;
