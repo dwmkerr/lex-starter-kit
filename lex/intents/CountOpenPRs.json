@@ -25,7 +25,7 @@
                 ]
             }, 
             "priority": 1, 
-            "slotTypeVersion": "1", 
+            "slotTypeVersion": "$LATEST", 
             "sampleUtterances": []
         }
     ], 

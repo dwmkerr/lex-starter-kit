@@ -19,7 +19,7 @@
                 ]
             }, 
             "priority": 1, 
-            "slotTypeVersion": "1", 
+            "slotTypeVersion": "$LATEST", 
             "sampleUtterances": []
         }, 
         {
@@ -36,7 +36,7 @@
                 ]
             }, 
             "priority": 2, 
-            "slotTypeVersion": "1", 
+            "slotTypeVersion": "$LATEST", 
             "sampleUtterances": []
         }, 
         {
@@ -53,7 +53,7 @@
                 ]
             }, 
             "priority": 3, 
-            "slotTypeVersion": "1", 
+            "slotTypeVersion": "$LATEST", 
             "sampleUtterances": []
         }
     ], 
