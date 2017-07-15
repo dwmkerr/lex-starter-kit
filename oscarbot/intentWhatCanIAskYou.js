@@ -6,7 +6,6 @@ function handler(event, context, callback) {
   //  Load all of the utterances Oscar can handle.
   const utterancesList = utterances.map(u => ` - ${u}`).join('\n');
   const response = i18n('whatCanIAskYouResponse', { utterancesList });
-  debugger;
 
   return callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {
     contentType: 'PlainText',
