@@ -6,7 +6,6 @@ describe('intentWhatProjectsAmIWorkingOn', () => {
   it('should be able to tell me what projects I am working on', (done) => {
     const input = createTestInput({
       intent: 'WhatProjectsAmIWorkingOn',
-      sessionAttributes: { Repository: 'dwmkerr/angular-modal-service' },
       slots: { GitHubUsername: 'dwmkerr' }
     });
 
