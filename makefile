@@ -35,7 +35,7 @@ setup: check-dependencies build
 		--code S3Bucket=$(OSCAR_BUCKET),S3Key=$(FUNCTION).zip
 
 # Deploys updates.
-deploy:
+deploy: build
 	aws s3 cp oscarbot.zip s3://$(OSCAR_BUCKET)/$(FUNCTION).zip
 	aws lambda update-function-code \
 		--region $(REGION) \

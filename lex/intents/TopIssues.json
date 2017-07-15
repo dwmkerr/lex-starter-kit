@@ -1,5 +1,5 @@
 {
-    "name": "CountIssues", 
+    "name": "TopIssues", 
     "sampleUtterances": [
         "List the top issues for my project",
         "What are the issues for my project",
@@ -22,7 +22,7 @@
                 ]
             }, 
             "priority": 1, 
-            "slotTypeVersion": "1", 
+            "slotTypeVersion": "$LATEST", 
             "sampleUtterances": []
         }
     ], 

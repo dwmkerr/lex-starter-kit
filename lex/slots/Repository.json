@@ -1,12 +1,19 @@
 {
     "enumerationValues": [{
-        "value": "dwmkerr/angular-modal-service",
-        "value": "mindmelting/lex-boilerplate",
-        "value": "nodejs/node",
-        "value": "glennjones/hapi-swagger",
-        "value": "hapijs/joi",
-        "value": "facebook/react-native",
-        "value": "mgonto/restangular",
+        "value": "dwmkerr/angular-modal-service"
+    }, {
+        "value": "mindmelting/lex-boilerplate"
+    }, {
+        "value": "nodejs/node"
+    }, {
+        "value": "glennjones/hapi-swagger"
+    }, {
+        "value": "hapijs/joi"
+    }, {
+        "value": "facebook/react-native"
+    }, {
+        "value": "mgonto/restangular"
+    }, {
         "value": "sahat/satellizer"
     }],
     "name": "Repository",
