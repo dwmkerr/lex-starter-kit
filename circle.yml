@@ -6,6 +6,7 @@ machine:
 
 dependencies:
   pre:
+    - pip install awscli
     - sudo apt-get update; sudo apt-get install jq
 
 test:

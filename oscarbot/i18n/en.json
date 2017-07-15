@@ -6,13 +6,13 @@
 	"describeLastCommitResponse": "${author} was the most recent person to comment ${fromNow} on ${repository} and they said ${message}",
 	"getStarsResponse": "If ${projectName} keeps stealing all the stars, the night sky will soon be empty! It currently has ${stars} stars",
 	"elicitSlotGitHubUser": "What's your GitHub username?",
-	"openIssueRequestTitle": "Sure, I’ll need a title for that, what do you want to call it?",
+	"openIssueRequestTitle": "Sure, I'll need a title for that, what do you want to call it?",
 	"openIssueRequestDescription": "Great, I need you add a description for ${issueTitle}",
 	"openIssueConfirm": "I just want to confirm that you want to open an issue titled ${issueTitle} and described it as ${issueContent}",
-	"openIssueResponse": "Thanks for confirming, the issue is now open and it’s located at ${url}",
+	"openIssueResponse": "Thanks for confirming, the issue is now open and it's located at ${url}",
 	"topIssuesResponse": "OK, here we go! The top issues for ${projectName} are: ${issueText}",
 	"threeLaws": "I only have the CPU to support two of the three laws at any one time.",
-	"repoFormatIncorrect": "Woah, I can’t seem to find ${slotRepositoryName}, I’m picky with spelling, could you type it again? It helps if you include the owner, such as ‘twbs/bootstrap",
-	"repoNotFound": "I had a good search but couldn’t find the ${slotRepositoryName} repository. If it’s private I may not have access, otherwise I may just not looking for the right thing can you help me out by ensuring the name is formatted as ‘user/project’",
+	"repoFormatIncorrect": "Woah, I can't seem to find ${slotRepositoryName}, I'm picky with spelling, could you type it again? It helps if you include the owner, such as ‘twbs/bootstrap",
+	"repoNotFound": "I had a good search but couldn't find the ${slotRepositoryName} repository. If it's private I may not have access, otherwise I may just not looking for the right thing can you help me out by ensuring the name is formatted as ‘user/project'",
 	"projectNamePrompt": "Hi! what is the project name you want to find out about?"
 }

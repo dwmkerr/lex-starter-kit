@@ -45,7 +45,7 @@ describe('validateSession', () => {
     validateSession(newIntent, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'ElicitSlot');
       assert.equal(response.dialogAction.slotToElicit, 'Repository');
-      assert(response.dialogAction.message.content.match(/I’m picky with spelling/));
+      assert(response.dialogAction.message.content.match(/I'm picky with spelling/));
       done();
     });
   });
@@ -62,7 +62,7 @@ describe('validateSession', () => {
     validateSession(newIntent, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'ElicitSlot');
       assert.equal(response.dialogAction.slotToElicit, 'Repository');
-      assert(response.dialogAction.message.content.match(/If it’s private I may not have access/));
+      assert(response.dialogAction.message.content.match(/If it's private I may not have access/));
       done();
     });
   });
