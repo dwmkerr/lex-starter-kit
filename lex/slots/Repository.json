@@ -15,6 +15,42 @@
         "value": "mgonto/restangular"
     }, {
         "value": "sahat/satellizer"
+    }, {
+        "value": "alexanderepstein/Bash-Snippets"
+    }, {
+        "value": "jaredreich/pell"
+    }, {
+        "value": "Kristories/awesome-guidelines"
+    }, {
+        "value": "shieldfy/API-Security-Checklist"
+    }, {
+        "value": "azat-co/practicalnode"
+    }, {
+        "value": "d4l3k/go-pry"
+    }, {
+        "value": "gpujs/gpu.js"
+    }, {
+        "value": "iogf/sukhoi"
+    }, {
+        "value": "wearehive/project-guidelines"
+    }, {
+        "value": "tensorflow/nmt"
+    }, {
+        "value": "coells/100days"
+    }, {
+        "value": "geekplux/markvis"
+    }, {
+        "value": "gitpoint/git-point"
+    }, {
+        "value": "zeit/now"
+    }, {
+        "value": "sdras/intro-to-vue"
+    }, {
+        "value": "walmik/scribbletune"
+    }, {
+        "value": "Tanibox/tania"
+    }, {
+        "value": "scwang90/SmartRefreshLayout"
     }],
     "name": "Repository",
     "description": "The name of the repository."
