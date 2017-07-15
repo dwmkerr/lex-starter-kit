@@ -4,23 +4,7 @@
         "What projects am I working on"
     ], 
     "slots": [
-        {
-            "slotType": "Repository", 
-            "name": "Repository", 
-            "slotConstraint": "Required", 
-            "valueElicitationPrompt": {
-                "maxAttempts": 2, 
-                "messages": [
-                    {
-                        "content": "e.g. What city?", 
-                        "contentType": "PlainText"
-                    }
-                ]
-            },
-            "priority": 1, 
-            "slotTypeVersion": "$LATEST", 
-            "sampleUtterances": []
-        }, { 
+        { 
             "slotType": "GitHubUsername", 
             "name": "GitHubUsername", 
             "slotConstraint": "Required", 
@@ -33,7 +17,7 @@
                     }
                 ]
             }, 
-            "priority": 2, 
+            "priority": 1, 
             "slotTypeVersion": "$LATEST", 
             "sampleUtterances": []
         }
