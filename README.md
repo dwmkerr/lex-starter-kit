@@ -2,7 +2,7 @@
 
 > Oscar is a sassy, connected chatbot who enables you to easily interact with GitHub projects, all out of Slack!
 
-Check the [Quick Start Guide](https://docs.google.com/document/d/18Cson5ZFJicqecOh9l_enK-nn5m8zuAMgCh0P9tMzzI/edit?usp=sharing) to get access to Oscar on our Slack Channel - [oscar-bot.slack.com](oscar-bot.slack.com). Also check out [The AWS Chatbot Challenge](https://aws.amazon.com/events/chatbot-challenge/).
+Check the [Quick Start Guide](https://docs.google.com/document/d/18Cson5ZFJicqecOh9l_enK-nn5m8zuAMgCh0P9tMzzI/edit?usp=sharing) to get access to Oscar on our Slack Channel - [oscar-bot.slack.com](http://oscar-bot.slack.com). Also check out [The AWS Chatbot Challenge](https://aws.amazon.com/events/chatbot-challenge/).
 
 - [Quick Start](#quick-start)
 - [Developer Guide](#developer-guide)
