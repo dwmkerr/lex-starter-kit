@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Abort on any error.
+set -e
+
 # Create intents from a folder.
 # Usage:
 #   deploy-intents us-east-1 ./folder/**/*.json
@@ -38,6 +41,25 @@ function deploy-intents() {
         # I'm so, so sorry I have to do this.
         lambdaFunc="arn:aws:lambda:$region:$accountNo:function:$functionName"
         cat $intentFile | jq --arg l "$lambdaFunc" '.fulfillmentActivity.codeHook.uri |= $l | .dialogCodeHook.uri |= $l' > $intentFile.temp
+
+        # Now more shenanigans. Go through each slottype and replace '$VERSION'
+        # with the latest published version. Urgh.
+        SLOTTYPES=`cat $intentFile | jq -r ".slots[].slotType"`
+        for SLOTTYPE in $SLOTTYPES; do
+
+            echo "Intent uses slot type '$SLOTTYPE'. Getting latest published version..."
+
+            # Get the versions, rip out the version number of the most recent one.
+            SLOTTYPEVERSION=`aws lex-models get-slot-type-versions --name $SLOTTYPE --region $region | jq -r ".slotTypes[-1].version"`
+            echo "The latest version of '$SLOTTYPE' is '$SLOTTYPEVERSION'..."
+
+            # Replace the version number in the slot type.
+            cp $intentFile.temp $intentFile.temp2
+            cat $intentFile.temp2 | jq --arg v "$SLOTTYPEVERSION" --arg s "$SLOTTYPE" '(.slots[] | select(.slotType == $s) | .slotTypeVersion) |= $v' > $intentFile.temp
+            rm $intentFile.temp2
+
+        done
+
 
         # Check to see if we have the intent already.
         LATEST_VERSION=`aws lex-models get-intent-versions --name $intentName --region $region | jq -r '.intents[0].version | select (.!=null)'`
