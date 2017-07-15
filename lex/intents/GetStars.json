@@ -2,7 +2,7 @@
     "name": "GetStars", 
     "sampleUtterances": [
         "How many stars does the project have",
-        "How many stars dose {Repository} have"
+        "How many stars does {Repository} have"
     ], 
     "slots": [
         {

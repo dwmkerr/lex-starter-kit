@@ -47,6 +47,19 @@ make setup
 
 Which will build the lambda function, bucket and policies.
 
+## Useful Commands
+
+Here are some commands you can run to help work with the project:
+
+| Command | Usage |
+|---------|-------|
+| `make build` | Builds the lamba function and zips it up locally. |
+| `make test` | Runs the unit tests. |
+| `make lint` | Lints the code. |
+| `make setup` | Sets up your AWS resources. First time setup only. |
+| `make deploy` | Deploys the code, slots and intents. |
+| `make utterances` | Helper to print out all supported utterances. Useful when building docs. |
+
 ## Circle CI
 
 `circle.yml` will build changes on master and deploy to AWS (make sure you have set the Circle AWS key in the console)
