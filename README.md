@@ -1,22 +1,41 @@
-# lex-boilerplate
+# lex-boilerplate [![CircleCI](https://circleci.com/gh/mindmelting/lex-boilerplate.svg?style=shield&circle-token=f3df5063eb7b005165aa378212810a9b8c1c1d6c)](https://circleci.com/gh/mindmelting/lex-boilerplate)
 
-Oscarbot project for [The AWS Chatbot Challenge](https://aws.amazon.com/events/chatbot-challenge/).
+> Oscar is a sassy, connected chatbot who enables you to easily interact with GitHub projects, all out of Slack!
 
-The Slack Channel is: https://oscar-bot.slack.com
+Check the [Quick Start Guide](https://docs.google.com/document/d/18Cson5ZFJicqecOh9l_enK-nn5m8zuAMgCh0P9tMzzI/edit?usp=sharing) to get access to Oscar on our Slack Channel - [oscar-bot.slack.com](oscar-bot.slack.com). Also check out [The AWS Chatbot Challenge](https://aws.amazon.com/events/chatbot-challenge/).
 
-# Talking to Oscar
+- [Quick Start](#quick-start)
+- [Developer Guide](#developer-guide)
+	- [Environment Setup](#environment-setup)
+	- [Useful Commands](#useful-commands)
+	- [Circle CI](#circle-ci)
+	- [Snappy Responses](#snappy-responses)
+	- [Useful Reading](#useful-reading)
 
-The quickest way to try out Oscar is to request an invite to the [OscarBot Slack Channel](https://oscar-bot.slack.com).
+# Quick Start
+
+The fastest way to try out Oscar is to request an invite to the [OscarBot Slack Channel](https://oscar-bot.slack.com). Then checkout the [Quick Start Guide](https://docs.google.com/document/d/18Cson5ZFJicqecOh9l_enK-nn5m8zuAMgCh0P9tMzzI/edit?usp=sharing).
 
 Oscar can provide all sorts of information about repositories, as well as doing things like opening issues. Some example interations are:
 
-TODO
+- "How many issues does {Repository} have?"
+- "I would like to open an issue"
+- "List the top issues for my project"
 
-There is a complete list at:
-
-TODO
+There's a more detailed list in the [Quick Start Guide]([Quick Start Guide](https://docs.google.com/document/d/18Cson5ZFJicqecOh9l_enK-nn5m8zuAMgCh0P9tMzzI/edit?usp=sharing)).
 
 # Developer Guide
+
+The project structure is:
+
+```
+├── aws           # some aws resources used in setup
+├── docs          # internal docs/images
+├── lex           # slots and intent json files
+├── oscar-cli     # the oscar cli
+├── oscarbot      # lamba function and tests
+└── scripts       # scripts used by the makefile
+```
 
 This diagram shows the key steps for setup and development:
 
@@ -60,18 +79,35 @@ Here are some commands you can run to help work with the project:
 | `make deploy` | Deploys the code, slots and intents. |
 | `make utterances` | Helper to print out all supported utterances. Useful when building docs. |
 
+## The CLI
+
+If you have the AWS CLI setup with access to the bot, you can actually chat using the CLI. First, build and link the CLI with:
+
+```bash
+make cli
+```
+
+Then just run the `oscar` command to chat!
+
+```
+$ oscar
+Hello, I am Oscar 🤖
+
+You chat to me about your GitHub project!
+
+oscar > Hi! What can I help you with?
+me    > What projects am I working on?
+```
+
 ## Circle CI
 
-`circle.yml` will build changes on master and deploy to AWS (make sure you have set the Circle AWS key in the console)
+`circle.yml` will build changes on master and deploy to AWS (make sure you have set the Circle AWS key in the console).
 
-## Chatting
+## Testing
 
-- How many stars does my project have?
-- How many issues does my project have?
-- Can you open an issue for me?
-- What was the last commit on my project?
-- What was the last commit on dwmkerr/effective-shell?
-- What are the issues for my project?
+The bulk of the tests work by creating a chat event and passing it to the lambda function. This means it will test the *intent* but not the natural language understanding.
+
+A good example test to get learn from is [intentDescribeLastCommit.js](oscarbot/intentDescribeLastCommit.js).
 
 ## Snappy Responses
 
