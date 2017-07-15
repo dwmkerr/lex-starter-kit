@@ -1,13 +1,8 @@
 const config = require('./config');
 const dialogActions = require('./utils/dialogActions');
+const elicitSlot = require('./utils/dialog/elicitSlot');
 const github = require('./utils/github');
 const i18n = require('./i18n');
-
-function elicitSlot(event, slotName, message, callback) {
-  return callback(null,
-    dialogActions.elicitSlot(event.sessionAttributes, 
-      event.currentIntent.name, event.currentIntent.slots, slotName, { contentType: 'PlainText', content: message } ));
-}
 
 function checkConfirmationStatus(event, callback) {
   const confirmationStatus = event.currentIntent.confirmationStatus;

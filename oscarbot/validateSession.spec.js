@@ -9,7 +9,6 @@ const intentRepositorySession = require('./tests/intent-repository-session.json'
 describe('validateSession', () => {
   it('Should elicit a response from user for repository', (done) => {
     validateSession(intentRepository, null, (err, response) => {
-      console.log(response);
       assert.equal(response.dialogAction.type, 'ElicitSlot');
       assert.equal(response.dialogAction.slotToElicit, 'Repository');
       done();

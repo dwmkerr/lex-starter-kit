@@ -1,4 +1,3 @@
-const moment = require('moment');
 const config = require('./config');
 const dialogActions = require('./utils/dialogActions');
 const getRepoOwnerAndName = require('./utils/getRepoOwnerAndName');
