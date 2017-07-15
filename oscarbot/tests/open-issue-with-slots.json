@@ -1,6 +1,7 @@
 {
   "currentIntent": {
     "slots": {
+      "Repository": null,
       "IssueTitle": "Something is broken",
       "IssueContent": "There is a glitch in the matrix"
     },
