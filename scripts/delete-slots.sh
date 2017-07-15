@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Abort on any error.
+set -e
+
 set -o xtrace
 # Delete slots, based on the names in the files we have.
 # Usage:

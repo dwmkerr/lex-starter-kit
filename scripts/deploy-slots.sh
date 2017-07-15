@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Abort on any error.
+set -e
+
 # Create slots from a folder.
 # Usage:
 #   deploy-slots us-east-1 ./folder/**/*.json
