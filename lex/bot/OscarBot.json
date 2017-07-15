@@ -1,0 +1,55 @@
+{
+    "intents": [
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "GetStars"
+        }, 
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "CountIssues"
+        }, 
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "WhatCanIAskYou"
+        }, 
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "OpenIssue"
+        }, 
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "DescribeLastCommit"
+        }, 
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "CountOpenPRs"
+        }, 
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "WhatProjectsAmIWorkingOn"
+        }
+    ], 
+    "name": "oscarbot", 
+    "locale": "en-US", 
+    "abortStatement": {
+        "messages": [
+            {
+                "content": "Sorry, I could not understand. Goodbye.", 
+                "contentType": "PlainText"
+            }
+        ]
+    }, 
+    "clarificationPrompt": {
+        "maxAttempts": 5, 
+        "messages": [
+            {
+                "content": "Sorry, can you please repeat that?", 
+                "contentType": "PlainText"
+            }
+        ]
+    }, 
+    "voiceId": "Joey", 
+    "childDirected": false, 
+    "idleSessionTTLInSeconds": 300,
+    "description": "Oscar is a bot to help you interact with GitHub projects."
+}
