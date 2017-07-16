@@ -35,7 +35,7 @@ me    > dwmkerr/spaceinvaders
 oscar > What's your GitHub username?
 me    > oscarbotchallenge
 oscar > What's your GitHub password? (I need it to fork for you, but I'll forget it straight after).
-me    > LNbY,CXXwm9Y
+me    > <Password>
 oscar > I'm going to fork _dwmkerr/spaceinvaders_ on behalf of _oscarbotchallenge_ is that OK?
 me    > ok
 oscar > I've started forking _dwmkerr/spaceinvaders_ for you to _oscarbotchallenge/spaceinvaders_, it can sometimes take a few minutes to complete.
@@ -135,7 +135,7 @@ me    > dwmkerr/spaceinvaders
 oscar > What's your GitHub username?
 me    > oscarbotchallenge
 me    > oscar > What's your GitHub password? (I need it to remove the star, but I'll forget it straight after).
-me    > LNbY,CXXwm9Y
+me    >
 oscar > I'm going to unstar _dwmkerr/spaceinvaders_ on behalf of _oscarbotchallenge_ isthat OK?
 me    > no
 oscar > Ok, I will not unstar the repository.
