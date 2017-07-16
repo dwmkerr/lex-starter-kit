@@ -3,8 +3,10 @@
     "sampleUtterances": [
       "star a project",
       "add a star",
-      "Can you star a project for me",
-      "Add a star to a project"
+      "Can you star a project",
+      "Add a star to a project",
+      "Can you star {Repository}",
+      "Add a star to {Respository}"
     ], 
     "slots": [
         {

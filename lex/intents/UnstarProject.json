@@ -4,7 +4,9 @@
       "unstar a project",
       "remove a star",
       "Can you unstar a project for me",
-      "Remove a star from a project"
+      "Remove a star from a project",
+      "Can you unstar {Repository}",
+      "Remove a star from {Respository}"
     ], 
     "slots": [
         {
