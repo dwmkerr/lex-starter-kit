@@ -43,6 +43,10 @@
         {
             "intentVersion": "$LATEST", 
             "intentName": "UnstarProject"
+        },
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "TopIssues"
         }
     ], 
     "name": "oscarbot", 
