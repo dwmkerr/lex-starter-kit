@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { handler } = require('./intentOpenIssue');
+const { handler } = require('../index');
 const openIssue = require('./tests/open-issue.json');
 const openIssueWithTitle = require('./tests/open-issue-with-title.json');
 const openIssueWithSlots = require('./tests/open-issue-with-slots.json');

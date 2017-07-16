@@ -1,8 +1,8 @@
-const config = require('./config');
-const dialogActions = require('./utils/dialogActions');
-const login = require('./utils/github/login');
-const query = require('./utils/github/query');
-const i18n = require('./i18n');
+const config = require('../config');
+const dialogActions = require('../utils/dialogActions');
+const login = require('../utils/github/login');
+const query = require('../utils/github/query');
+const i18n = require('../i18n');
 
 function handler(event, context, callback) {
   const repository = event.sessionAttributes.Repository;
@@ -12,33 +12,28 @@ function handler(event, context, callback) {
 
   const username = config.GITHUB_USERNAME;
   const password = config.GITHUB_PASSWORD;
+  console.log(`Logging in with credentials ${username}:${password}`);
   login(username, password, event)
     .then((token) => {
       console.log(`Logged in successfully, token: ${token}`);
       query(token, `
-        query { 
+        query {
           repository(owner: "${owner}", name: "${name}") {
             name
-            issues(states: OPEN, first: 3, orderBy: {field: UPDATED_AT, direction: DESC}) {
-              nodes {
-                title,
-                url
-              }
-            }
+            stargazers { totalCount }
           }
         }
         `)
         .then((result) => {
+
           //  Create the response.
+          console.log(`Result is: ${result}`);
           const data = JSON.parse(result).data;
           const projectName = data.repository.name;
-          const issues = data.repository.issues.nodes;
-          const issueText = issues.reduce((a, b) => {
-            return `${a} \n _${b.title}_ - ${b.url}`;
-          }, '');
-          const response = i18n('topIssuesResponse', {
+          const stars = data.repository.stargazers.totalCount;
+          const response = i18n('getStarsResponse', {
             projectName,
-            issueText
+            stars
           });
 
           callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {

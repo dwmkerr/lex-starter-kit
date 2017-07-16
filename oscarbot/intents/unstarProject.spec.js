@@ -1,13 +1,13 @@
 const assert = require('assert');
-const config = require('./config');
-const { handler } = require('./index');
+const config = require('../config');
+const { handler } = require('../index');
 const createTestInput = require('./tests/createTestInput');
 
-describe('intentStarProject', () => {
-  it('should be able to star a project', (done) => {
+describe('intentUnstarProject', () => {
+  it('should be able to unstar a project', (done) => {
     const input = createTestInput({
-      intent: 'StarProject',
-      slots: { 
+      intent: 'UnstarProject',
+      slots: {
         Repository: 'mindmelting/lex-oscarbot',
         GitHubUsername: config.GITHUB_USERNAME,
         GitHubPassword: config.GITHUB_PASSWORD
@@ -20,7 +20,7 @@ describe('intentStarProject', () => {
 
     handler(event, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'Close');
-      assert(response.dialogAction.message.content.match(/I've starred mindmelting\/lex-oscarbot for you/));
+      assert(response.dialogAction.message.content.match(/I've unstarred mindmelting\/lex-oscarbot for you/));
       done();
     });
   });
