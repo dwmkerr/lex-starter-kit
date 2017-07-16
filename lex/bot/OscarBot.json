@@ -39,6 +39,10 @@
         {
             "intentVersion": "$LATEST", 
             "intentName": "MyOpenIssues"
+        },
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "TopIssues"
         }
     ], 
     "name": "oscarbot", 
