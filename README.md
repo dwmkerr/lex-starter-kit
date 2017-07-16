@@ -1,4 +1,4 @@
-# lex-oscarbot [![CircleCI](https://circleci.com/gh/mindmelting/lex-oscarbot.svg?style=svg&circle-token=f3df5063eb7b005165aa378212810a9b8c1c1d6c)](https://circleci.com/gh/mindmelting/lex-oscarbot)
+# lex-oscarbot [![CircleCI](https://circleci.com/gh/mindmelting/lex-oscarbot.svg?style=svg&circle-token=f3df5063eb7b005165aa378212810a9b8c1c1d6c)](https://circleci.com/gh/mindmelting/lex-oscarbot) [![codecov](https://codecov.io/gh/mindmelting/lex-oscarbot/branch/master/graph/badge.svg?token=iQYwx3rf4b)](https://codecov.io/gh/mindmelting/lex-oscarbot)
 
 > Oscar is a sassy, connected chatbot who enables you to easily interact with GitHub projects, all out of Slack!
 

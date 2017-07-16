@@ -12,7 +12,8 @@ dependencies:
 test:
   override:
     - make lint
-    - make test
+    - make coverage
+    - curl -s https://codecov.io/bash | bash
 
 deployment:
   release:
