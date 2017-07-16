@@ -47,6 +47,10 @@
         {
             "intentVersion": "$LATEST", 
             "intentName": "TopIssues"
+        },
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "ForkProject"
         }
     ], 
     "name": "oscarbot", 
