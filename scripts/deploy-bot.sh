@@ -23,7 +23,7 @@ function deploy-bot() {
 
         # Get the versions, rip out the version number of the most recent one.
         INTENTVERSION=`aws lex-models get-intent-versions --name $INTENT --region $region | jq -r ".intents[-1].version"`
-        echo "Bot uses intent '$INTENT'. Latest published version is '$INTENTVERSION'."
+        echo "Updating $botName intent $INTENT to latest version ($INTENTVERSION)..."
 
         # Replace the version number in the intent.
         cp $botFile.temp $botFile.temp2

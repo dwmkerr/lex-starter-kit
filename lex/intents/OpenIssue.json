@@ -2,7 +2,10 @@
     "name": "OpenIssue", 
     "sampleUtterances": [
         "I would like to open an issue",
-        "I would like to open an issue on {Repository}"
+        "I would like to open an issue on {Repository}",
+        "Can you open an issue for me",
+        "Open an issue",
+        "Open an issue on {Repository}"
     ], 
     "slots": [
         {

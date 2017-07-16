@@ -54,7 +54,6 @@ function handler(event, context, callback) {
         .then((result) => {
 
           //  Create the response.
-          console.log(`Result is: ${result}`);
           const url = result.html_url;
           const response = i18n('openIssueResponse', { url });
 

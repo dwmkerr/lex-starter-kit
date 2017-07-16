@@ -25,10 +25,14 @@ describe('intentOpenIssue', () => {
 
   //  This is disabled by default otherwise we get lots of issues added to the repo.
   xit('should be able to open an issue', (done) => {
-    handler(openIssueWithSlots, null, (err, response) => {
-      console.log(response);
+
+    //  Take the test event, and set its confirmation status.
+    const event = Object.assign({}, openIssueWithSlots);
+    event.currentIntent.confirmationStatus = 'Confirmed';
+
+    handler(event, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'Close');
-      assert(response.dialogAction.message.content.match(/opened the issue/));
+      assert(response.dialogAction.message.content.match(/issue is now open/));
       done();
     });
   });
