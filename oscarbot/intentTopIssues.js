@@ -34,7 +34,7 @@ function handler(event, context, callback) {
           const projectName = data.repository.name;
           const issues = data.repository.issues.nodes;
           const issueText = issues.reduce((a, b) => {
-            return `${a} \n ${b.title} - ${b.url}`;
+            return `${a} \n _${b.title}_ - ${b.url}`;
           }, '');
           const response = i18n('topIssuesResponse', {
             projectName,

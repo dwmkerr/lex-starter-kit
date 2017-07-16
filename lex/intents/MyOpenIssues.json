@@ -1,8 +1,16 @@
 {
-    "name": "WhatProjectsAmIWorkingOn", 
+    "name": "MyOpenIssues", 
     "sampleUtterances": [
-        "What projects am I working on",
-        "What projects is {GitHubUsername} working on"
+        "What issues have I opened",
+        "What are the issues I have opened",
+        "Issues that I have open",
+        "Top issues that I have open",
+        "Issues that {GitHubUsername} has opened",
+        "What issues have I created",
+        "What are the issues I have created",
+        "Issues that I have created",
+        "Top issues that I have created",
+        "Issues that {GitHubUsername} has created"
     ], 
     "slots": [
         { 
