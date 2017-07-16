@@ -29,7 +29,9 @@ function login(username, password, event) {
   if (!username) throw new Error('\'username\' cannot be null');
   if (!password) throw new Error('\'password\' cannot be null');
 
-  if (event.sessionAttributes && event.sessionAttributes[GITHUB_TOKEN_KEY]) {
+  //  If we have been provided an event, we might be able to login with the
+  //  token stored in the session token.
+  if (event && event.sessionAttributes && event.sessionAttributes[GITHUB_TOKEN_KEY]) {
     return Promise.resolve(event.sessionAttributes[GITHUB_TOKEN_KEY]);
   }
 
@@ -58,7 +60,9 @@ function login(username, password, event) {
       if (response.statusCode < 400) {
         const token = response.body.token;
 
-        setSessionToken(token, event);
+        //  If we have been provided with an event, we can store the token in
+        //  the session token.
+        if (event) setSessionToken(token, event);
 
         return token;
       } else {
