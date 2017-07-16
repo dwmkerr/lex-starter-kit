@@ -1,0 +1,39 @@
+{
+    "name": "WhatAreMyMostPopularProjects", 
+    "sampleUtterances": [
+      "What are my most popular projects",
+      "What are my most popular repositories",
+      "What is my most popular project",
+      "What is my most popular repository"
+    ], 
+    "slots": [
+        { 
+            "slotType": "GitHubUsername", 
+            "name": "GitHubUsername", 
+            "slotConstraint": "Required", 
+            "valueElicitationPrompt": {
+                "maxAttempts": 2, 
+                "messages": [
+                    {
+                        "content": "What is your GitHub username?", 
+                        "contentType": "PlainText"
+                    }
+                ]
+            }, 
+            "priority": 1, 
+            "slotTypeVersion": "$LATEST", 
+            "sampleUtterances": []
+        }
+    ], 
+    "dialogCodeHook": {
+        "uri": "arn:aws:lambda:us-east-1:160696617623:function:intentOscarBot", 
+        "messageVersion": "1.0"
+    }, 
+    "fulfillmentActivity": {
+        "type": "CodeHook", 
+        "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:160696617623:function:intentOscarBot", 
+            "messageVersion": "1.0"
+        }
+    }
+}
