@@ -1,8 +1,8 @@
-const config = require('./config');
-const dialogActions = require('./utils/dialogActions');
-const getRepoOwnerAndName = require('./utils/getRepoOwnerAndName');
-const github = require('./utils/github');
-const i18n = require('./i18n');
+const config = require('../config');
+const dialogActions = require('../utils/dialogActions');
+const getRepoOwnerAndName = require('../utils/getRepoOwnerAndName');
+const github = require('../utils/github');
+const i18n = require('../i18n');
 
 function handler(event, context, callback) {
   const repository = event.sessionAttributes.Repository;
@@ -11,7 +11,7 @@ function handler(event, context, callback) {
   github.login(config.GITHUB_USERNAME, config.GITHUB_PASSWORD, event)
     .then((token) => {
       github.query(token, `
-        query { 
+        query {
           repository(owner: "${owner}", name: "${name}") {
             name
             pullRequests(states: OPEN) {

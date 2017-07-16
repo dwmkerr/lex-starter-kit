@@ -1,9 +1,9 @@
 const assert = require('assert');
 const validateSession = require('./validateSession');
-const intentRepository = require('./tests/intent-repository.json');
-const intentRepositorySlot = require('./tests/intent-repository-slot.json');
-const intentRepositoryQuestionSlot = require('./tests/intent-repository-question-slot.json');
-const intentRepositorySession = require('./tests/intent-repository-session.json');
+const intentRepository = require('./intents/tests/intent-repository.json');
+const intentRepositorySlot = require('./intents/tests/intent-repository-slot.json');
+const intentRepositoryQuestionSlot = require('./intents/tests/intent-repository-question-slot.json');
+const intentRepositorySession = require('./intents/tests/intent-repository-session.json');
 
 
 describe('validateSession', () => {

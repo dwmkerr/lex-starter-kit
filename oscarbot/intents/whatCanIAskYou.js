@@ -1,5 +1,5 @@
-const dialogActions = require('./utils/dialogActions');
-const i18n = require('./i18n');
+const dialogActions = require('../utils/dialogActions');
+const i18n = require('../i18n');
 const utterances = require('./utterances.json');
 
 function handler(event, context, callback) {
