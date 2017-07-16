@@ -1,6 +1,5 @@
 const config = require('../config');
-const dialogActions = require('../utils/dialogActions');
-const elicitSlot = require('../utils/dialog/elicitSlot');
+const dialog = require('../utils/dialog');
 const github = require('../utils/github');
 const i18n = require('../i18n');
 
@@ -8,7 +7,7 @@ function handler(event, context, callback) {
   const gitHubUsername = event.currentIntent.slots.GitHubUsername;
 
   //  Elicit the required slots.
-  if (!gitHubUsername) return elicitSlot(event, 'GitHubUsername', i18n('elicitSlotGitHubUser'), callback);
+  if (!gitHubUsername) return dialog.elicitSlot(event, 'GitHubUsername', i18n('elicitSlotGitHubUser'), callback);
 
   github.login(config.GITHUB_USERNAME, config.GITHUB_PASSWORD, event)
     .then((token) => {
@@ -39,10 +38,7 @@ function handler(event, context, callback) {
             contributedReposCount
           });
 
-          return callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {
-            contentType: 'PlainText',
-            content: response
-          }));
+          return dialog.fulfilled(event, response, callback);
         });
     });
 }

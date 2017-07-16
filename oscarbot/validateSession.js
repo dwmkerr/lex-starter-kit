@@ -1,6 +1,6 @@
 const config = require('./config');
 const github = require('./utils/github');
-const dialogActions = require('./utils/dialogActions');
+const dialog = require('./utils/dialog');
 const i18n = require('./i18n');
 
 const REPOSITORY_SLOT = 'Repository';
@@ -52,7 +52,7 @@ function setRepositoryValidated(sessionAttributes, repositoryName) {
  * @param event - The lex event.
  * @param context - The lex context.
  * @param callback - The lex callback.
- * @returns - A promise which resolves with true if the session is valid and 
+ * @returns - A promise which resolves with true if the session is valid and
    dialog should continue, false if data needs to be elicited and the caller
    should return.
  */
@@ -81,7 +81,7 @@ function validateRepositorySlot(event, context, callback) {
 
     //  There is no project name, but if might have been provided in a slot, or
     //  it might be different from the session so we have to revalidate.
-    //  If so, validate it and then copy it to the session and the caller and 
+    //  If so, validate it and then copy it to the session and the caller and
     //  continue.
     else if (slotRepositoryName) {
 
@@ -97,11 +97,8 @@ function validateRepositorySlot(event, context, callback) {
       else if (!/(.+)\/(.+)/.test(slotRepositoryName)) {
         const message = i18n('repoFormatIncorrect', { slotRepositoryName });
 
-        callback(null, dialogActions.elicitSlot(sessionAttributes, 
-          event.currentIntent.name, event.currentIntent.slots, REPOSITORY_SLOT, {
-            contentType: 'PlainText',
-            content: message
-          }));
+        dialog.elicitSlot(event, REPOSITORY_SLOT, message, callback);
+
         return resolve(false);
       }
 
@@ -124,11 +121,7 @@ function validateRepositorySlot(event, context, callback) {
           //  If the repo couldn't be found, let the user know.
           if(err.statusCode == 404) {
             const message = i18n('repoNotFound', { slotRepositoryName });
-            callback(null, dialogActions.elicitSlot(sessionAttributes, 
-              event.currentIntent.name, event.currentIntent.slots, REPOSITORY_SLOT, {
-                contentType: 'PlainText',
-                content: message
-              }));
+            dialog.elicitSlot(event, REPOSITORY_SLOT, message, callback);
             return resolve(false);
           }
 
@@ -139,11 +132,7 @@ function validateRepositorySlot(event, context, callback) {
 
     //  There is no project name, so elicit one.
     else {
-      callback(null, dialogActions.elicitSlot(sessionAttributes, 
-        event.currentIntent.name, event.currentIntent.slots, REPOSITORY_SLOT, {
-          contentType: 'PlainText',
-          content: i18n('projectNamePrompt')
-        }));
+      dialog.elicitSlot(event, REPOSITORY_SLOT, i18n('projectNamePrompt'), callback);
       return resolve(false);
     }
   });
@@ -156,7 +145,7 @@ function validateRepositorySlot(event, context, callback) {
  * @param event - The lex event.
  * @param context - The lex context.
  * @param callback - The lex callback.
- * @returns - A promise which resolves with true if the session is valid and 
+ * @returns - A promise which resolves with true if the session is valid and
    dialog should continue, false if data needs to be elicited and the caller
    should return.
  */

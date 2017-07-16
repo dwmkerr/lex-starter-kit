@@ -1,19 +1,5 @@
 // --------------- Helpers to build responses which match the structure of the necessary dialog actions -----------------------
 
-function elicitSlot(sessionAttributes, intentName, slots, slotToElicit, message, responseCard) {
-  return {
-    sessionAttributes,
-    dialogAction: {
-      type: 'ElicitSlot',
-      intentName,
-      slots,
-      slotToElicit,
-      message,
-      responseCard,
-    },
-  };
-}
-
 function confirmIntent(sessionAttributes, intentName, slots, message, responseCard) {
   return {
     sessionAttributes,
@@ -21,18 +7,6 @@ function confirmIntent(sessionAttributes, intentName, slots, message, responseCa
       type: 'ConfirmIntent',
       intentName,
       slots,
-      message,
-      responseCard,
-    },
-  };
-}
-
-function close(sessionAttributes, fulfillmentState, message, responseCard) {
-  return {
-    sessionAttributes,
-    dialogAction: {
-      type: 'Close',
-      fulfillmentState,
       message,
       responseCard,
     },
@@ -70,9 +44,7 @@ function buildResponseCard(title, subTitle, options) {
 }
 
 module.exports = {
-  elicitSlot,
   confirmIntent,
-  close,
   delegate,
   buildResponseCard,
 };
