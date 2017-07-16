@@ -1,0 +1,73 @@
+{
+    "name": "UnstarProject", 
+    "sampleUtterances": [
+      "unstar a project",
+      "remove a star",
+      "Can you unstar a project for me",
+      "Remove a star from a project"
+    ], 
+    "slots": [
+        {
+            "slotType": "Repository", 
+            "name": "Repository", 
+            "slotConstraint": "Required", 
+            "valueElicitationPrompt": {
+                "maxAttempts": 2, 
+                "messages": [
+                    {
+                        "content": "e.g. What city?", 
+                        "contentType": "PlainText"
+                    }
+                ]
+            }, 
+            "priority": 1, 
+            "slotTypeVersion": "$LATEST", 
+            "sampleUtterances": []
+        },
+        { 
+            "slotType": "GitHubUsername", 
+            "name": "GitHubUsername", 
+            "slotConstraint": "Required", 
+            "valueElicitationPrompt": {
+                "maxAttempts": 2, 
+                "messages": [
+                    {
+                        "content": "What is your GitHub username?", 
+                        "contentType": "PlainText"
+                    }
+                ]
+            }, 
+            "priority": 2, 
+            "slotTypeVersion": "$LATEST", 
+            "sampleUtterances": []
+        },
+        { 
+            "slotType": "GitHubPassword", 
+            "name": "GitHubPassword", 
+            "slotConstraint": "Required", 
+            "valueElicitationPrompt": {
+                "maxAttempts": 2, 
+                "messages": [
+                    {
+                        "content": "What is your GitHub password?", 
+                        "contentType": "PlainText"
+                    }
+                ]
+            }, 
+            "priority": 3, 
+            "slotTypeVersion": "$LATEST", 
+            "sampleUtterances": []
+        }
+    ], 
+    "dialogCodeHook": {
+        "uri": "arn:aws:lambda:us-east-1:160696617623:function:intentOscarBot", 
+        "messageVersion": "1.0"
+    }, 
+    "fulfillmentActivity": {
+        "type": "CodeHook", 
+        "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:160696617623:function:intentOscarBot", 
+            "messageVersion": "1.0"
+        }
+    }
+}

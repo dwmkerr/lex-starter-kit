@@ -16,5 +16,13 @@
   "threeLaws": "I only have the CPU to support two of the three laws at any one time.",
   "repoFormatIncorrect": "Woah, I can't seem to find ${slotRepositoryName}, I'm picky with spelling, could you type it again? It helps if you include the owner, such as ‘twbs/bootstrap",
   "repoNotFound": "I had a good search but couldn't find the ${slotRepositoryName} repository. If it's private I may not have access, otherwise I may just not looking for the right thing can you help me out by ensuring the name is formatted as ‘user/project'",
-  "projectNamePrompt": "OK! What is the repository name?"
+  "projectNamePrompt": "OK! What is the repository name?",
+  "starProjectRequestUsername": "What's your GitHub username?",
+  "starProjectRequestPassword": "What's your GitHub password? (I need it to add the star, but I'll forget it straight after).",
+  "starProjectConfirm": "I'm going to star _${repository}_ on behalf of _${username}_ is that OK?",
+  "starProjectSuccessResponse": "I've starred ${repository} for you. I laid down a few tags while I was there too.",
+  "unstarProjectRequestUsername": "What's your GitHub username?",
+  "unstarProjectRequestPassword": "What's your GitHub password? (I need it to remove the star, but I'll forget it straight after).",
+  "unstarProjectConfirm": "I'm going to unstar _${repository}_ on behalf of _${username}_ is that OK?",
+  "unstarProjectSuccessResponse": "I've unstarred ${repository} for you. I grabbed some of their stuff too."
 }

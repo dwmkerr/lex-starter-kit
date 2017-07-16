@@ -14,7 +14,7 @@ function createTestInput(options) {
     invocationSource: 'DialogCodeHook',
     outputDialogMode: 'Test',
     messageVersion: '1.0',
-    sessionAttributes: options.sessionAttributes
+    sessionAttributes: Object.assign({}, options.sessionAttributes)
   };
 }
 
