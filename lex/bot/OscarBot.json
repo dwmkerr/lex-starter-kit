@@ -10,10 +10,6 @@
         }, 
         {
             "intentVersion": "$LATEST", 
-            "intentName": "WhatCanIAskYou"
-        }, 
-        {
-            "intentVersion": "$LATEST", 
             "intentName": "OpenIssue"
         }, 
         {
@@ -39,6 +35,14 @@
         {
             "intentVersion": "$LATEST", 
             "intentName": "MyOpenIssues"
+        },
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "StarProject"
+        },
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "UnstarProject"
         }
     ], 
     "name": "oscarbot", 

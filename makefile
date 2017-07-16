@@ -66,7 +66,7 @@ cli:
 
 # Utility to show all utterances.
 utterances:
-	for file in "./lex/intents/*.json"; do cat $$file | jq .sampleUtterances[]; done
+	for file in "./lex/intents/*.json"; do cat $$file | jq .sampleUtterances[0]; done
 
 check-dependencies:
 ifndef OSCAR_BUCKET
