@@ -40,7 +40,6 @@ describe('intentStarProject', () => {
     event.currentIntent.confirmationStatus = 'Confirmed';
 
     handler(event, null, (err, response) => {
-      debugger;
       assert.equal(response.dialogAction.type, 'Close');
       assert(response.dialogAction.message.content.match(/I've starred mindmelting\/lex-oscarbot for you/));
       done();
