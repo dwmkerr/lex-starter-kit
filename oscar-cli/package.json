@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/mindmelting/lex-boilerplate#readme",
   "dependencies": {
-    "chalk": "^2.0.1"
+    "chalk": "^2.0.1",
+    "debug": "^2.6.8"
   }
 }
