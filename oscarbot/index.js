@@ -12,6 +12,7 @@ const intentWhatAreMyMostPopularProjects = require('./intentWhatAreMyMostPopular
 const intentWhatCanIAskYou = require('./intentWhatCanIAskYou');
 const intentWhatProjectsAmIWorkingOn = require('./intentWhatProjectsAmIWorkingOn');
 const intentMyOpenIssues = require('./intentMyOpenIssues');
+const intentForkProject = require('./intentForkProject');
 
 const INTENT_HANDLERS = {
   CountIssues: intentCountIssues,
@@ -25,7 +26,8 @@ const INTENT_HANDLERS = {
   UnstarProject: intentUnstarProject,
   WhatCanIAskYou: intentWhatCanIAskYou,
   WhatProjectsAmIWorkingOn: intentWhatProjectsAmIWorkingOn,
-  MyOpenIssues: intentMyOpenIssues
+  MyOpenIssues: intentMyOpenIssues,
+  ForkProject: intentForkProject
 };
 
 function handler(event, context, callback) {
