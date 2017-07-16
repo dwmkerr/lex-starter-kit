@@ -13,16 +13,19 @@ describe('intentStarProject', () => {
         GitHubPassword: config.GITHUB_PASSWORD
       }
     });
-    input.currentIntent.confirmationStatus = 'Denied';
 
-    handler(input, null, (err, response) => {
+    //  Take the test event, and set its confirmation status.
+    const event = Object.assign({}, input);
+    event.currentIntent.confirmationStatus = 'Denied';
+
+    handler(event, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'Close');
       assert(response.dialogAction.message.content.match(/Ok, I will not star the repository./));
       done();
     });
   });
 
-  it('should be able to star a project', (done) => {
+  xit('should be able to star a project', (done) => {
     const input = createTestInput({
       intent: 'StarProject',
       slots: {
@@ -37,6 +40,7 @@ describe('intentStarProject', () => {
     event.currentIntent.confirmationStatus = 'Confirmed';
 
     handler(event, null, (err, response) => {
+      debugger;
       assert.equal(response.dialogAction.type, 'Close');
       assert(response.dialogAction.message.content.match(/I've starred mindmelting\/lex-oscarbot for you/));
       done();
