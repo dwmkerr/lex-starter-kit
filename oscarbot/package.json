@@ -7,7 +7,7 @@
     "lint": "eslint .",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov > coverage.lcov",
     "test": "mocha -t 10000 '**/*.spec.js'",
-    "test:debug": "mocha --inspect --inspect-brk -t 10000 '**.spec.js'"
+    "test:debug": "mocha --inspect --inspect-brk -t 10000 '**/*.spec.js'"
   },
   "dependencies": {
     "moment": "^2.18.1",

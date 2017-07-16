@@ -1,5 +1,5 @@
 const dialogActions = require('../utils/dialogActions');
-const elicitSlot = require('../utils/dialog/elicitSlot');
+const dialog = require('../utils/dialog');
 const failed = require('../utils/dialog/failed');
 const github = require('../utils/github');
 const i18n = require('../i18n');
@@ -7,10 +7,7 @@ const i18n = require('../i18n');
 function checkConfirmationStatus(event, callback) {
   const confirmationStatus = event.currentIntent.confirmationStatus;
   if (confirmationStatus === 'Denied') {
-    return callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {
-      contentType: 'PlainText',
-      content: 'Ok, I will not fork the repository.'
-    }));
+    return dialog.fulfilled(event, 'Ok, I will not fork the repository.', callback);
   } else if (confirmationStatus === 'None') {
     const repository = event.currentIntent.slots.Repository;
     const username = event.currentIntent.slots.GitHubUsername;
@@ -41,8 +38,8 @@ function handler(event, context, callback) {
   const gitHubPassword = event.currentIntent.slots.GitHubPassword;
 
   //  Elicit the slots if needed.
-  if (!gitHubUsername) return elicitSlot(event, 'GitHubUsername', i18n('forkProjectRequestUsername'), callback);
-  if (!gitHubPassword) return elicitSlot(event, 'GitHubPassword', i18n('forkProjectRequestPassword'), callback);
+  if (!gitHubUsername) return dialog.elicitSlot(event, 'GitHubUsername', i18n('forkProjectRequestUsername'), callback);
+  if (!gitHubPassword) return dialog.elicitSlot(event, 'GitHubPassword', i18n('forkProjectRequestPassword'), callback);
 
   //  We'll confirm for this event.
   if (checkConfirmationStatus(event, callback)) return;
@@ -63,10 +60,7 @@ function handler(event, context, callback) {
       const fork = result.body.full_name;
       const response = i18n('forkProjectSuccessResponse', { repository, fork });
 
-      callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {
-        contentType: 'PlainText',
-        content: response
-      }));
+      return dialog.fulfilled(event, response, callback);
     })
     .catch((err) => {
       console.log(`Error forking project: ${err}`);

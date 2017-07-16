@@ -1,5 +1,5 @@
 const config = require('../config');
-const dialogActions = require('../utils/dialogActions');
+const dialog = require('../utils/dialog');
 const login = require('../utils/github/login');
 const query = require('../utils/github/query');
 const i18n = require('../i18n');
@@ -36,10 +36,7 @@ function handler(event, context, callback) {
             stars
           });
 
-          callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {
-            contentType: 'PlainText',
-            content: response
-          }));
+          return dialog.fulfilled(event, response, callback);
         });
     });
 }

@@ -1,16 +1,13 @@
 const config = require('../config');
 const dialogActions = require('../utils/dialogActions');
-const elicitSlot = require('../utils/dialog/elicitSlot');
+const dialog = require('../utils/dialog');
 const github = require('../utils/github');
 const i18n = require('../i18n');
 
 function checkConfirmationStatus(event, callback) {
   const confirmationStatus = event.currentIntent.confirmationStatus;
   if (confirmationStatus === 'Denied') {
-    return callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {
-      contentType: 'PlainText',
-      content: 'Ok, I will not create the issue.'
-    }));
+    return dialog.fulfilled(event, 'Ok, I will not create the issue.', callback);
   } else if (confirmationStatus === 'None') {
     const issueTitle = event.currentIntent.slots.IssueTitle;
     const issueContent = event.currentIntent.slots.IssueContent;
@@ -40,8 +37,8 @@ function handler(event, context, callback) {
   const issueTitle = event.currentIntent.slots.IssueTitle;
   const issueContent = event.currentIntent.slots.IssueContent;
 
-  if (!issueTitle) return elicitSlot(event, 'IssueTitle', i18n('openIssueRequestTitle'), callback);
-  if (!issueContent) return elicitSlot(event, 'IssueContent', i18n('openIssueRequestDescription', { issueTitle }), callback);
+  if (!issueTitle) return dialog.elicitSlot(event, 'IssueTitle', i18n('openIssueRequestTitle'), callback);
+  if (!issueContent) return dialog.elicitSlot(event, 'IssueContent', i18n('openIssueRequestDescription', { issueTitle }), callback);
 
   if (checkConfirmationStatus(event, callback)) return;
 
@@ -57,10 +54,7 @@ function handler(event, context, callback) {
           const url = result.html_url;
           const response = i18n('openIssueResponse', { url });
 
-          callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {
-            contentType: 'PlainText',
-            content: response
-          }));
+          return dialog.fulfilled(event, response, callback);
         });
     });
 }

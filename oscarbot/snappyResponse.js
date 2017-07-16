@@ -1,4 +1,4 @@
-const dialogActions = require('./utils/dialogActions');
+const dialog = require('./utils/dialog');
 const i18n = require('./i18n');
 
 const responses = {
@@ -9,15 +9,12 @@ function snappyResponse(event, context, callback) {
 
   //  See if we've got a response.
   const response = responses[event.currentIntent.name];
-  
+
   //  If we've got no response, return false and we're done.
   if (!response) return false;
 
   //  Fire off a snappy response.
-  callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {
-    contentType: 'PlainText',
-    content: response
-  }));
+  dialog.fulfilled(event, response, callback);
 
   //  True. We were indeed snappy.
   return true;

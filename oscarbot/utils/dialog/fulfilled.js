@@ -1,21 +1,19 @@
-
 /**
- * failed - Fires a 'failed' response.
+ * fulfilled - Fires a 'fulfilled' response.
  *
  * @param event - The current event.
  * @param message - The message to send to the user (plain text).
  * @param callback - The lambda callback.
  * @returns - The synchronous result of the callback function.
  */
-function failed(event, message, callback) {
+function fulfilled(event, message, callback) {
+
   //  Create the response.
   const response = {
     sessionAttributes: event.sessionAttributes,
     dialogAction: {
       type: 'Close',
-      fulfillmentState: 'Failed',
-      intentName: event.currentIntent.name,
-      slots: event.currentIntent.slots,
+      fulfillmentState: 'Fulfilled',
       message: {
         contentType: 'PlainText',
         content: message
@@ -27,4 +25,4 @@ function failed(event, message, callback) {
   return callback(null, response);
 }
 
-module.exports = failed;
+module.exports = fulfilled;
