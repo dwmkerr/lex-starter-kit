@@ -6,7 +6,7 @@
       "Can you star a project",
       "Add a star to a project",
       "Can you star {Repository}",
-      "Add a star to {Respository}"
+      "Add a star to {Repository}"
     ], 
     "slots": [
         {
