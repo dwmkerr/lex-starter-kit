@@ -1,12 +1,12 @@
 const assert = require('assert');
-const config = require('./config');
-const { handler } = require('./index');
+const config = require('../config');
+const { handler } = require('../index');
 const createTestInput = require('./tests/createTestInput');
 
-describe('intentStarProject', () => {
-  it('should be able to star a project', (done) => {
+describe('forkProject', () => {
+  it('should be able to fork a project', (done) => {
     const input = createTestInput({
-      intent: 'StarProject',
+      intent: 'ForkProject',
       slots: { 
         Repository: 'mindmelting/lex-oscarbot',
         GitHubUsername: config.GITHUB_USERNAME,
@@ -20,7 +20,7 @@ describe('intentStarProject', () => {
 
     handler(event, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'Close');
-      assert(response.dialogAction.message.content.match(/I've starred mindmelting\/lex-oscarbot for you/));
+      assert(response.dialogAction.message.content.match(/I've started forking _mindmelting\/lex-oscarbot/));
       done();
     });
   });

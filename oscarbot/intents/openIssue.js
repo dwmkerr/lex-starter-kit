@@ -1,8 +1,8 @@
-const config = require('./config');
-const dialogActions = require('./utils/dialogActions');
-const elicitSlot = require('./utils/dialog/elicitSlot');
-const github = require('./utils/github');
-const i18n = require('./i18n');
+const config = require('../config');
+const dialogActions = require('../utils/dialogActions');
+const elicitSlot = require('../utils/dialog/elicitSlot');
+const github = require('../utils/github');
+const i18n = require('../i18n');
 
 function checkConfirmationStatus(event, callback) {
   const confirmationStatus = event.currentIntent.confirmationStatus;

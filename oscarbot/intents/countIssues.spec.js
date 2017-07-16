@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { handler } = require('./intentCountIssues');
+const { handler } = require('../index');
 const countIssuesWithSlots = require('./tests/count-issues-with-slots.json');
 
 describe('intentCountIssues', () => {

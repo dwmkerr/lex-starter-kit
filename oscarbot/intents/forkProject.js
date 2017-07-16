@@ -1,15 +1,15 @@
-const dialogActions = require('./utils/dialogActions');
-const elicitSlot = require('./utils/dialog/elicitSlot');
-const failed = require('./utils/dialog/failed');
-const github = require('./utils/github');
-const i18n = require('./i18n');
+const dialogActions = require('../utils/dialogActions');
+const elicitSlot = require('../utils/dialog/elicitSlot');
+const failed = require('../utils/dialog/failed');
+const github = require('../utils/github');
+const i18n = require('../i18n');
 
 function checkConfirmationStatus(event, callback) {
   const confirmationStatus = event.currentIntent.confirmationStatus;
   if (confirmationStatus === 'Denied') {
     return callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {
       contentType: 'PlainText',
-      content: 'Ok, I will not star the repository.'
+      content: 'Ok, I will not fork the repository.'
     }));
   } else if (confirmationStatus === 'None') {
     const repository = event.currentIntent.slots.Repository;
@@ -20,7 +20,7 @@ function checkConfirmationStatus(event, callback) {
       event.currentIntent.slots,
       {
         contentType: 'PlainText',
-        content: i18n('starProjectConfirm', {
+        content: i18n('forkProjectConfirm', {
           repository,
           username
         })
@@ -41,26 +41,27 @@ function handler(event, context, callback) {
   const gitHubPassword = event.currentIntent.slots.GitHubPassword;
 
   //  Elicit the slots if needed.
-  if (!gitHubUsername) return elicitSlot(event, 'GitHubUsername', i18n('starProjectRequestUsername'), callback);
-  if (!gitHubPassword) return elicitSlot(event, 'GitHubPassword', i18n('starProjectRequestPassword'), callback);
+  if (!gitHubUsername) return elicitSlot(event, 'GitHubUsername', i18n('forkProjectRequestUsername'), callback);
+  if (!gitHubPassword) return elicitSlot(event, 'GitHubPassword', i18n('forkProjectRequestPassword'), callback);
 
   //  We'll confirm for this event.
   if (checkConfirmationStatus(event, callback)) return;
 
-  //  OK, time to try and login - as the user who will star (not as oscar)!
+  //  OK, time to try and login - as the user who will fork (not as oscar)!
   github.login(gitHubUsername, gitHubPassword)
     .then((token) => {
-      return github.put(token, `/user/starred/${repository}`);
+      return github.post(token, `/repos/${repository}/forks`, {});
     })
     .then((result) => {
 
       //  Check the result.
-      if (result.statusCode !== 204) {
+      if (result.statusCode !== 202) {
         //  Time to bail...
       }
 
       //  Create the response.
-      const response = i18n('starProjectSuccessResponse', { repository });
+      const fork = result.body.full_name;
+      const response = i18n('forkProjectSuccessResponse', { repository, fork });
 
       callback(null, dialogActions.close(event.sessionAttributes, 'Fulfilled', {
         contentType: 'PlainText',
@@ -68,8 +69,8 @@ function handler(event, context, callback) {
       }));
     })
     .catch((err) => {
-      console.log(`Error starring project: ${err}`);
-      failed(event, 'Sorry, there was a problem starring the project.', callback);
+      console.log(`Error forking project: ${err}`);
+      failed(event, 'Sorry, there was a problem forking the project.', callback);
     });
 }
 

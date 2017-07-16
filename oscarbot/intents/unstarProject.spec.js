@@ -1,13 +1,13 @@
 const assert = require('assert');
-const config = require('./config');
-const { handler } = require('./index');
+const config = require('../config');
+const { handler } = require('../index');
 const createTestInput = require('./tests/createTestInput');
 
 describe('intentUnstarProject', () => {
   it('should be able to unstar a project', (done) => {
     const input = createTestInput({
       intent: 'UnstarProject',
-      slots: { 
+      slots: {
         Repository: 'mindmelting/lex-oscarbot',
         GitHubUsername: config.GITHUB_USERNAME,
         GitHubPassword: config.GITHUB_PASSWORD

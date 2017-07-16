@@ -1,33 +1,21 @@
 const validateSession = require('./validateSession');
 const snappyResponse = require('./snappyResponse');
-const intentCountIssues = require('./intentCountIssues');
-const intentCountOpenPRs = require('./intentCountOpenPRs');
-const intentDescribeLastCommit = require('./intentDescribeLastCommit');
-const intentGetStars = require('./intentGetStars');
-const intentOpenIssue = require('./intentOpenIssue');
-const intentTopIssues = require('./intentTopIssues');
-const intentStarProject = require('./intentStarProject');
-const intentUnstarProject = require('./intentUnstarProject');
-const intentWhatAreMyMostPopularProjects = require('./intentWhatAreMyMostPopularProjects');
-const intentWhatCanIAskYou = require('./intentWhatCanIAskYou');
-const intentWhatProjectsAmIWorkingOn = require('./intentWhatProjectsAmIWorkingOn');
-const intentMyOpenIssues = require('./intentMyOpenIssues');
-const intentForkProject = require('./intentForkProject');
+const intents = require('./intents');
 
 const INTENT_HANDLERS = {
-  CountIssues: intentCountIssues,
-  CountOpenPRs: intentCountOpenPRs,
-  DescribeLastCommit: intentDescribeLastCommit,
-  GetStars: intentGetStars,
-  OpenIssue: intentOpenIssue,
-  TopIssues: intentTopIssues,
-  WhatAreMyMostPopularProjects: intentWhatAreMyMostPopularProjects,
-  StarProject: intentStarProject,
-  UnstarProject: intentUnstarProject,
-  WhatCanIAskYou: intentWhatCanIAskYou,
-  WhatProjectsAmIWorkingOn: intentWhatProjectsAmIWorkingOn,
-  MyOpenIssues: intentMyOpenIssues,
-  ForkProject: intentForkProject
+  CountIssues: intents.countIssues,
+  CountOpenPRs: intents.countOpenPRs,
+  DescribeLastCommit: intents.describeLastCommit,
+  GetStars: intents.getStars,
+  OpenIssue: intents.openIssue,
+  TopIssues: intents.topIssues,
+  WhatAreMyMostPopularProjects: intents.whatAreMyMostPopularProjects,
+  StarProject: intents.starProject,
+  UnstarProject: intents.unstarProject,
+  WhatCanIAskYou: intents.whatCanIAskYou,
+  WhatProjectsAmIWorkingOn: intents.whatProjectsAmIWorkingOn,
+  MyOpenIssues: intents.myOpenIssues,
+  ForkProject: intents.forkProject
 };
 
 function handler(event, context, callback) {

@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { handler } = require('./index');
+const { handler } = require('../index');
 const createTestInput = require('./tests/createTestInput');
 
 describe('intentDescribeLastCommit', () => {
