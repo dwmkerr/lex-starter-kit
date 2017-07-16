@@ -4,7 +4,7 @@ const { handler } = require('../index');
 const createTestInput = require('./tests/createTestInput');
 
 describe('intentStarProject', () => {
-  it.only('should not star a project if the confirmation status is \'Denied\'', (done) => {
+  it('should not star a project if the confirmation status is \'Denied\'', (done) => {
     const input = createTestInput({
       intent: 'StarProject',
       slots: {
