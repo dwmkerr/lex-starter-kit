@@ -14,7 +14,8 @@ const INTENT_HANDLERS = {
   UnstarProject: intents.unstarProject,
   WhatCanIAskYou: intents.whatCanIAskYou,
   WhatProjectsAmIWorkingOn: intents.whatProjectsAmIWorkingOn,
-  MyOpenIssues: intents.myOpenIssues
+  MyOpenIssues: intents.myOpenIssues,
+  ForkProject: intents.forkProject
 };
 
 function handler(event, context, callback) {

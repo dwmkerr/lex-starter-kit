@@ -12,7 +12,8 @@ function failed(event, message, callback) {
   const response = {
     sessionAttributes: event.sessionAttributes,
     dialogAction: {
-      type: 'Failed',
+      type: 'Close',
+      fulfillmentState: 'Failed',
       intentName: event.currentIntent.name,
       slots: event.currentIntent.slots,
       message: {

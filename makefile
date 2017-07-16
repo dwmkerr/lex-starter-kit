@@ -12,6 +12,9 @@ lint:
 test:
 	cd oscarbot && yarn && npm test
 
+coverage:
+	cd oscarbot && yarn && npm run coverage
+
 # Sets up the core AWS resources.
 setup: check-dependencies build
 	# Create the bucket. If it fails, it's probably because the name is in use.

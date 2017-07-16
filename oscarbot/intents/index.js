@@ -11,4 +11,5 @@ module.exports = {
   whatCanIAskYou: require('./whatCanIAskYou'),
   whatProjectsAmIWorkingOn: require('./whatProjectsAmIWorkingOn'),
   myOpenIssues: require('./myOpenIssues'),
+  forkProject: require('./forkProject'),
 };

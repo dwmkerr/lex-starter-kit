@@ -14,7 +14,7 @@ function snappyResponse(event, context, callback) {
   if (!response) return false;
 
   //  Fire off a snappy response.
-  dialog.close(event, response, callback);
+  dialog.fulfilled(event, response, callback);
 
   //  True. We were indeed snappy.
   return true;
