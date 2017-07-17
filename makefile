@@ -33,7 +33,7 @@ setup: check-dependencies build
 		--function-name $(FUNCTION) \
 		--runtime nodejs6.10 \
 		--handler index.handler \
-		--environment="Variables={OSCAR_GITHUB_USERNAME=\"$(OSCAR_GITHUB_USERNAME)\",OSCAR_GITHUB_PASSWORD=\"$(OSCAR_GITHUB_PASSWORD)\"}" \
+		--environment="Variables={OSCAR_GITHUB_USERNAME=\"$(OSCAR_GITHUB_USERNAME)\",OSCAR_GITHUB_PASSWORD=\"$(OSCAR_GITHUB_PASSWORD)\",DEBUG=oscar}" \
 		--role "arn:aws:iam::$$ACCOUNT_ID:role/$(FUNCTION)-role" \
 		--code S3Bucket=$(OSCAR_BUCKET),S3Key=$(FUNCTION).zip
 

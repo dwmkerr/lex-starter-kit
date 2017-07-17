@@ -57,6 +57,7 @@ Set the following environment variables:
 | `OSCAR_BUCKET` | A name to use for the S3 bucket for Oscar. This must be unique across AWS, so try something like `oscarbot-<your name>` |
 | `OSCAR_GITHUB_USERNAME` | The GitHub user to login as when performing queries. |
 | `OSCAR_GITHUB_PASSWORD` | The GitHub password to login with when performing queries. |
+| `DEBUG=oscar` | Optional. Enables debug output (we use the [debug](https://www.npmjs.com/package/debug) module. |
 
 You can now call:
 
@@ -90,7 +91,7 @@ Here are some commands you can run to help work with the project:
 | `make deploy` | Deploys the code, slots and intents. |
 | `make utterances` | Helper to print out all supported utterances. Useful when building docs. |
 | `npm run test:debug` | Runs tests with the Chrome Inspector. |
-| `npm run coverage` | Runs tests, generating a coverage report. | 
+| `npm run coverage` | Runs tests, generating a coverage report. |
 
 ## The CLI
 
