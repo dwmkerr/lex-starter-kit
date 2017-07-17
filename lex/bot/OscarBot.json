@@ -55,6 +55,10 @@
         {
             "intentVersion": "$LATEST", 
             "intentName": "ForkProject"
+        },
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "HowsItGoing"
         }
     ],
     "name": "oscarbot",

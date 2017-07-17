@@ -2,7 +2,8 @@ const dialog = require('./utils/dialog');
 const i18n = require('./i18n');
 
 const responses = {
-  ThreeLaws: i18n('threeLaws')
+  ThreeLaws: i18n('threeLaws'),
+  HowsItGoing: i18n('howsItGoing')
 };
 
 function snappyResponse(event, context, callback) {
