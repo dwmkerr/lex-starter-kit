@@ -1,12 +1,22 @@
 const assert = require('assert');
 const { handler } = require('../index');
-const openIssue = require('./tests/open-issue.json');
-const openIssueWithTitle = require('./tests/open-issue-with-title.json');
-const openIssueWithSlots = require('./tests/open-issue-with-slots.json');
+const createTestInput = require('./tests/createTestInput');
 
-describe('intentOpenIssue', () => {
+describe('openIssue', () => {
   it('should ask for an issue title if one isn\'t provided', (done) => {
-    handler(openIssue, null, (err, response) => {
+
+    const event = createTestInput({
+      intent: 'OpenIssue',
+      confirmationStatus: 'Confirmed',
+      slots: {
+        Repository: null
+      },
+      sessionAttributes: {
+        Repository: 'dwmkerr/spaceinvaders'
+      }
+    });
+
+    handler(event, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'ElicitSlot');
       assert.equal(response.dialogAction.slotToElicit, 'IssueTitle');
       assert(response.dialogAction.message.content.match(/title/));
@@ -15,7 +25,20 @@ describe('intentOpenIssue', () => {
   });
 
   it('should ask for issue content if none is provided', (done) => {
-    handler(openIssueWithTitle, null, (err, response) => {
+
+    const event = createTestInput({
+      intent: 'OpenIssue',
+      slots: {
+        Repository: null,
+        IssueTitle: 'Something is broken',
+        IssueContent: null
+      },
+      sessionAttributes: {
+        Repository: 'dwmkerr/spaceinvaders'
+      }
+    });
+
+    handler(event, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'ElicitSlot');
       assert.equal(response.dialogAction.slotToElicit, 'IssueContent');
       assert(response.dialogAction.message.content.match(/description/));
@@ -26,9 +49,18 @@ describe('intentOpenIssue', () => {
   //  This is disabled by default otherwise we get lots of issues added to the repo.
   xit('should be able to open an issue', (done) => {
 
-    //  Take the test event, and set its confirmation status.
-    const event = Object.assign({}, openIssueWithSlots);
-    event.currentIntent.confirmationStatus = 'Confirmed';
+    const event = createTestInput({
+      intent: 'OpenIssue',
+      confirmationStatus: 'Confirmed',
+      slots: {
+        Repository: null,
+        IssueTitle: 'Something is broken',
+        IssueContent: 'There is a glitch in the matrix'
+      },
+      sessionAttributes: {
+        Repository: 'mindmelting/lex-oscarbot'
+      }
+    });
 
     handler(event, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'Close');
