@@ -114,7 +114,7 @@
     "abortStatement": {
         "messages": [
             {
-                "content": "Dang, I couldn't understand that. Ask 'What can I ask you?' for phrases I will understand.",
+                "content": "Dang, unfortunately I still couldn't understand that. Please try saying something different.",
                 "contentType": "PlainText"
             }
         ]

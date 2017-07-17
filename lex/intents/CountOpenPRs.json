@@ -19,7 +19,7 @@
                 "maxAttempts": 2, 
                 "messages": [
                     {
-                        "content": "e.g. What city?", 
+                        "content": "Ok! What is the repository name?", 
                         "contentType": "PlainText"
                     }
                 ]
