@@ -1,7 +1,9 @@
 {
-    "name": "HowsItGoing",
+    "name": "TellMeAJoke",
     "sampleUtterances": [
-        "How's it going"
+      "Tell me a joke",
+      "Can you tell me a joke",
+      "Do you know any jokes"
     ],
     "slots": [],
     "fulfillmentActivity": {

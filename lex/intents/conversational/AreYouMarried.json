@@ -1,7 +1,9 @@
 {
-    "name": "HowsItGoing",
+    "name": "AreYouMarried",
     "sampleUtterances": [
-        "How's it going"
+      "Are you married",
+      "Do you have a boyfried",
+      "Do you have a girlfriend"
     ],
     "slots": [],
     "fulfillmentActivity": {

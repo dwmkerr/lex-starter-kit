@@ -1,7 +1,8 @@
 {
-    "name": "HowsItGoing",
+    "name": "WhatsYourFavouriteMovie",
     "sampleUtterances": [
-        "How's it going"
+      "What's your favourite movie",
+      "What's your favourite film"
     ],
     "slots": [],
     "fulfillmentActivity": {

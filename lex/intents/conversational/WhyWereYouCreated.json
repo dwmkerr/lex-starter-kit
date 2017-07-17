@@ -1,7 +1,7 @@
 {
-    "name": "HowsItGoing",
+    "name": "WhyWereYouCreated",
     "sampleUtterances": [
-        "How's it going"
+      "Why were you created"
     ],
     "slots": [],
     "fulfillmentActivity": {
