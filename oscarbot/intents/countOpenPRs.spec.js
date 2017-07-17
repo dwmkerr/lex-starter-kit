@@ -11,7 +11,7 @@ describe('intentCountOpenPRs', () => {
 
     handler(input, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'Close');
-      assert(response.dialogAction.message.content.match(/angular-modal-service has \d+ open pull requests/));
+      assert(response.dialogAction.message.content.match(/'angular-modal-service' has \d+ open pull requests/));
       done();
     });
   });
