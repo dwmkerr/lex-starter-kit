@@ -1,7 +1,11 @@
 {
-    "name": "HowsItGoing",
+    "name": "Hi",
     "sampleUtterances": [
-        "How's it going"
+      "Hi",
+      "Hi Oscar",
+      "Howdy",
+      "Hello",
+      "Greetings"
     ],
     "slots": [],
     "fulfillmentActivity": {

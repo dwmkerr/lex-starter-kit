@@ -1,7 +1,8 @@
 {
-    "name": "HowsItGoing",
+    "name": "SpacesOrTabs",
     "sampleUtterances": [
-        "How's it going"
+      "Spaces or tabs",
+      "Tags or spaces"
     ],
     "slots": [],
     "fulfillmentActivity": {

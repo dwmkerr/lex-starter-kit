@@ -1,7 +1,8 @@
 {
-    "name": "HowsItGoing",
+    "name": "WhyIsYourNameOscar",
     "sampleUtterances": [
-        "How's it going"
+      "Why Oscar",
+      "Why is your name Oscar"
     ],
     "slots": [],
     "fulfillmentActivity": {

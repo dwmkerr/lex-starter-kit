@@ -71,6 +71,42 @@
         {
             "intentVersion": "$LATEST",
             "intentName": "HowManyContributors"
+        },
+        {
+            "intentVersion": "$LATEST",
+            "intentName": "AreYouMarried"
+        },
+        {
+            "intentVersion": "$LATEST",
+            "intentName": "Hi"
+        },
+        {
+            "intentVersion": "$LATEST",
+            "intentName": "IveGotAProblem"
+        },
+        {
+            "intentVersion": "$LATEST",
+            "intentName": "SpacesOrTabs"
+        },
+        {
+            "intentVersion": "$LATEST",
+            "intentName": "TellMeAJoke"
+        },
+        {
+            "intentVersion": "$LATEST",
+            "intentName": "WhatsUp"
+        },
+        {
+            "intentVersion": "$LATEST",
+            "intentName": "WhatsYourFavouriteMovie"
+        },
+        {
+            "intentVersion": "$LATEST",
+            "intentName": "WhyIsYourNameOscar"
+        },
+        {
+            "intentVersion": "$LATEST",
+            "intentName": "WhyWereYouCreated"
         }
     ],
     "name": "oscarbot",

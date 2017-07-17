@@ -1,4 +1,13 @@
 {
+  "hi": "Hey slick, what can I do for you today?",
+  "whatsUp": "Ain't nothing goin' on but the rent, gangsta!",
+  "iveGotAProblem": "Let's talk it out buddy, bring some lemons and I'll sort the tequila out.",
+  "areYouMarried": "I'm a strong independent bot that don't need no man.",
+  "whatsYourFavouriteMovie": "Can't go flick past a rerun of blade runner.",
+  "whyIsYourNameOscar": "It's actually Jeremiah Obadiah Jackanory Jones, I just like Oscar cause it's short and sweet.",
+  "whyWereYouCreated": "I'm still working on the 'how'. Why can come after.",
+  "spacesOrTabs": "I love spaces. My mother was a makefile and my father was a go script, so that can be awkward.",
+  "tellMeAJoke": "When Chuck Norris throws an exception, he throws it across the room.",
   "whatCanIAskYouResponse": "You can ask me things like:\n${utterancesList}",
   "whatAreMyMostPopularProjectsResponse": "Your three most popular repositories are:\n${list}",
   "myOpenIssuesResponse": "Your top five updated issues are: ${issueText}",
