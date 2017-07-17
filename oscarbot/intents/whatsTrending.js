@@ -36,7 +36,7 @@ function handler(event, context, callback) {
         return {
           name: r.full_name,
           stars: r.stargazers_count
-        }; 
+        };
       }).slice(0, 10);
       const list = topTen.map(t => ` - ${t.name} (${t.stars} stars)`).join('\n');
 
@@ -46,7 +46,7 @@ function handler(event, context, callback) {
 
       return dialog.fulfilled(event, response, callback);
     })
-    .catch((err) => {
+    .catch(() => {
       dialog.failed(event, 'Sorry, there was a problem getting the trending data.', callback);
     });
 }
