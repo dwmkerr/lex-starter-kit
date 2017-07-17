@@ -107,6 +107,10 @@
         {
             "intentVersion": "$LATEST",
             "intentName": "WhyWereYouCreated"
+        },
+        {
+            "intentVersion": "$LATEST",
+            "intentName": "Goodbye"
         }
     ],
     "name": "oscarbot",
