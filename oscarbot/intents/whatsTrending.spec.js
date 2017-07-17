@@ -10,7 +10,7 @@ describe('whatsTrending', () => {
 
     handler(input, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'Close');
-      assert(response.dialogAction.message.content.match(/The following repos are trending/));
+      assert(response.dialogAction.message.content.match(/The following new repos are trending/));
       done();
     });
   });

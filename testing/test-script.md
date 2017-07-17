@@ -42,6 +42,15 @@ oscar > I've started forking _dwmkerr/spaceinvaders_ for you to _oscarbotchallen
 me    >
 ```
 
+**Get Forks**
+
+```
+oscar > Hi! What can I help you with?
+me    > how many people have forked angular?
+```
+
+- Check the number of forks
+
 **Get Stars**
 
 ```
@@ -50,6 +59,19 @@ oscar > If spaceinvaders keeps stealing all the stars, the night sky will soon b
 ```
 
 - Check the number of stars.
+
+**How Many Contributors**
+
+```
+oscar > OK! What is the repository name?
+me    > dwmkerr/angular-modal-service
+oscar > angular-modal-service is big into kitchenware - it's got 336 forks
+me    > how many contributors does it have
+oscar > dwmkerr/angular-modal-service has 17 contributors.
+me    > Have a great day!
+```
+
+- Check the number of contributors.
 
 **My Open Issues**
 
@@ -206,3 +228,5 @@ oscar > The following repos are trending in the last seven days:
  - clauswilke/ggjoy (166 stars)
  - nadoo/glider (154 stars)
 ```
+
+- Represents new projects which are trending

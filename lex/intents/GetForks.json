@@ -1,15 +1,15 @@
 {
-    "name": "GetStars",
+    "name": "GetForks",
     "sampleUtterances": [
-        "How many stars does the project have",
-        "How many stars does {Repository} have",
-        "How many people have starred {Repository}"
+        "How many forks does the project have",
+        "How many forks does {Repository} have",
+        "How many people have forked {Repository}"
     ],
     "slots": [
         {
             "slotType": "Repository",
             "name": "Repository",
-            "slotConstraint": "Required", 
+            "slotConstraint": "Required",
             "valueElicitationPrompt": {
                 "maxAttempts": 2,
                 "messages": [

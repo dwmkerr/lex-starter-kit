@@ -3,6 +3,8 @@ module.exports = {
   countOpenPRs: require('./countOpenPRs'),
   describeLastCommit: require('./describeLastCommit'),
   getStars: require('./getStars'),
+  getForks: require('./getForks'),
+  howManyContributors: require('./howManyContributors'),
   openIssue: require('./openIssue'),
   topIssues: require('./topIssues'),
   starProject: require('./starProject'),
