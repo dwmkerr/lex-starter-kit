@@ -20,7 +20,7 @@ describe('intentUnstarProject', () => {
 
     handler(event, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'Close');
-      assert(response.dialogAction.message.content.match(/I've unstarred mindmelting\/lex-oscarbot for you/));
+      assert(response.dialogAction.message.content.match(/I've unstarred 'mindmelting\/lex-oscarbot' for you/));
       done();
     });
   });
