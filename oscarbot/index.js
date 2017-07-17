@@ -14,6 +14,7 @@ const INTENT_HANDLERS = {
   UnstarProject: intents.unstarProject,
   WhatCanIAskYou: intents.whatCanIAskYou,
   WhatProjectsAmIWorkingOn: intents.whatProjectsAmIWorkingOn,
+  WhatsTrending: intents.whatsTrending,
   MyOpenIssues: intents.myOpenIssues,
   ForkProject: intents.forkProject
 };

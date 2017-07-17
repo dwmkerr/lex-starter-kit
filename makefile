@@ -7,13 +7,13 @@ build:
 	cd oscarbot && npm install --production && zip -r ../$(FUNCTION).zip .
 
 lint:
-	cd oscarbot && yarn && npm run lint
+	cd oscarbot && npm install && npm run lint
 
 test:
-	cd oscarbot && yarn && npm test
+	cd oscarbot && npm install && npm test
 
 coverage:
-	cd oscarbot && yarn && npm run coverage
+	cd oscarbot && npm install && npm run coverage
 
 # Sets up the core AWS resources.
 setup: check-dependencies build

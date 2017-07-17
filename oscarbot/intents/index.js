@@ -10,6 +10,7 @@ module.exports = {
   whatAreMyMostPopularProjects: require('./whatAreMyMostPopularProjects'),
   whatCanIAskYou: require('./whatCanIAskYou'),
   whatProjectsAmIWorkingOn: require('./whatProjectsAmIWorkingOn'),
+  whatsTrending: require('./whatsTrending'),
   myOpenIssues: require('./myOpenIssues'),
   forkProject: require('./forkProject'),
 };

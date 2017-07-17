@@ -29,5 +29,6 @@
   "forkProjectRequestUsername": "What's your GitHub username?",
   "forkProjectRequestPassword": "What's your GitHub password? (I need it to fork for you, but I'll forget it straight after).",
   "forkProjectConfirm": "I'm going to fork _${repository}_ on behalf of _${username}_ is that OK?",
-  "forkProjectSuccessResponse": "I've started forking _${repository}_ for you to _${fork}_, it can sometimes take a few minutes to complete."
+  "forkProjectSuccessResponse": "I've started forking _${repository}_ for you to _${fork}_, it can sometimes take a few minutes to complete.",
+  "whatsTrendingSuccessResponse": "The following new repos are trending in the last seven days:\n${list}"
 }

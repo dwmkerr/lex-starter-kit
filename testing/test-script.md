@@ -188,3 +188,21 @@ oscar > Hi! What can I help you with?
 me    > what projects is dwmkerr working on
 oscar > You own 71 repositories and have contributed to 22 repositories.
 ```
+
+**What's Trending**
+
+```
+oscar > Hi! What can I help you with?
+me    > what's trending on github
+oscar > The following repos are trending in the last seven days:
+ - Kristories/awesome-guidelines (1372 stars)
+ - Spandan-Madan/DeepLearningProject (734 stars)
+ - cdflynn/turn-layout-manager (426 stars)
+ - woxingxiao/SlidingUpPanelLayout (316 stars)
+ - wangchunming/2017hosts (303 stars)
+ - square/RxIdler (189 stars)
+ - vulnersCom/burp-vulners-scanner (177 stars)
+ - yo-op/sketchcachecleaner (169 stars)
+ - clauswilke/ggjoy (166 stars)
+ - nadoo/glider (154 stars)
+```

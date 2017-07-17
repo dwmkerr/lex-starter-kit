@@ -1,0 +1,20 @@
+{
+    "name": "WhatsTrending", 
+    "sampleUtterances": [
+      "What's trending",
+      "What's trending on GitHub",
+      "What projects are trending"
+    ], 
+    "slots": [],
+    "dialogCodeHook": {
+        "uri": "arn:aws:lambda:us-east-1:160696617623:function:intentOscarBot", 
+        "messageVersion": "1.0"
+    }, 
+    "fulfillmentActivity": {
+        "type": "CodeHook", 
+        "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:160696617623:function:intentOscarBot", 
+            "messageVersion": "1.0"
+        }
+    }
+}

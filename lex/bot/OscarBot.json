@@ -59,6 +59,10 @@
         {
             "intentVersion": "$LATEST", 
             "intentName": "HowsItGoing"
+        },
+        {
+            "intentVersion": "$LATEST", 
+            "intentName": "WhatsTrending"
         }
     ],
     "name": "oscarbot",
