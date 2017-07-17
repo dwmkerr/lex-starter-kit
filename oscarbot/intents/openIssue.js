@@ -9,6 +9,7 @@ function checkConfirmationStatus(event, callback) {
   if (confirmationStatus === 'Denied') {
     return dialog.fulfilled(event, 'Ok, I will not create the issue.', callback);
   } else if (confirmationStatus === 'None') {
+    const repository = event.currentIntent.slots.Repository;
     const issueTitle = event.currentIntent.slots.IssueTitle;
     const issueContent = event.currentIntent.slots.IssueContent;
 
@@ -18,6 +19,7 @@ function checkConfirmationStatus(event, callback) {
       {
         contentType: 'PlainText',
         content: i18n('openIssueConfirm', {
+          repository,
           issueTitle,
           issueContent
         })
@@ -51,7 +53,7 @@ function handler(event, context, callback) {
         .then((result) => {
 
           //  Create the response.
-          const url = result.html_url;
+          const url = result.body.html_url;
           const response = i18n('openIssueResponse', { url });
 
           return dialog.fulfilled(event, response, callback);
