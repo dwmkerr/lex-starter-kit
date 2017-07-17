@@ -6,6 +6,10 @@
         },
         {
             "intentVersion": "$LATEST",
+            "intentName": "GetForks"
+        },
+        {
+            "intentVersion": "$LATEST",
             "intentName": "CountIssues"
         },
         {
@@ -53,12 +57,20 @@
             "intentName": "TopIssues"
         },
         {
-            "intentVersion": "$LATEST", 
+            "intentVersion": "$LATEST",
             "intentName": "ForkProject"
         },
         {
-            "intentVersion": "$LATEST", 
+            "intentVersion": "$LATEST",
             "intentName": "HowsItGoing"
+        },
+        {
+            "intentVersion": "$LATEST",
+            "intentName": "WhatsTrending"
+        },
+        {
+            "intentVersion": "$LATEST",
+            "intentName": "HowManyContributors"
         }
     ],
     "name": "oscarbot",

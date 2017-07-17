@@ -3,6 +3,8 @@ module.exports = {
   countOpenPRs: require('./countOpenPRs'),
   describeLastCommit: require('./describeLastCommit'),
   getStars: require('./getStars'),
+  getForks: require('./getForks'),
+  howManyContributors: require('./howManyContributors'),
   openIssue: require('./openIssue'),
   topIssues: require('./topIssues'),
   starProject: require('./starProject'),
@@ -10,6 +12,7 @@ module.exports = {
   whatAreMyMostPopularProjects: require('./whatAreMyMostPopularProjects'),
   whatCanIAskYou: require('./whatCanIAskYou'),
   whatProjectsAmIWorkingOn: require('./whatProjectsAmIWorkingOn'),
+  whatsTrending: require('./whatsTrending'),
   myOpenIssues: require('./myOpenIssues'),
   forkProject: require('./forkProject'),
 };

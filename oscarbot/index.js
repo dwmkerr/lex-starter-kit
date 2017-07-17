@@ -6,7 +6,9 @@ const INTENT_HANDLERS = {
   CountIssues: intents.countIssues,
   CountOpenPRs: intents.countOpenPRs,
   DescribeLastCommit: intents.describeLastCommit,
+  GetForks: intents.getForks,
   GetStars: intents.getStars,
+  HowManyContributors: intents.howManyContributors,
   OpenIssue: intents.openIssue,
   TopIssues: intents.topIssues,
   WhatAreMyMostPopularProjects: intents.whatAreMyMostPopularProjects,
@@ -14,6 +16,7 @@ const INTENT_HANDLERS = {
   UnstarProject: intents.unstarProject,
   WhatCanIAskYou: intents.whatCanIAskYou,
   WhatProjectsAmIWorkingOn: intents.whatProjectsAmIWorkingOn,
+  WhatsTrending: intents.whatsTrending,
   MyOpenIssues: intents.myOpenIssues,
   ForkProject: intents.forkProject
 };

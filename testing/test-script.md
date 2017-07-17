@@ -42,6 +42,15 @@ oscar > I've started forking _dwmkerr/spaceinvaders_ for you to _oscarbotchallen
 me    >
 ```
 
+**Get Forks**
+
+```
+oscar > Hi! What can I help you with?
+me    > how many people have forked angular?
+```
+
+- Check the number of forks
+
 **Get Stars**
 
 ```
@@ -50,6 +59,19 @@ oscar > If spaceinvaders keeps stealing all the stars, the night sky will soon b
 ```
 
 - Check the number of stars.
+
+**How Many Contributors**
+
+```
+oscar > OK! What is the repository name?
+me    > dwmkerr/angular-modal-service
+oscar > angular-modal-service is big into kitchenware - it's got 336 forks
+me    > how many contributors does it have
+oscar > dwmkerr/angular-modal-service has 17 contributors.
+me    > Have a great day!
+```
+
+- Check the number of contributors.
 
 **My Open Issues**
 
@@ -188,3 +210,23 @@ oscar > Hi! What can I help you with?
 me    > what projects is dwmkerr working on
 oscar > You own 71 repositories and have contributed to 22 repositories.
 ```
+
+**What's Trending**
+
+```
+oscar > Hi! What can I help you with?
+me    > what's trending on github
+oscar > The following repos are trending in the last seven days:
+ - Kristories/awesome-guidelines (1372 stars)
+ - Spandan-Madan/DeepLearningProject (734 stars)
+ - cdflynn/turn-layout-manager (426 stars)
+ - woxingxiao/SlidingUpPanelLayout (316 stars)
+ - wangchunming/2017hosts (303 stars)
+ - square/RxIdler (189 stars)
+ - vulnersCom/burp-vulners-scanner (177 stars)
+ - yo-op/sketchcachecleaner (169 stars)
+ - clauswilke/ggjoy (166 stars)
+ - nadoo/glider (154 stars)
+```
+
+- Represents new projects which are trending

@@ -1,15 +1,15 @@
 {
-    "name": "GetStars",
+    "name": "HowManyContributors",
     "sampleUtterances": [
-        "How many stars does the project have",
-        "How many stars does {Repository} have",
-        "How many people have starred {Repository}"
+      "How many contributors on {Repository}",
+      "How many contributors does {Repository} have",
+      "How many people contribute to {Repository}"
     ],
     "slots": [
         {
             "slotType": "Repository",
             "name": "Repository",
-            "slotConstraint": "Required", 
+            "slotConstraint": "Required",
             "valueElicitationPrompt": {
                 "maxAttempts": 2,
                 "messages": [

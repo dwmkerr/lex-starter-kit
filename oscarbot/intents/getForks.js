@@ -14,7 +14,7 @@ function handler(event, context, callback) {
         query {
           repository(owner: "${owner}", name: "${name}") {
             name
-            stargazers { totalCount }
+            forks { totalCount }
           }
         }
         `)
@@ -23,10 +23,10 @@ function handler(event, context, callback) {
           //  Create the response.
           const data = JSON.parse(result).data;
           const projectName = data.repository.name;
-          const stars = data.repository.stargazers.totalCount;
-          const response = i18n('getStarsResponse', {
+          const forks = data.repository.forks.totalCount;
+          const response = i18n('getForksResponse', {
             projectName,
-            stars
+            forks
           });
 
           return dialog.fulfilled(event, response, callback);
