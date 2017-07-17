@@ -36,6 +36,9 @@ function handler(event, context, callback) {
           });
 
           return dialog.fulfilled(event, response, callback);
+        })
+        .catch(() => {
+          return dialog.failed(event, i18n('githubError'), callback);
         });
     });
 }
