@@ -68,21 +68,14 @@ Which will build the lambda function, bucket and policies.
 
 ## Deploying Changes
 
-If you change the lambda function, slots or intents, just call:
+If you change the lambda function, slots, intents or bot, just call:
 
 ```bash
 make deploy
 ```
 
-This will rebuild the lambda function and redeploy it. It will also rebuild and publish all slots and intents.
-
-## Publishing the Bot
-
-If make changes to the bot itself (such as adding an intent to it), you can publish the bot by running:
-
-```bash
-make publish
-```
+This will rebuild the lambda function and redeploy it. It will also rebuild and publish all slots, intents and the bot.
+``
 
 ## Useful Commands
 
