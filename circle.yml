@@ -24,4 +24,3 @@ deployment:
     branch: master
     commands:
       - make deploy
-      - make publish
