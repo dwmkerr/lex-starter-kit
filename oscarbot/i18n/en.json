@@ -41,5 +41,6 @@
   "forkProjectConfirm": "I'm going to fork _${repository}_ on behalf of _${username}_ is that OK?",
   "forkProjectSuccessResponse": "I've started forking _${repository}_ for you to _${fork}_, it can sometimes take a few minutes to complete.",
   "whatsTrendingSuccessResponse": "The following new repos are trending in the last seven days:\n${list}",
-  "howManyContributorsResponse": "${repository} has ${contributors} contributors."
+  "howManyContributorsResponse": "${repository} has ${contributors} contributors.",
+  "githubError": "Sorry, there was a problem talking to Github. Can you try again later?"
 }
