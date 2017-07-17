@@ -9,6 +9,7 @@ const INTENT_HANDLERS = {
   DescribeLastCommit: intents.describeLastCommit,
   GetForks: intents.getForks,
   GetStars: intents.getStars,
+  Goodbye: intents.goodbye,
   HowManyContributors: intents.howManyContributors,
   OpenIssue: intents.openIssue,
   TopIssues: intents.topIssues,
