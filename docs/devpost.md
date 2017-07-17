@@ -8,9 +8,9 @@ We loved the idea of an 'open source buddy' who would help you out while you are
 
 Oscar is a chatbot that interfaces neatly with open-source projects on Github. You can bring Oscar into your team channel on Slack and he'll help you get information on your projects and perform common tasks. For terminal nerds, you can even run Oscar through a command line interface so that you never have to leave your terminal window!
 
-![Oscar In Action in Slack]()
+![Oscar In Action in Slack](https://raw.githubusercontent.com/mindmelting/lex-oscarbot/e205856a8e03a8d354c26e9707cae1fe94c1d7e0/docs/screenshots/slack.jpg)
 
-![Oscar In Action in a Terminal]()
+![Oscar In Action in a Terminal](https://raw.githubusercontent.com/mindmelting/lex-oscarbot/e205856a8e03a8d354c26e9707cae1fe94c1d7e0/docs/screenshots/terminal.jpg)
 
 Oscar can:
 
@@ -57,7 +57,7 @@ When the `make deploy` command completes, your bot is ready. Just run the `oscar
 * We actually used Oscar while developing him. When we found bugs, we'd raise issues by chatting to Oscar!
 * The 'conversational' intents, which add a little flavour, and were added after seeing what random things friends asked the bot.
 * The testing. We pick up most bugs very quickly in our unit tests.
-* The deployment scripts, which automatically handle creating, updating, versioning and publishing slots, intents and bots. 
+* The deployment scripts, which automatically handle creating, updating, versioning and publishing slots, intents and bots.
 * The CI/CD pipeline and `make` commands, which make the developer experience smooth.
 * The CLI, which provides a very fast way to interact with Oscar.
 
