@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov > coverage.lcov",
-    "test": "mocha -t 10000 '**/*.spec.js'",
-    "test:debug": "mocha --inspect --inspect-brk -t 10000 '**/*.spec.js'"
+    "test": "mocha -t 10000 './{,!(node_modules)/**/}*.spec.js'",
+    "test:debug": "mocha --inspect --inspect-brk -t 10000 './{,!(node_modules)/**/}*.spec.js'"
   },
   "dependencies": {
     "debug": "^2.6.8",
