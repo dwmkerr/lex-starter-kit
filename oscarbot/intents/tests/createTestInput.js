@@ -3,7 +3,7 @@ function createTestInput(options) {
     currentIntent: {
       slots: Object.assign({}, options.slots), // make sure we've always got an object, even if it is empty.
       name: options.intent,
-      confirmationStatus: 'None'
+      confirmationStatus: options.confirmationStatus || 'None'
     },
     bot: {
       alias: '$LATEST',
