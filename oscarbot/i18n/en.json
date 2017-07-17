@@ -20,7 +20,7 @@
   "elicitSlotGitHubUser": "What's your GitHub username?",
   "openIssueRequestTitle": "Sure, I'll need a title for that, what do you want to call it?",
   "openIssueRequestDescription": "Great, I need you add a description for ${issueTitle}",
-  "openIssueConfirm": "I just want to confirm that you want to open an issue titled *${issueTitle}* and with description _${issueContent}_?",
+  "openIssueConfirm": "I just want to confirm that you want to open an issue on '${repository}' titled *${issueTitle}* and with description _${issueContent}_?",
   "openIssueResponse": "Thanks for confirming, the issue is now open and it's located at ${url}",
   "topIssuesResponse": "OK, here we go! The top issues for ${projectName} are: ${issueText}",
   "threeLaws": "I only have the CPU to support two of the three laws at any one time.",
