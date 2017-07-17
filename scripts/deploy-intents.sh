@@ -79,6 +79,10 @@ function deploy-intents() {
         CHECKSUM=`aws lex-models get-intent --name $intentName --region $region --intent-version '$LATEST' | jq -r .checksum`
         echo "Publishing $intentName with checksum $CHECKSUM..."
         aws lex-models create-intent-version --name $intentName --region $region --checksum "$CHECKSUM"
+
+        # Clean up the temporary intent file.
+        rm $intentFile.temp
+
 	done
 }
 

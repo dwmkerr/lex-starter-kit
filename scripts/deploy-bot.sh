@@ -62,6 +62,10 @@ function deploy-bot() {
     CHECKSUM=`aws lex-models get-bot --name $botName --region $region --version-or-alias '$LATEST' | jq -r .checksum`
     echo "Publishing $botName with checksum $CHECKSUM..."
     aws lex-models create-bot-version --name $botName --region $region --checksum "$CHECKSUM"
+
+    # Cleanup the temporary bot file.
+    rm $botFile.temp
+
 }
 
 # Allows to call a function based on arguments passed to the script
