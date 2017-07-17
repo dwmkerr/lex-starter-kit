@@ -4,6 +4,7 @@ module.exports = {
   describeLastCommit: require('./describeLastCommit'),
   getStars: require('./getStars'),
   getForks: require('./getForks'),
+  goodbye: require('./goodbye'),
   howManyContributors: require('./howManyContributors'),
   openIssue: require('./openIssue'),
   topIssues: require('./topIssues'),
