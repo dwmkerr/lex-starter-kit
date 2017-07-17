@@ -1,21 +1,16 @@
 const config = require('../config');
 const dialog = require('../utils/dialog');
-const login = require('../utils/github/login');
-const query = require('../utils/github/query');
+const getRepoOwnerAndName = require('../utils/getRepoOwnerAndName');
+const github = require('../utils/github');
 const i18n = require('../i18n');
 
 function handler(event, context, callback) {
   const repository = event.sessionAttributes.Repository;
-  const repoParts = repository.split('/');
-  const owner = repoParts[0];
-  const name = repoParts[1];
+  const { owner, name } = getRepoOwnerAndName(repository);
 
-  const username = config.GITHUB_USERNAME;
-  const password = config.GITHUB_PASSWORD;
-  login(username, password, event)
+  github.login(config.GITHUB_USERNAME, config.GITHUB_PASSWORD, event)
     .then((token) => {
-      console.log(`Logged in successfully, token: ${token}`);
-      query(token, `
+      github.query(token, `
         query {
           repository(owner: "${owner}", name: "${name}") {
             name

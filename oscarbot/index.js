@@ -1,3 +1,4 @@
+const logging = require('./logging');
 const validateSession = require('./validateSession');
 const snappyResponse = require('./snappyResponse');
 const intents = require('./intents');
@@ -22,6 +23,11 @@ const INTENT_HANDLERS = {
 };
 
 function handler(event, context, callback) {
+
+  //  Log the incoming event, and ensure we log the response in the callback.
+  logging.logIncomingEvent(event);
+  callback = logging.wrapCallback(callback);
+
   //  If we can reply with a snappy response, we are done.
   if (snappyResponse(event, context, callback)) return;
 
