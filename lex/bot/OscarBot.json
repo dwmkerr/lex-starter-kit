@@ -118,7 +118,7 @@
     "abortStatement": {
         "messages": [
             {
-                "content": "Sorry, I could not understand. Goodbye.",
+                "content": "Dang, unfortunately I still couldn't understand that. Please try saying something different.",
                 "contentType": "PlainText"
             }
         ]
@@ -127,7 +127,7 @@
         "maxAttempts": 5,
         "messages": [
             {
-                "content": "Sorry, can you please repeat that?",
+                "content": "Dang, I couldn't understand that. Ask 'What can I ask you?' for phrases I will understand.",
                 "contentType": "PlainText"
             }
         ]

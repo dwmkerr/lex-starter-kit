@@ -16,7 +16,7 @@
                 "maxAttempts": 2, 
                 "messages": [
                     {
-                        "content": "What is the repsoitory name? e.g. nodejs/node", 
+                        "content": "Ok! What is the repository name?", 
                         "contentType": "PlainText"
                     }
                 ]

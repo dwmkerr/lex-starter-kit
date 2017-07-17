@@ -41,7 +41,7 @@ describe('intentStarProject', () => {
 
     handler(event, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'Close');
-      assert(response.dialogAction.message.content.match(/I've starred mindmelting\/lex-oscarbot for you/));
+      assert(response.dialogAction.message.content.match(/I've starred 'mindmelting\/lex-oscarbot' for you/));
       done();
     });
   });

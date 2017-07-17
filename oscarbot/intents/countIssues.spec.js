@@ -15,7 +15,7 @@ describe('intentCountIssues', () => {
 
     handler(event, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'Close');
-      assert(response.dialogAction.message.content.match(/Jay-Z has 99 problems but angular-modal-service only has \d+!/));
+      assert(response.dialogAction.message.content.match(/Jay-Z has 99 problems but 'angular-modal-service' only has \d+!/));
       done();
     });
   });

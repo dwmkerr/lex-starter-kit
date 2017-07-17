@@ -13,7 +13,7 @@ describe('howManyContributors', () => {
 
     handler(input, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'Close');
-      assert(response.dialogAction.message.content.match(/mindmelting\/lex-oscarbot has \d+ contributors/));
+      assert(response.dialogAction.message.content.match(/'mindmelting\/lex-oscarbot' has \d+ contributors/));
       done();
     });
   });

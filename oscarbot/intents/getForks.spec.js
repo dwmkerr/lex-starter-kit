@@ -13,7 +13,7 @@ describe('getForks', () => {
 
     handler(event, null, (err, response) => {
       assert.equal(response.dialogAction.type, 'Close');
-      assert(response.dialogAction.message.content.match(/angular-modal-service is big into kitchenware - it's got \d+ forks/));
+      assert(response.dialogAction.message.content.match(/'angular-modal-service' is big into kitchenware - it's got \d+ forks/));
       done();
     });
   });
