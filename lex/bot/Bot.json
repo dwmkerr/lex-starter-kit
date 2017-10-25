@@ -1,6 +1,6 @@
 {
-    "name": "oscarbot",
-    "description": "Oscar is a bot to help you interact with GitHub projects.",
+    "name": "lex-starter-kit",
+    "description": "A simple chatbot based on AWS Lex and Lambda",
     "locale": "en-US",
     "voiceId": "Joey",
     "childDirected": false,
@@ -8,7 +8,7 @@
     "abortStatement": {
         "messages": [
             {
-                "content": "Dang, unfortunately I still couldn't understand that. Please try saying something different.",
+                "content": "Sorry, I don't understand.",
                 "contentType": "PlainText"
             }
         ]
@@ -17,7 +17,7 @@
         "maxAttempts": 5,
         "messages": [
             {
-                "content": "Dang, I couldn't understand that. Ask 'What can I ask you?' for phrases I will understand.",
+                "content": "Can try you saying that again?",
                 "contentType": "PlainText"
             }
         ]
@@ -25,115 +25,7 @@
     "intents": [
         {
             "intentVersion": "$LATEST",
-            "intentName": "GetStars"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "GetForks"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "CountIssues"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "OpenIssue"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "DescribeLastCommit"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "CountOpenPRs"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "WhatAreMyMostPopularProjects"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "WhatCanIAskYou"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "WhatProjectsAmIWorkingOn"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "MyOpenIssues"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "StarProject"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "UnstarProject"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "ThreeLaws"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "TopIssues"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "ForkProject"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "HowsItGoing"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "WhatsTrending"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "HowManyContributors"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "AreYouMarried"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "Hi"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "IveGotAProblem"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "SpacesOrTabs"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "TellMeAJoke"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "WhatsUp"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "WhatsYourFavouriteMovie"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "WhyIsYourNameOscar"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "WhyWereYouCreated"
-        },
-        {
-            "intentVersion": "$LATEST",
-            "intentName": "Goodbye"
+            "intentName": "WhatTime"
         }
     ]
 }

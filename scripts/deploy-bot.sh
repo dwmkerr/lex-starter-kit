@@ -65,7 +65,6 @@ function deploy-bot() {
 
     # Cleanup the temporary bot file.
     rm $botFile.temp
-
 }
 
 # Allows to call a function based on arguments passed to the script

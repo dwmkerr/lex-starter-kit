@@ -17,10 +17,9 @@ test:
 # Builds the lambda function. Copies it to a clean location first so that we
 # can eliminate any non-production node modules.
 build:
-	rm -rf ./artifacts/lambda
-	cp -R ./lambda ./artifacts/lambda
-	rm -rf ./artifacts/lambda/node_modules
-	cd ./artifacts/lambda && npm install --production && zip -r ../$(FUNCTION).zip .
+	# rm -rf ./artifacts/lambda
+	# cp -rf ./lambda ./artifacts/lambda
+	cd ./artifacts/lambda && npm install --production && npm prune --production && zip -r ../$(FUNCTION).zip .
 
 # Creates a coverage report.
 coverage:
