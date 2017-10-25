@@ -49,7 +49,7 @@ setup: check-dependencies build
 		--code S3Bucket=$(BUCKET),S3Key=$(FUNCTION).zip
 
 # Deploys updates.
-deploy: build
+deploy-lambda: build
 	aws s3 cp ./artifacts/$(FUNCTION).zip s3://$(BUCKET)/$(FUNCTION).zip
 	aws lambda update-function-code \
 		--region $(REGION) \
@@ -57,6 +57,7 @@ deploy: build
 		--s3-bucket $(BUCKET) \
 		--s3-key $(FUNCTION).zip
 	
+deploy-lex:
 	# Update the slots.
 	./scripts/deploy-slots.sh deploy-slots $(REGION) "lex/slots/*.json"
 	
@@ -65,7 +66,9 @@ deploy: build
 	./scripts/deploy-intents.sh deploy-intents "$(REGION)" "$(FUNCTION)" $$ACCOUNT_ID `find ./lex/intents -name '*.json'`
 	
 	# Update the bot.
-	./scripts/deploy-bot.sh deploy-bot "$(REGION)" "lex/bots/*.json"
+	./scripts/deploy-bot.sh deploy-bot "$(REGION)" "lex/bot/Bot.json"
+
+deploy: deploy-lambda deploy-lex
 
 # Destroys some resources. Still work in progress for others.
 destroy:

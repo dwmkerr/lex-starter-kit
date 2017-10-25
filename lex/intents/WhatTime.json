@@ -1,7 +1,7 @@
 {
     "name": "WhatTime",
     "sampleUtterances": [
-        "What time is it?"
+        "What time is it"
     ],
     "slots": [],
     "dialogCodeHook": {
