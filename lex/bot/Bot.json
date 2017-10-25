@@ -1,4 +1,27 @@
 {
+    "name": "oscarbot",
+    "description": "Oscar is a bot to help you interact with GitHub projects.",
+    "locale": "en-US",
+    "voiceId": "Joey",
+    "childDirected": false,
+    "idleSessionTTLInSeconds": 300,
+    "abortStatement": {
+        "messages": [
+            {
+                "content": "Dang, unfortunately I still couldn't understand that. Please try saying something different.",
+                "contentType": "PlainText"
+            }
+        ]
+    },
+    "clarificationPrompt": {
+        "maxAttempts": 5,
+        "messages": [
+            {
+                "content": "Dang, I couldn't understand that. Ask 'What can I ask you?' for phrases I will understand.",
+                "contentType": "PlainText"
+            }
+        ]
+    },
     "intents": [
         {
             "intentVersion": "$LATEST",
@@ -112,28 +135,5 @@
             "intentVersion": "$LATEST",
             "intentName": "Goodbye"
         }
-    ],
-    "name": "oscarbot",
-    "locale": "en-US",
-    "abortStatement": {
-        "messages": [
-            {
-                "content": "Dang, unfortunately I still couldn't understand that. Please try saying something different.",
-                "contentType": "PlainText"
-            }
-        ]
-    },
-    "clarificationPrompt": {
-        "maxAttempts": 5,
-        "messages": [
-            {
-                "content": "Dang, I couldn't understand that. Ask 'What can I ask you?' for phrases I will understand.",
-                "contentType": "PlainText"
-            }
-        ]
-    },
-    "voiceId": "Joey",
-    "childDirected": false,
-    "idleSessionTTLInSeconds": 300,
-    "description": "Oscar is a bot to help you interact with GitHub projects."
+    ]
 }
