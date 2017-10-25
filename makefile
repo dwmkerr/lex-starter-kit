@@ -65,7 +65,7 @@ deploy: build
 	./scripts/deploy-intents.sh deploy-intents "$(REGION)" "$(FUNCTION)" $$ACCOUNT_ID `find ./lex/intents -name '*.json'`
 	
 	# Update the bot.
-	./scripts/deploy-bot.sh deploy-bot "$(REGION)" "lex/bot/OscarBot.json"
+	./scripts/deploy-bot.sh deploy-bot "$(REGION)" "lex/bots/*.json"
 
 # Destroys some resources. Still work in progress for others.
 destroy:
