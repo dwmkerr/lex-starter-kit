@@ -1,5 +1,5 @@
 REGION := us-east-1
-FUNCTION := lex-starter-kit-function
+FUNCTION := serverless-summit
 
 # Helper variables we use to check if things exist.
 # Consider moving into a script of its own, and checking we are logged in.
@@ -44,12 +44,12 @@ setup: check-dependencies build
 		--function-name $(FUNCTION) \
 		--runtime nodejs6.10 \
 		--handler index.handler \
-		--environment="Variables={OSCAR_GITHUB_USERNAME=\"$(OSCAR_GITHUB_USERNAME)\",OSCAR_GITHUB_PASSWORD=\"$(OSCAR_GITHUB_PASSWORD)\",DEBUG=oscar}" \
+		--environment="Variables={DEBUG=lex-starter-kit}" \
 		--role "arn:aws:iam::$$ACCOUNT_ID:role/$(FUNCTION)-role" \
 		--code S3Bucket=$(BUCKET),S3Key=$(FUNCTION).zip
 
 # Deploys updates.
-deploy: build
+deploy-lambda: build
 	aws s3 cp ./artifacts/$(FUNCTION).zip s3://$(BUCKET)/$(FUNCTION).zip
 	aws lambda update-function-code \
 		--region $(REGION) \
@@ -57,6 +57,7 @@ deploy: build
 		--s3-bucket $(BUCKET) \
 		--s3-key $(FUNCTION).zip
 	
+deploy-lex:
 	# Update the slots.
 	./scripts/deploy-slots.sh deploy-slots $(REGION) "lex/slots/*.json"
 	
@@ -65,7 +66,9 @@ deploy: build
 	./scripts/deploy-intents.sh deploy-intents "$(REGION)" "$(FUNCTION)" $$ACCOUNT_ID `find ./lex/intents -name '*.json'`
 	
 	# Update the bot.
-	./scripts/deploy-bot.sh deploy-bot "$(REGION)" "lex/bot/OscarBot.json"
+	./scripts/deploy-bot.sh deploy-bot "$(REGION)" "lex/bot/Bot.json"
+
+deploy: deploy-lambda deploy-lex
 
 # Destroys some resources. Still work in progress for others.
 destroy:

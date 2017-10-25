@@ -1,5 +1,5 @@
 {
-    "name": "lex-starter-kit",
+    "name": "lexstarterkit",
     "description": "A simple chatbot based on AWS Lex and Lambda",
     "locale": "en-US",
     "voiceId": "Joey",
@@ -17,7 +17,7 @@
         "maxAttempts": 5,
         "messages": [
             {
-                "content": "Can try you saying that again?",
+                "content": "Can try you saying that again",
                 "contentType": "PlainText"
             }
         ]

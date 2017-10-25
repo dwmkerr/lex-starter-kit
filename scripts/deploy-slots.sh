@@ -3,6 +3,9 @@
 # Abort on any error.
 set -e
 
+# If we don't have any files in a glob, give an empty array (not a wildcard).
+shopt -s nullglob
+
 # Create slots from a folder.
 # Usage:
 #   deploy-slots us-east-1 ./folder/**/*.json
