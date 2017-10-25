@@ -1,5 +1,5 @@
 REGION := us-east-1
-FUNCTION := lex-starter-kit-function
+FUNCTION := serverless-summit
 
 # Helper variables we use to check if things exist.
 # Consider moving into a script of its own, and checking we are logged in.

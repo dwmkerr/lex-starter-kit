@@ -1,2 +1,3 @@
 # The zipped lambda function.
 *.zip
+lambda/
