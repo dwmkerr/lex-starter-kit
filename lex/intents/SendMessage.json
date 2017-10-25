@@ -1,0 +1,53 @@
+{
+    "name": "SendMessage", 
+    "sampleUtterances": [
+        "Can you send a message for me?",
+        "Can you send a message to {Recipient} for me?"
+    ], 
+    "slots": [
+        {
+            "slotType": "Recipient", 
+            "name": "Recipient", 
+            "slotConstraint": "Required", 
+            "valueElicitationPrompt": {
+                "maxAttempts": 2, 
+                "messages": [
+                    {
+                        "content": "Who should I send the message to?", 
+                        "contentType": "PlainText"
+                    }
+                ]
+            }, 
+            "priority": 1, 
+            "slotTypeVersion": "$LATEST", 
+            "sampleUtterances": []
+        }, {
+            "slotType": "Message", 
+            "name": "Message", 
+            "slotConstraint": "Required", 
+            "valueElicitationPrompt": {
+                "maxAttempts": 2, 
+                "messages": [
+                    {
+                        "content": "What is the message?", 
+                        "contentType": "PlainText"
+                    }
+                ]
+            }, 
+            "priority": 2, 
+            "slotTypeVersion": "$LATEST", 
+            "sampleUtterances": []
+        }
+    ], 
+    "dialogCodeHook": {
+        "uri": "arn:aws:lambda:us-east-1:160696617623:function:intentOscarBot", 
+        "messageVersion": "1.0"
+    }, 
+    "fulfillmentActivity": {
+        "type": "CodeHook", 
+        "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:160696617623:function:intentOscarBot", 
+            "messageVersion": "1.0"
+        }
+    }
+}

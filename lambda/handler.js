@@ -27,6 +27,7 @@ function handler(event, context, callback) {
     }
     
     //  Call the intent function.
+    //  Bonus: If we don't get a promise, auto-promisify? Or throw?
     intentHandler(event, context)
       .then(dialogAction => callback(null, dialogAction))
       .catch(callback);

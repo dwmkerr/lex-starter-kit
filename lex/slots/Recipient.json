@@ -1,0 +1,19 @@
+{
+    "name": "Recipient",
+    "description": "A recipient for a message",
+    "enumerationValues": [{
+        "value": "Sarah"
+    }, {
+        "value": "Ganesh"
+    }, {
+        "value": "Dave"
+    }, {
+        "value": "Sujin"
+    }, {
+        "value": "Abhishek"
+    }, {
+        "value": "Zoltan"
+    }, {
+        "value": "Lawrence"
+    },
+}

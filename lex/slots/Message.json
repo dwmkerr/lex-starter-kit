@@ -1,0 +1,294 @@
+{
+  "name": "Message",
+  "description": "The message to send.",
+  "enumerationValues": [
+    {
+      "value": "There is something going wrong in the matrix, is there anyone who can help me?"
+    },
+    {
+      "value": "Some build methods preload templates into the template cache. Because of this, templates may never be available directly at their specified "
+    },
+    {
+      "value": "I was using a template for my model that had the following root element:\n\n```\n<div class=\"modal fade\">\n nested content\n</div>\n```\n\nIf my tem"
+    },
+    {
+      "value": "I have modals that I want to force users to interact with (ie. disclosures). Is there a feature to enforce this?\n"
+    },
+    {
+      "value": "Thank you for this great addition to angular, I love the flexibility and ease of use.\n\nI am trying to write unit tests for a controller I'm "
+    },
+    {
+      "value": "Hi Dave,\nExcellent tutorial on reusable modal windows. \nHowever I've found some issues in your project.\n1. You said there are no dependencie"
+    },
+    {
+      "value": "Currently the bower.json limits this module to the 1.2.x line.  I have been testing it on 1.3.0-rc.4 for a while this morning and have not f"
+    },
+    {
+      "value": "It would be extremely useful to document how unit testing works with Angular Modal Service.\n"
+    },
+    {
+      "value": "Hi ,\n\nI want to pass the message to display in the model window? Do you have any samples of that? please let me know.\n"
+    },
+    {
+      "value": "Take your example:\n\n``` javascript\nModalService.showModal({\n  templateUrl: \"some/template.html\",\n  controller: \"SomeController\"\n}).then(func"
+    },
+    {
+      "value": "Code is entered exactly as the example and when the `showAModal()` function fires the modal template html is appended to the body while the "
+    },
+    {
+      "value": "Hi,\n\nI'd like to see an example for using the appendElement in the call to showModal().  Could you add it to the examples? :-)\n\nCheers,\nAlli"
+    },
+    {
+      "value": "see thread at: \n\nhttp://www.dwmkerr.com/the-only-angularjs-modal-service-youll-ever-need/#comment-1590486697\n"
+    },
+    {
+      "value": "I'm using angular 1.3.0 with Ruby on Rails.  \n\n![image](https://cloud.githubusercontent.com/assets/362617/5588970/b0ada59c-90d9-11e4-8a4f-9e"
+    },
+    {
+      "value": "I'm running into an issue with a modal's $scope. It looks like the modal's $scope is set to rootscope. I'm trying to use $emit to send an ev"
+    },
+    {
+      "value": "Anyone else have the problem of calling showModal from inside the then function of the close promise?  I get a darkened background that gets"
+    },
+    {
+      "value": "A really useful sample would be how to create a wizard with the angular modal service.\n\nhttp://www.panopta.com/static/bootstrap-wizard-plugi"
+    },
+    {
+      "value": "Oddly enough, I've used angular-modal-service successfully in other projects, but haven't been able to pinpoint why this project is special."
+    },
+    {
+      "value": "@dwmkerr, it'd be really great if you can publish this to npm. Since you already have package.json, it is really easy. Here are the simple s"
+    },
+    {
+      "value": "See comment at:\n\nhttp://www.dwmkerr.com/the-only-angularjs-modal-service-youll-ever-need/#comment-1810738299\n\nIt would be useful to have an "
+    },
+    {
+      "value": "please delete I was blind :P\n"
+    },
+    {
+      "value": "We need to publish to npm on release as well as bumping version numbers\n"
+    },
+    {
+      "value": "Why `controller` option is required for `showModal`? Maybe make it optional for modals without controllers.\n"
+    },
+    {
+      "value": "Hi, I would like to create a modal view with an input suggesting places from google maps api.\nPreviously to do that I used the angular-googl"
+    },
+    {
+      "value": "Hi!\nI do not find any way to make use of ngAnimate on modal open. The close method allow to specify a time in millisecond for this\n\nThanks\n"
+    },
+    {
+      "value": "Hi can you help me writing unit test for modal controllers ?\n\nI tried but I'm not able to solve these errors:\n- Error: [$injector:unpr] Unkn"
+    },
+    {
+      "value": "Everytime I open a modal, .modal-open is still attached to the body of my page.\nThe `overflow: hiddden` property prevent me to slide my page"
+    },
+    {
+      "value": "I looked through the examples to see if there was already a documented way of properly cleaning up a modal that is dismissed when clicking o"
+    },
+    {
+      "value": "Seem not to be compatible:\nConsole error: modal is not a function\n"
+    },
+    {
+      "value": "When a modal is open, and the page behind it is obscured\n\nWhile you cannot click on anything on that page\n\nYou can still tab to move the tab"
+    },
+    {
+      "value": "There's a nice cleanup solution at #23:\n\nhttps://github.com/dwmkerr/angular-modal-service/pull/23#issuecomment-76632249\n"
+    },
+    {
+      "value": "Hi,\n\nI am using a $timeout to automatically close a modal after 1000 milliseconds. But the scroll bar does not come back into action after t"
+    },
+    {
+      "value": "If a scope is provided externally, it is still destroyed by the service. This is unintuitive and leads to problems with lifecycle management"
+    },
+    {
+      "value": "Just started happening today! Did something change? Any clues on why this would happen?\n"
+    },
+    {
+      "value": "I am getting this message \"Scripts may close only the windows that were opened by it.\", and I can only  use the \"Cancel\" button to close a w"
+    },
+    {
+      "value": "Useful addition\n"
+    },
+    {
+      "value": "hi, I want to decide when I close the modal, and that it is only the close button to close the modal, you can .\n\nthank you\n\nMassimo\n"
+    },
+    {
+      "value": "Hello,\n\nI am testing the modals and I don't know how to set backdrop to static like the boostrap modal.\n\nEj:  ModalService.showModal({\n     "
+    },
+    {
+      "value": "Hi, \n\nthanks a lot for your this nice utitilty.\n\nOne question: What is the reason behind including a dependency to bootstrap in your bower.j"
+    },
+    {
+      "value": "In the current system, and if i understand it, to use a custom modal, you have to pass a controller already created : \n\n``` javascript\napp.c"
+    },
+    {
+      "value": "I followed the sample code and it is kind of working, except that the then() function doesn't get called when I dismiss the dialog. I'm not "
+    },
+    {
+      "value": "I have the following form. i want to preceed with Ok action when enter key is pressed, but cannot get it to work. I have tried various optio"
+    },
+    {
+      "value": "I cannot get this to work with the latest bootstrap CSS (v.3.3.4): The modal appears but remains somewhat faded and there is not control ove"
+    },
+    {
+      "value": "I am calling ModalService from a directive, which works well when on a particular route view. However, when I change the route to other view"
+    },
+    {
+      "value": "In FAQ \"I'm using a Bootstrap Modal and the backdrop doesn't fade away\", it mentions: \"It will try and make both elements into a modal. This"
+    },
+    {
+      "value": "[Your article](http://www.dwmkerr.com/the-only-angularjs-modal-service-youll-ever-need/) clearly show an execution order:\n\n```\nvar modalCont"
+    },
+    {
+      "value": "The latest tag (0.6.6) isn't on NPM which includes the IE8 fix. Could someone publish it there?\n"
+    },
+    {
+      "value": "Hi, is it possible to attach a sample with a 'save' button and showing where is the best place to call the save(record) methode and how to r"
+    },
+    {
+      "value": "so, I've managed to get a custom modal to popup over the screen. It stays there for a second or two, then vanishes. If I click again, it app"
+    },
+    {
+      "value": "Is jquery really necessary? It's considered bad practice to use jQuery in AngularJS projects afaik.\n\nThe necessity is not documented: E.g. f"
+    },
+    {
+      "value": "Supposing I want to use a constructor instead of using a registered controller, but also I want to use controllerAs property, so my code wil"
+    },
+    {
+      "value": "Hello, I'm using the following code to trigger the modal :\n\n$scope.showModal = function () {\n\n```\n        ModalService.showModal({\n         "
+    },
+    {
+      "value": "When I include the modal service in the dependencies and inject it into one of my controllers, my code gives me the following error. Any ide"
+    },
+    {
+      "value": "First I have confirmed that by HTML does not have multiple root elements. I have the following code...\n\n```\napp.controller('SampleModalContr"
+    },
+    {
+      "value": "Could you please add support to the new Angular 1.4.x version?\n\nNow It's tied to the 1.3.x version.\n\nThanks.\n"
+    },
+    {
+      "value": "That is the error message I get.\nI don't want to use Bootstrap or jQuery at all, how can I dispose of them?\n"
+    },
+    {
+      "value": "I'm using angular-modal-service with bootstrap modals and I've run into an issue where close is being run before the modal animation is comp"
+    },
+    {
+      "value": "Hi,\nThe controller in the samples from your site (http://dwmkerr.github.io/angular-modal-service/) only work with ng-controller=\"SampleContr"
+    },
+    {
+      "value": "Please remove jquery and bootstrap from bower dependency, many people dont use them in his projects and have pure angular app.\n"
+    },
+    {
+      "value": "When i create some directive in modal template definition and try send from modal controller some scope params in directive isolated scope, "
+    },
+    {
+      "value": "I'm getting: TypeError - cannot read property 'resolve' of null \n   at line 91 of angular-modail-service   version: 0.6.7\n\n```\n           //"
+    },
+    {
+      "value": "I'd like to roll my own modal, but I want to be able to animate the enter/leave transition, and it would be great if this service could coop"
+    },
+    {
+      "value": "Is it possible to make the modal drag-able ?\n"
+    },
+    {
+      "value": "Hi why i am unable to pass my data to ModalController. I have forked original JSFiddle example for angularModalService and made it a complex"
+    },
+    {
+      "value": "There is an issue with the way template caching is done. Angular uses its own template caching and it conflicts with the way it is implement"
+    },
+    {
+      "value": "When building an email form, for example, and would like to validate it, there is no way to access the \"local\" form fields. The fields shoul"
+    },
+    {
+      "value": "Hi, is possible to load a html template in **ajax**?\nThanks\n"
+    },
+    {
+      "value": "I am trying to use a usual `ng-href` in my modal template. I use the inputs to pass my variable to `$scope` but I my link doesn't work immed"
+    },
+    {
+      "value": "This is the code of the controller to show modal dialog in my app\n\n```\n   myApp.controller('addUserCtrl',['$timeout', '$scope', function($ti"
+    },
+    {
+      "value": "Thanks @dwmkerr for this great library. One of our devs wanted to use this, but it's unclear if this is still being maintained. Any comments"
+    },
+    {
+      "value": "I've a problem when I use a modal and then I open another modal inside it. \n\nWhen I close the child modal, the css \"modal-open\" is removed i"
+    },
+    {
+      "value": "Modals can be closed by clicking outside the modal window and I want to keep that functionality. However, closing the modal this way doesn't"
+    },
+    {
+      "value": "Actually, I should use modals with IE8 and I want to know which problems may be occured with it. Thanks.\n"
+    },
+    {
+      "value": "You should probably update the changelog because the last referenced version is 0.6.6.\nI forgot to add this in my PR ;) \n"
+    },
+    {
+      "value": "TypeError: after.after is not a function\n    at a (angular-modal-service.js:57)\n"
+    },
+    {
+      "value": "After the changes for the new release the ModalService is not working. Using the $templateRequest to handle the template caching automatical"
+    },
+    {
+      "value": "http://jsfiddle.net/dwmkerr/8MVLJ/\n\nThis is the primary error in the console:\n\n```\nError: [$injector:unpr] http://errors.angularjs.org/1.2.9"
+    },
+    {
+      "value": "How can I close any open modal?\n\nI use this on a mobile app, and i have a problem. If the user press the soft or hard android back key the m"
+    },
+    {
+      "value": "When installing through bower I get a deprecated dst.\n"
+    },
+    {
+      "value": "Demo?\n"
+    },
+    {
+      "value": "Hi is there a way to deal with the following scenario:\n\n``` javascript\n\n        ModalService.showModal({\n            templateUrl : \"go/find/"
+    },
+    {
+      "value": "Are there onShow and onShown events?\nIf I put other directive like angualrjs google map it doesn't work in side this modal service.\nThe angu"
+    },
+    {
+      "value": "```\n<div class=\"modal-backdrop fade in\"></div>\n```\n\nThis div tag does not get removed on mobile.\n"
+    },
+    {
+      "value": "In the provided [custom modal sample page](http://dwmkerr.github.io/angular-modal-service/#custom), I'm can see the **custom.css** is gettin"
+    },
+    {
+      "value": "The modal's scope must be isolate so it does not reference any property up the scope chain such as 'Id' etc.\n\n$rootScope.$new(true) \n\nhttps:"
+    },
+    {
+      "value": "Hello,\n\nThanks for this great service!\n\nI've just implemented some nice CSS animations using the classes provided when you're using ngAnimat"
+    },
+    {
+      "value": "Enabling ng-strict-di causes this service to throw errors:\n[$injector:strictdi]\n\nhttps://docs.angularjs.org/error/$injector/strictdi\nhttps:/"
+    },
+    {
+      "value": "hi. \nIn any of your exemple (http://dwmkerr.github.io/angular-modal-service/). \nIf you clic to open a modal, and then press 'enter' key many"
+    },
+    {
+      "value": "This is not an issue, but a question, and I am sorry if this is the wrong place to ask questions. I was wondering if it is possible to use a"
+    },
+    {
+      "value": "Is the last version 0.6.10 but the last commit is tagged as 0.9.10 ?\n\nLook at the picture, please...\n\n![screen shot 2016-02-19 at 11 17 56]("
+    },
+    {
+      "value": "I have a button that it is enabled when a function checks if all the required fields are valid ... but in the new version 0.6.10, when I clo"
+    },
+    {
+      "value": "Hi, I think it might be me but, in my controller\n\n```\nappControllers.controller('ACtrl', ['$scope', 'ModalService', '$element',\nfunction($sc"
+    },
+    {
+      "value": " Thanx for good angular service!\n\nBut i have an error:\n\n> Error: $injector:unpin\n> Unknown Provider\n> Unknown provider: closeProvider <- clo"
+    },
+    {
+      "value": "Installing the package through bower sets the version in my bower.json file to 9.10. bower.json in repository shows version as 6.10\n"
+    },
+    {
+      "value": "Hello,\nI use this code to show my modal service:\n$scope.setEditModel = function (index) {\n            ModalService.showModal({\n             "
+    },
+    {
+      "value": "Is this a joke? How are people supposed to _actually_ use these modal if we have to dig through your giant index.html just to see how it's i"
+    }
+  ]
+}
