@@ -5,7 +5,8 @@ const session = require('../session');
 
 function create(repository, title, message) {
   //  Grab our github config.
-  const { github: { username, password } } = config;
+  const username = config.github.username;
+  const password = config.github.password;
 
   //  Validate the config is present.
   if (!username) throw new Error('No GitHub username has been configured');
