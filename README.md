@@ -5,7 +5,7 @@ TODO Circle TODO CodeCode
 
 This project is a template quickly creating chatbox using AWS Lex and Lambda.
 
-It is based on [lex-oscarbot](https://github.com/mindmelting/lex-oscarbot), a chatbot built for the [AWS Chatbot Challenge] by [dwmkerr]() and [mindmelting]().
+It is based on [lex-oscarbot](https://github.com/mindmelting/lex-oscarbot), a chatbot built for the [AWS Chatbot Challenge](https://aws.amazon.com/events/chatbot-challenge/) by [dwmkerr](https://github.com/dwmkerr), [mindmelting](https://github.com/mindmelting) and Selin Lanzafame.
 
 - [Quick Start](#quick-start)
 - [Developer Guide](#developer-guide)
@@ -20,12 +20,21 @@ Have a bot up and running in seconds with:
 
 ```bash
 aws login
-export BUCKET=<someuniquename>
-make build
+make setup
 make deploy
 ```
 
-Your bot is now running on AWS!
+Your bot is now running on AWS! You can use the [lex-chat](https://github.com/dwmkerr/lex-chat) tool to chat with the bot:
+
+```bash
+npm install -g lex-chat
+```
+
+![lex-chat screen capture](./docs/lex-chat.gif)
+
+You can see your bot in the [Lex Console](https://console.aws.amazon.com/lex/home):
+
+![Lex Console Screenshot](./docs/lex-console.png)
 
 # Developer Guide
 
@@ -40,10 +49,6 @@ The project structure is:
 └── scripts       # scripts used by the makefile
 ```
 
-This diagram shows the key steps for setup and development:
-
-![Setup & Development Guide Diagram](./docs/setup-and-develop-commands.png)
-
 ## Environment Setup
 
 Install:
@@ -57,15 +62,14 @@ Set the following environment variables:
 
 | Variable | Usage |
 |----------|-------|
-| `DEBUG=lambda` | Optional. Enables debug output (we use the [debug](https://www.npmjs.com/package/debug) module. |
 | `TWILIO_SID` | A Twilio account id for sending text messages. |
 | `TWILIO_AUTH_TOKEN` | A Twilio auth token for sending text messages. |
 | `TWILIO_PHONE_NUMBER` | A Twilio phone number to send messages from. |
 
-You can now call:
+If you change config, don't forget to run:
 
 ```bash
-make setup
+make config
 ```
 
 Which will build the lambda function, bucket and policies.
@@ -76,9 +80,13 @@ If you change the lambda function, slots, intents or bot, just call:
 
 ```bash
 make deploy
-```
 
-This will rebuild the lambda function and redeploy it. It will also rebuild and publish all slots, intents and bots.
+# or just deploy the code
+make deploy-lambda
+
+# or just deploy the lex models
+make deploy-lex
+```
 
 ## Useful Commands
 
@@ -89,11 +97,19 @@ Here are some commands you can run to help work with the project:
 | `make lint` | Lints the code. |
 | `make test` | Runs the unit tests. |
 | `make setup` | Sets up your AWS resources. First time setup only. |
+| `make config` | Sets up the config for the lambda function. Only needed if config changes. |
 | `make build` | Builds the lamba function and zips it up locally. |
 | `make deploy` | Deploys the code, slots and intents. |
 | `make utterances` | Helper to print out all supported utterances. Useful when building docs. |
-| `npm run test:debug` | Runs tests with the Chrome Inspector. |
-| `npm run coverage` | Runs tests, generating a coverage report. |
+
+If you are working on the code (in the [`./lambda/`](./lambda) folder, you can also use the commands below:
+
+| Command | Usage |
+|---------|-------|
+| `npm test` | Test the code. |
+| `npm run test:debug` | Test the code, using the debugger. |
+| `npm run coverage` | Test the code, checking coverage. |
+| `npm run lint` | Lint the code. |
 
 ## Circle CI
 
