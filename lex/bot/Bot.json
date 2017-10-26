@@ -29,6 +29,9 @@
         }, {
             "intentVersion": "$LATEST",
             "intentName": "SendMessage"
+        }, {
+            "intentVersion": "$LATEST",
+            "intentName": "CreateIssue"
         }
     ]
 }

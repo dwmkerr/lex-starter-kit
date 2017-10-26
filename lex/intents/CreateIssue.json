@@ -1,0 +1,74 @@
+{
+    "name": "CreateIssue", 
+    "sampleUtterances": [
+        "I would like to open an issue",
+        "I would like to open an issue on {GitHubRepository}",
+        "Can you open an issue for me",
+        "Open an issue",
+        "Open an issue on {GitHubRepository}"
+    ], 
+    "slots": [
+        {
+            "slotType": "GitHubRepository", 
+            "name": "GitHubRepository", 
+            "slotConstraint": "Required", 
+            "valueElicitationPrompt": {
+                "maxAttempts": 2, 
+                "messages": [
+                    {
+                        "content": "What is the repository name?", 
+                        "contentType": "PlainText"
+                    }
+                ]
+            }, 
+            "priority": 1, 
+            "slotTypeVersion": "$LATEST", 
+            "sampleUtterances": []
+        }, 
+        {
+            "slotType": "GitHubIssueTitle", 
+            "name": "GitHubIssueTitle", 
+            "slotConstraint": "Required", 
+            "valueElicitationPrompt": {
+                "maxAttempts": 2, 
+                "messages": [
+                    {
+                        "content": "What is the issue title?", 
+                        "contentType": "PlainText"
+                    }
+                ]
+            }, 
+            "priority": 2, 
+            "slotTypeVersion": "$LATEST", 
+            "sampleUtterances": []
+        }, 
+        {
+            "slotType": "GitHubIssueContent", 
+            "name": "GitHubIssueContent", 
+            "slotConstraint": "Required", 
+            "valueElicitationPrompt": {
+                "maxAttempts": 2, 
+                "messages": [
+                    {
+                        "content": "What is the issue content?", 
+                        "contentType": "PlainText"
+                    }
+                ]
+            }, 
+            "priority": 3, 
+            "slotTypeVersion": "$LATEST", 
+            "sampleUtterances": []
+        }
+    ], 
+    "dialogCodeHook": {
+        "uri": "arn:aws:lambda:us-east-1:160696617623:function:intentOscarBot", 
+        "messageVersion": "1.0"
+    }, 
+    "fulfillmentActivity": {
+        "type": "CodeHook", 
+        "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:160696617623:function:intentOscarBot", 
+            "messageVersion": "1.0"
+        }
+    }
+}

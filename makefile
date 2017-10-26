@@ -60,11 +60,22 @@ endif
 ifndef TWILIO_PHONE_NUMBER
 	$(error "Environment variable $$TWILIO_PHONE_NUMBER must be set.")
 endif
+ifndef GITHUB_USERNAME
+	$(error "Environment variable $$GITHUB_USERNAME must be set.")
+endif
+ifndef GITHUB_PASSWORD
+	$(error "Environment variable $$GITHUB_PASSWORD must be set.")
+endif
+ifndef GITHUB_CLIENT_ID
+	$(error "Environment variable $$GITHUB_CLIENT_ID must be set.")
+endif
+ifndef GITHUB_CLIENT_SECRET
+	$(error "Environment variable $$GITHUB_CLIENT_SECRET must be set.")
+endif
 	aws lambda update-function-configuration \
 		--region $(REGION) \
 		--function-name $(FUNCTION) \
-		--environment="Variables={TWILIO_SID=$(TWILIO_SID),TWILIO_AUTH_TOKEN=$(TWILIO_AUTH_TOKEN),TWILIO_PHONE_NUMBER=$(TWILIO_PHONE_NUMBER)}"
-	
+		--environment="Variables={TWILIO_SID=$(TWILIO_SID),TWILIO_AUTH_TOKEN=$(TWILIO_AUTH_TOKEN),TWILIO_PHONE_NUMBER=$(TWILIO_PHONE_NUMBER),GITHUB_USERNAME=$(GITHUB_USERNAME),GITHUB_PASSWORD=$(GITHUB_PASSWORD),GITHUB_CLIENT_ID=$(GITHUB_CLIENT_ID),GITHUB_CLIENT_SECRET=$(GITHUB_CLIENT_SECRET)}"
 
 # Deploys updates.
 deploy-lambda: build

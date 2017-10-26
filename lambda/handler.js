@@ -1,5 +1,6 @@
 const logging = require('./logging');
 const intents = require('./intents');
+const session = require('./session');
 
 /**
  * Our main lambda handler function.
@@ -25,7 +26,10 @@ function handler(event, context, callback) {
     if (!intentHandler) {
       throw new Error(`Intent '${intentName}' not recognised`);
     }
-    
+
+    //  If there slots we can load from the session, load them.
+    session.loadSessionAttributesIntoSlots(event);
+
     //  Call the intent function.
     //  Bonus: If we don't get a promise, auto-promisify? Or throw?
     intentHandler(event, context)
