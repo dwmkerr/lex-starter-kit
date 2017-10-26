@@ -13,8 +13,6 @@ function failed(event, message) {
     dialogAction: {
       type: 'Close',
       fulfillmentState: 'Failed',
-      intentName: event.currentIntent.name,
-      slots: event.currentIntent.slots,
       message: {
         contentType: 'PlainText',
         content: message

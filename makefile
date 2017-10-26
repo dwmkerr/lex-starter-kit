@@ -49,6 +49,23 @@ setup: check-dependencies build
 		--role "arn:aws:iam::$$ACCOUNT_ID:role/$(FUNCTION)-role" \
         --zip-file fileb://artifacts/$(FUNCTION).zip
 
+# Set environment variables for the lambda function.
+config:
+ifndef TWILIO_SID
+	$(error "Environment variable $$TWILIO_SID must be set.")
+endif
+ifndef TWILIO_AUTH_TOKEN
+	$(error "Environment variable $$TWILIO_AUTH_TOKEN must be set.")
+endif
+ifndef TWILIO_PHONE_NUMBER
+	$(error "Environment variable $$TWILIO_PHONE_NUMBER must be set.")
+endif
+	aws lambda update-function-configuration \
+		--region $(REGION) \
+		--function-name $(FUNCTION) \
+		--environment="Variables={TWILIO_SID=$(TWILIO_SID),TWILIO_AUTH_TOKEN=$(TWILIO_AUTH_TOKEN),TWILIO_PHONE_NUMBER=$(TWILIO_PHONE_NUMBER)}"
+	
+
 # Deploys updates.
 deploy-lambda: build
 	aws lambda update-function-code \
@@ -83,15 +100,6 @@ utterances:
 	for file in "./lex/intents/*.json"; do cat $$file | jq .sampleUtterances[0]; done
 
 check-dependencies:
-ifndef BUCKET
-	$(error "Environment variable $$BUCKET must be set.")
-endif
-ifndef OSCAR_GITHUB_USERNAME
-	$(error "Environment variable $$OSCAR_GITHUB_USERNAME must be set.")
-endif
-ifndef OSCAR_GITHUB_PASSWORD
-	$(error "Environment variable $$OSCAR_GITHUB_PASSWORD must be set.")
-endif
 ifndef JQ_EXISTS
 	$(error "Error: jq must be installed.")
 endif

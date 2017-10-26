@@ -57,8 +57,10 @@ Set the following environment variables:
 
 | Variable | Usage |
 |----------|-------|
-| `BUCKET` | A name to use for the S3 bucket for the lambda function. This must be unique across AWS, so try something like `bot-<your name>` |
 | `DEBUG=lambda` | Optional. Enables debug output (we use the [debug](https://www.npmjs.com/package/debug) module. |
+| `TWILIO_SID` | A Twilio account id for sending text messages. |
+| `TWILIO_AUTH_TOKEN` | A Twilio auth token for sending text messages. |
+| `TWILIO_PHONE_NUMBER` | A Twilio phone number to send messages from. |
 
 You can now call:
 

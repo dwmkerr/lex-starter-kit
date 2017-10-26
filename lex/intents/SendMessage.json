@@ -1,8 +1,8 @@
 {
     "name": "SendMessage", 
     "sampleUtterances": [
-        "Can you send a message for me?",
-        "Can you send a message to {Recipient} for me?"
+        "Can you send a message for me",
+        "Can you send a message to {Recipient} for me"
     ], 
     "slots": [
         {

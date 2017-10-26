@@ -2,18 +2,19 @@
     "name": "Recipient",
     "description": "A recipient for a message",
     "enumerationValues": [{
-        "value": "Sarah"
+        "value": "+9183234563443"
     }, {
-        "value": "Ganesh"
+        "value": "+9123542952560"
     }, {
-        "value": "Dave"
+        "value": "+652342675"
     }, {
-        "value": "Sujin"
+        "value": "+625467457234"
     }, {
-        "value": "Abhishek"
+        "value": "+624564567546"
     }, {
-        "value": "Zoltan"
+        "value": "+91840804084"
     }, {
-        "value": "Lawrence"
-    },
+        "value": "+91565678345"
+    }
+  ]
 }
