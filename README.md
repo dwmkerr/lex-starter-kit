@@ -1,5 +1,4 @@
 # Lex Starter Kit
-TODO Circle TODO CodeCode
 
 > Build a chatbot with AWS Lex and Lambda in minutes!
 
