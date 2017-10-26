@@ -1,4 +1,4 @@
-# Lex Starter Kit [![CircleCI](https://circleci.com/gh/dwmkerr/lex-starter-kit.svg?style=shield)](https://circleci.com/gh/dwmkerr/lex-starter-kit)
+# Lex Starter Kit [![CircleCI](https://circleci.com/gh/dwmkerr/lex-starter-kit.svg?style=shield)](https://circleci.com/gh/dwmkerr/lex-starter-kit) [![codecov](https://codecov.io/gh/dwmkerr/lex-starter-kit/branch/step1/graph/badge.svg)](https://codecov.io/gh/dwmkerr/lex-starter-kit)
 
 > Build a chatbot with AWS Lex and Lambda in minutes!
 
