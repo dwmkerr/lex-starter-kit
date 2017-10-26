@@ -2,7 +2,7 @@
 
 > Build a chatbot with AWS Lex and Lambda in minutes!
 
-This project is a template quickly creating chatbox using AWS Lex and Lambda.
+This project is a starter kit quickly creating chatbox using AWS Lex and Lambda.
 
 It is based on [lex-oscarbot](https://github.com/mindmelting/lex-oscarbot), a chatbot built for the [AWS Chatbot Challenge](https://aws.amazon.com/events/chatbot-challenge/) by [dwmkerr](https://github.com/dwmkerr), [mindmelting](https://github.com/mindmelting) and Selin Lanzafame.
 
