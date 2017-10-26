@@ -83,15 +83,6 @@ utterances:
 	for file in "./lex/intents/*.json"; do cat $$file | jq .sampleUtterances[0]; done
 
 check-dependencies:
-ifndef BUCKET
-	$(error "Environment variable $$BUCKET must be set.")
-endif
-ifndef OSCAR_GITHUB_USERNAME
-	$(error "Environment variable $$OSCAR_GITHUB_USERNAME must be set.")
-endif
-ifndef OSCAR_GITHUB_PASSWORD
-	$(error "Environment variable $$OSCAR_GITHUB_PASSWORD must be set.")
-endif
 ifndef JQ_EXISTS
 	$(error "Error: jq must be installed.")
 endif
