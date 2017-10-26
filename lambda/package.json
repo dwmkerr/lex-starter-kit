@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "handler.js",
   "license": "MIT",
+  "engines": {
+    "node": ">=6"
+  },
   "scripts": {
     "lint": "eslint .",
     "coverage": "nyc npm test && nyc report --reporter=lcov --reporter=html --report-dir ./artifacts/coverage",
