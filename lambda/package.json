@@ -22,6 +22,6 @@
   "devDependencies": {
     "eslint": "^4.1.1",
     "mocha": "^3.4.2",
-    "nyc": "^11.0.3"
+    "nyc": "^11.2.1"
   }
 }
