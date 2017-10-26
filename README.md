@@ -47,7 +47,15 @@ The project structure is:
 ├── lambda        # lambda function and tests
 ├── lex           # slots and intent json files
 └── scripts       # scripts used by the makefile
-```
+``` 
+
+A full conference presentation goes through this project (a video link will be available shortly). For those who want to follow along with the presentation, you can check out the code at different points using these links:
+
+| Branch | Section |
+|--------|---------|
+| [`demo1`](https://github.com/dwmkerr/lex-starter-kit/tree/demo1) | Demo 1: The basics and your first intent. |
+| [`demo2`](https://github.com/dwmkerr/lex-starter-kit/tree/demo2) | Demo 2: Adding slots. |
+| [`demo3`](https://github.com/dwmkerr/lex-starter-kit/tree/demo3) | Demo 3: Conversation state with sessions. |
 
 ## Environment Setup
 
