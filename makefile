@@ -17,6 +17,7 @@ test:
 # Builds the lambda function. Copies it to a clean location first so that we
 # can eliminate any non-production node modules.
 build:
+	$(info Building lambda function code...)
 	rm -rf ./artifacts/lambda
 	cp -R ./lambda ./artifacts/lambda
 	rm -rf ./artifacts/lambda/node_modules
@@ -29,14 +30,14 @@ coverage:
 # Sets up the core AWS resources.
 setup: check-dependencies build
 	# Create the bucket. If it fails, it's probably because the name is in use.
-	aws s3 mb s3://$(BUCKET) --region $(REGION)
-	aws s3 cp ./artifacts/$(FUNCTION).zip s3://$(BUCKET)/$(FUNCTION).zip
-	
+	# aws s3 mb s3://$(BUCKET) --region $(REGION)
+	# aws s3 cp ./artifacts/$(FUNCTION).zip s3://$(BUCKET)/$(FUNCTION).zip
+
 	# Create the role and set the policy.
 	aws iam create-role --role-name "$(FUNCTION)-role" --assume-role-policy-document file://aws/lambda-policy-doc.json
 	aws iam put-role-policy --role-name "$(FUNCTION)-role" --policy-name "$(FUNCTION)-policy" --policy-document file://aws/policy.json
 	sleep 10 # roles take a while to setup
-	
+
 	# Create the bucket and lambda function.
 	ACCOUNT_ID=`aws sts get-caller-identity --output text --query 'Account'`; \
 	aws lambda create-function \
@@ -46,25 +47,23 @@ setup: check-dependencies build
 		--handler index.handler \
 		--environment="Variables={DEBUG=lex-starter-kit}" \
 		--role "arn:aws:iam::$$ACCOUNT_ID:role/$(FUNCTION)-role" \
-		--code S3Bucket=$(BUCKET),S3Key=$(FUNCTION).zip
+        --zip-file fileb://artifacts/$(FUNCTION).zip
 
 # Deploys updates.
 deploy-lambda: build
-	aws s3 cp ./artifacts/$(FUNCTION).zip s3://$(BUCKET)/$(FUNCTION).zip
 	aws lambda update-function-code \
 		--region $(REGION) \
 		--function-name $(FUNCTION) \
-		--s3-bucket $(BUCKET) \
-		--s3-key $(FUNCTION).zip
-	
+        --zip-file fileb://artifacts/$(FUNCTION).zip
+
 deploy-lex:
 	# Update the slots.
 	./scripts/deploy-slots.sh deploy-slots $(REGION) "lex/slots/*.json"
-	
+
 	# Update the intents.
 	ACCOUNT_ID=`aws sts get-caller-identity --output text --query 'Account'`; \
 	./scripts/deploy-intents.sh deploy-intents "$(REGION)" "$(FUNCTION)" $$ACCOUNT_ID `find ./lex/intents -name '*.json'`
-	
+
 	# Update the bot.
 	./scripts/deploy-bot.sh deploy-bot "$(REGION)" "lex/bot/Bot.json"
 
@@ -75,7 +74,6 @@ destroy:
 	aws lambda delete-function --function-name $(FUNCTION) || true
 	aws iam delete-role-policy --role-name "$(FUNCTION)-role" --policy-name "$(FUNCTION)-policy" || true
 	aws iam delete-role --role-name "$(FUNCTION)-role" || true
-	aws s3 rb s3://$(BUCKET) --force || true
 
 cli:
 	cd oscar-cli; npm build; npm link;
