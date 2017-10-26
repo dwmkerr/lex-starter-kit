@@ -18,7 +18,7 @@ It is based on [lex-oscarbot](https://github.com/mindmelting/lex-oscarbot), a ch
 Have a bot up and running in seconds with:
 
 ```bash
-aws login
+aws configure
 make setup
 make deploy
 ```
