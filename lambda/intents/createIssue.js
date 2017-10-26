@@ -33,7 +33,7 @@ function createIssue(event) {
   if (!issueContent) return Promise.resolve(dialog.elicitSlot(event, 'GitHubIssueContent', 'What\'s the content for the issue?'));
 
   //  Save the repository into the session for later use.
-  session.saveSlotIntoSessionAttribute(event, 'GitHubRepository');
+  //  session.saveSlotIntoSessionAttribute(event, 'GitHubRepository');
 
   //  Create the issue.
   return create(repository, issueTitle, issueContent)
