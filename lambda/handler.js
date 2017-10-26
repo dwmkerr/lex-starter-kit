@@ -28,7 +28,7 @@ function handler(event, context, callback) {
     
     //  Call the intent function.
     intentHandler(event, context)
-      .then(dialogAction => callback(null, dialogAction))
+      .then(response => callback(null, response))
       .catch(callback);
   } catch (err) {
     callback(err);

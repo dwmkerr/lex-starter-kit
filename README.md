@@ -99,4 +99,5 @@ Here are some commands you can run to help work with the project:
 
 ## Useful Reading
 
+- [Lambda and Lex, Input Events and Response Formats](http://docs.aws.amazon.com/lex/latest/dg/lambda-input-response-format.html)
 - https://docs.aws.amazon.com/lex/latest/dg/slack-bot-association.html
