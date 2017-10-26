@@ -5,6 +5,8 @@ const session = require('../session');
 
 function create(repository, title, message) {
   //  Grab our github config.
+  //  Note: I used to do this with destructuring, but it seems to make nyc goof
+  //  on circleci, even though it runs fine on nyc locally.
   const username = config.github.username;
   const password = config.github.password;
 
