@@ -1,4 +1,4 @@
-machine:
+achine:
   node:
     version: 6
     environment:
@@ -18,9 +18,5 @@ test:
 deployment:
   release:
     tag: /v[0-9]+(\.[0-9]+)*/
-    commands:
-      - make release
-  test:
-    branch: master
     commands:
       - make deploy
