@@ -23,10 +23,6 @@ build:
 	rm -rf ./artifacts/lambda/node_modules
 	cd ./artifacts/lambda && npm install --production && zip -r ../$(FUNCTION).zip .
 
-# Creates a coverage report.
-coverage:
-	cd lambda && npm install && npm run coverage
-
 # Sets up the core AWS resources.
 setup: check-dependencies build
 	# Create the bucket. If it fails, it's probably because the name is in use.
