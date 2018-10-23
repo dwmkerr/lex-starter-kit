@@ -113,9 +113,8 @@ If you are working on the code (in the [`./lambda/`](./lambda) folder, you can a
 
 | Command | Usage |
 |---------|-------|
-| `npm test` | Test the code. |
+| `npm test` | Test the code, also generating a coverage report .|
 | `npm run test:debug` | Test the code, using the debugger. |
-| `npm run coverage` | Test the code, checking coverage. |
 | `npm run lint` | Lint the code. |
 
 ## Circle CI

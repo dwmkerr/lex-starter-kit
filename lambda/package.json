@@ -8,20 +8,19 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "coverage": "nyc npm test && nyc report --reporter=lcov",
-    "test": "mocha -t 10000 './{,!(node_modules)/**/}*.spec.js'",
+    "test": "nyc mocha -t 10000 './{,!(node_modules)/**/}*.spec.js' && nyc report --report-dir=./artifacts/coverage --reporter=lcov",
     "test:debug": "mocha --inspect --inspect-brk -t 10000 './{,!(node_modules)/**/}*.spec.js'"
   },
   "dependencies": {
-    "debug": "^2.6.8",
-    "moment": "^2.19.1",
-    "request": "^2.81.0",
-    "request-promise-native": "^1.0.4",
-    "twilio": "^3.9.0"
+    "debug": "^4.1.0",
+    "moment": "^2.22.2",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "twilio": "^3.23.1"
   },
   "devDependencies": {
-    "eslint": "^4.1.1",
-    "mocha": "^3.4.2",
-    "nyc": "^11.2.1"
+    "eslint": "^5.7.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
   }
 }
