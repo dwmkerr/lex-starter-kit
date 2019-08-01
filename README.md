@@ -163,4 +163,6 @@ This is a simple task list of things I need to do to restructure and update the 
 - [ ] Create a simple time intent with python
 - [ ] Create a new blog post showing how the code works
 - [ ] Make sure we are showing how to use environment variables.
+- [ ] update nodejs code to 10x (async)
+- [ ] create sample on how to create an intent
 - [ ] lex chat - show logs and errors! that would be super cool...

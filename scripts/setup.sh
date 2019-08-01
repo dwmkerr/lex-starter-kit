@@ -40,11 +40,11 @@ debug "  runtime: ${runtime}"
 # Create the role and set the policy.
 role_name="${function_name}-role"
 policy_name="${function_name}-policy"
-debug "creating role '${role_name}'..."
+echo "Creating role '${role_name}'..."
 aws iam create-role --role-name "${role_name}" --assume-role-policy-document file://aws/lambda-policy-doc.json
-debug "creating policy '${policy_name}'..."
+echo "Creating policy '${policy_name}'..."
 aws iam put-role-policy --role-name "${role_name}" --policy-name "${policy_name}" --policy-document file://aws/policy.json
-debug "done, waiting 10s for creation to complete..."
+echo "Done, waiting 10s for creation to complete..."
 
 # Roles take a while to setup, this could be better...
 sleep 10 
@@ -54,7 +54,7 @@ debug "getting account id..."
 account_id=`aws sts get-caller-identity --output text --query 'Account'`
 debug "account id is '${account_id}'"
 
-debug "creating function in '${function_name}' in region '${region}'..."
+echo "Creating function in '${function_name}' in region '${region}'..."
 aws lambda create-function \
     --region "${region}" \
     --function-name "${function_name}" \
