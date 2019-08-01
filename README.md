@@ -4,14 +4,19 @@
 
 This project is a starter kit quickly creating chatbox using AWS Lex and Lambda.
 
-It is based on [lex-oscarbot](https://github.com/mindmelting/lex-oscarbot), a chatbot built for the [AWS Chatbot Challenge](https://aws.amazon.com/events/chatbot-challenge/) by [dwmkerr](https://github.com/dwmkerr), [mindmelting](https://github.com/mindmelting) and Selin Lanzafame.
+<!-- vim-markdown-toc GFM -->
 
-- [Quick Start](#quick-start)
-- [Developer Guide](#developer-guide)
-	- [Environment Setup](#environment-setup)
-	- [Useful Commands](#useful-commands)
-	- [Circle CI](#circle-ci)
-	- [Useful Reading](#useful-reading)
+* [Quick Start](#quick-start)
+* [Developer Guide](#developer-guide)
+    * [Environment Setup](#environment-setup)
+    * [Deploying Changes](#deploying-changes)
+    * [Useful Commands](#useful-commands)
+    * [Circle CI](#circle-ci)
+    * [Useful Reading](#useful-reading)
+* [Build a Chatbot in 10 Minutes](#build-a-chatbot-in-10-minutes)
+* [The AWS Chatbot Challenge](#the-aws-chatbot-challenge)
+
+<!-- vim-markdown-toc -->
 
 # Quick Start
 
@@ -125,3 +130,15 @@ If you are working on the code (in the [`./lambda/`](./lambda) folder, you can a
 
 - [Lambda and Lex - Input and Response Format](http://docs.aws.amazon.com/lex/latest/dg/lambda-input-response-format.html)
 - https://docs.aws.amazon.com/lex/latest/dg/slack-bot-association.html
+
+# Build a Chatbot in 10 Minutes
+
+This project was built after developing my conference presentation [Build a Chatbot in 10 Minutes](https://www.slideshare.net/CodeOps/build-a-chatbot-in-ten-minutes-dave-kerr-serverless-summit).
+
+If you want to see the exact version of the code which fits with the conference, including the versions of each of the different demos, just use the [`release/conference` branch](https://github.com/dwmkerr/lex-starter-kit/tree/release/conference).
+
+However, the conference version is not being kept up to date, so I would recommend using this version from the `master` branch.
+
+# The AWS Chatbot Challenge
+
+This project was initially based on [lex-oscarbot](https://github.com/mindmelting/lex-oscarbot), a chatbot built for the [AWS Chatbot Challenge](https://aws.amazon.com/events/chatbot-challenge/) by [dwmkerr](https://github.com/dwmkerr), [mindmelting](https://github.com/mindmelting) and Selin Lanzafame.
