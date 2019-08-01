@@ -156,6 +156,11 @@ This is a simple task list of things I need to do to restructure and update the 
 
 - [x] Move check dependencies code to script
 - [x] Document the usage of `DEBUG` for scripts and code
+- [x] move setup into a script
+- [ ] move config into a script
+- [ ] move deploy into a script
 - [ ] Create a simple date intent with node
 - [ ] Create a simple time intent with python
 - [ ] Create a new blog post showing how the code works
+- [ ] Make sure we are showing how to use environment variables.
+- [ ] lex chat - show logs and errors! that would be super cool...
