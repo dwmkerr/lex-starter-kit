@@ -3,7 +3,6 @@ FUNCTION := lex-starter
 
 # Variables for the actual function
 COUNTRY := sg
-REGION := sg
 
 # Lints the lambda function.
 lint:
@@ -31,7 +30,7 @@ config:
 	aws lambda update-function-configuration \
 		--region $(REGION) \
 		--function-name $(FUNCTION) \
-		--environment="Variables={COUNTRY=$(COUNTRY),REGION=$(REGION)}"
+		--environment="Variables={COUNTRY=$(COUNTRY),REGION=sg}"
 
 # Deploys updates.
 deploy-lambda: build
@@ -53,14 +52,9 @@ deploy-lex:
 
 deploy: deploy-lambda deploy-lex
 
-# Destroys some resources. Still work in progress for others.
+# Destroy resources created by 'setup'.
 destroy:
-	aws lambda delete-function --function-name $(FUNCTION) || true
-	aws iam delete-role-policy --role-name "$(FUNCTION)-role" --policy-name "$(FUNCTION)-policy" || true
-	aws iam delete-role --role-name "$(FUNCTION)-role" || true
-
-cli:
-	cd oscar-cli; npm build; npm link;
+	@./scripts/destroy.sh "$(FUNCTION)"
 
 # Utility to show all utterances.
 utterances:
