@@ -4,6 +4,8 @@
 
 This project is a starter kit quickly creating chatbox using AWS Lex and Lambda.
 
+Note: This is the *complicated* version of the project, which supports things like text messaging. This version of the project exists in this branch so that anyone who wants to follow along with the Conference Presentation [Build a Chatbot in 10 Minutes](https://speakerdeck.com/dwmkerr/build-a-chatbot-in-10-minutes) can follow along. For *most* users I would suggest use the [`master`](https://github.com/dwmkerr/lex-starter-kit) branch which is simple and kept up to date.
+
 It is based on [lex-oscarbot](https://github.com/mindmelting/lex-oscarbot), a chatbot built for the [AWS Chatbot Challenge](https://aws.amazon.com/events/chatbot-challenge/) by [dwmkerr](https://github.com/dwmkerr), [mindmelting](https://github.com/mindmelting) and Selin Lanzafame.
 
 - [Quick Start](#quick-start)
@@ -48,7 +50,9 @@ The project structure is:
 └── scripts       # scripts used by the makefile
 ``` 
 
-A full conference presentation goes through this project (a video link will be available shortly). For those who want to follow along with the presentation, you can check out the code at different points using these links:
+A full conference presentation goes through this project [Build a Chatbot in 10 Minutes](https://www.slideshare.net/CodeOps/build-a-chatbot-in-ten-minutes-dave-kerr-serverless-summit).
+
+For those who want to follow along with the presentation, you can check out the code at different points using these links:
 
 | Branch | Section |
 |--------|---------|
