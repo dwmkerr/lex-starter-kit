@@ -1,11 +1,6 @@
 REGION := us-east-1
 FUNCTION := serverless-summit
 
-# Helper variables we use to check if things exist.
-# Consider moving into a script of its own, and checking we are logged in.
-JQ_EXISTS := $(shell command -v jq 2> /dev/null)
-AWS_CLI_EXISTS := $(shell command -v aws 2> /dev/null)
-
 # Lints the lambda function.
 lint:
 	cd lambda && npm install && npm run lint
@@ -22,10 +17,6 @@ build:
 	cp -R ./lambda ./artifacts/lambda
 	rm -rf ./artifacts/lambda/node_modules
 	cd ./artifacts/lambda && npm install --production && zip -r ../$(FUNCTION).zip .
-
-# Creates a coverage report.
-coverage:
-	cd lambda && npm install && npm run coverage
 
 # Sets up the core AWS resources.
 setup: check-dependencies build
@@ -110,10 +101,6 @@ cli:
 utterances:
 	for file in "./lex/intents/*.json"; do cat $$file | jq .sampleUtterances[0]; done
 
+# Check the required tools are available.
 check-dependencies:
-ifndef JQ_EXISTS
-	$(error "Error: jq must be installed.")
-endif
-ifndef AWS_CLI_EXISTS
-	$(error "Error: aws-cli must be installed.")
-endif
+	@./scripts/check-dependencies.sh
