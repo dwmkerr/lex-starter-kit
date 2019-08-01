@@ -1,6 +1,6 @@
 # Lex Starter Kit
 
-[![CircleCI](https://circleci.com/gh/dwmkerr/lex-starter-kit.svg?style=shield)](https://circleci.com/gh/dwmkerr/lex-starter-kit) [![codecov](https://codecov.io/gh/dwmkerr/lex-starter-kit/branch/master/graph/badge.svg)](https://codecov.io/gh/dwmkerr/lex-starter-kit)
+[![CircleCI](https://circleci.com/gh/dwmkerr/lex-starter-kit.svg?style=shield)](https://circleci.com/gh/dwmkerr/lex-starter-kit) [![codecov](https://codecov.io/gh/dwmkerr/lex-starter-kit/branch/master/graph/badge.svg)](https://codecov.io/gh/dwmkerr/lex-starter-kit) [![GuardRails badge](https://badges.production.guardrails.io/dwmkerr/lex-starter-kit.svg)](https://www.guardrails.io)
 
 > Build a chatbot with AWS Lex and Lambda in minutes!
 
