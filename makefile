@@ -1,5 +1,9 @@
 REGION := us-east-1
-FUNCTION := serverless-summit
+FUNCTION := lex-starter
+
+# Variables for the actual function
+COUNTRY := sg
+REGION := sg
 
 # Lints the lambda function.
 lint:
@@ -20,53 +24,14 @@ build:
 
 # Sets up the core AWS resources.
 setup: check-dependencies build
-	# Create the bucket. If it fails, it's probably because the name is in use.
-	# aws s3 mb s3://$(BUCKET) --region $(REGION)
-	# aws s3 cp ./artifacts/$(FUNCTION).zip s3://$(BUCKET)/$(FUNCTION).zip
-
-	# Create the role and set the policy.
-	aws iam create-role --role-name "$(FUNCTION)-role" --assume-role-policy-document file://aws/lambda-policy-doc.json
-	aws iam put-role-policy --role-name "$(FUNCTION)-role" --policy-name "$(FUNCTION)-policy" --policy-document file://aws/policy.json
-	sleep 10 # roles take a while to setup
-
-	# Create the bucket and lambda function.
-	ACCOUNT_ID=`aws sts get-caller-identity --output text --query 'Account'`; \
-	aws lambda create-function \
-		--region $(REGION) \
-		--function-name $(FUNCTION) \
-		--runtime nodejs6.10 \
-		--handler index.handler \
-		--environment="Variables={DEBUG=lex-starter-kit}" \
-		--role "arn:aws:iam::$$ACCOUNT_ID:role/$(FUNCTION)-role" \
-        --zip-file fileb://artifacts/$(FUNCTION).zip
+	@./scripts/setup.sh "$(REGION)" "$(FUNCTION)" "nodejs10.x"
 
 # Set environment variables for the lambda function.
 config:
-ifndef TWILIO_SID
-	$(error "Environment variable $$TWILIO_SID must be set.")
-endif
-ifndef TWILIO_AUTH_TOKEN
-	$(error "Environment variable $$TWILIO_AUTH_TOKEN must be set.")
-endif
-ifndef TWILIO_PHONE_NUMBER
-	$(error "Environment variable $$TWILIO_PHONE_NUMBER must be set.")
-endif
-ifndef GITHUB_USERNAME
-	$(error "Environment variable $$GITHUB_USERNAME must be set.")
-endif
-ifndef GITHUB_PASSWORD
-	$(error "Environment variable $$GITHUB_PASSWORD must be set.")
-endif
-ifndef GITHUB_CLIENT_ID
-	$(error "Environment variable $$GITHUB_CLIENT_ID must be set.")
-endif
-ifndef GITHUB_CLIENT_SECRET
-	$(error "Environment variable $$GITHUB_CLIENT_SECRET must be set.")
-endif
 	aws lambda update-function-configuration \
 		--region $(REGION) \
 		--function-name $(FUNCTION) \
-		--environment="Variables={TWILIO_SID=$(TWILIO_SID),TWILIO_AUTH_TOKEN=$(TWILIO_AUTH_TOKEN),TWILIO_PHONE_NUMBER=$(TWILIO_PHONE_NUMBER),GITHUB_USERNAME=$(GITHUB_USERNAME),GITHUB_PASSWORD=$(GITHUB_PASSWORD),GITHUB_CLIENT_ID=$(GITHUB_CLIENT_ID),GITHUB_CLIENT_SECRET=$(GITHUB_CLIENT_SECRET)}"
+		--environment="Variables={COUNTRY=$(COUNTRY),REGION=$(REGION)}"
 
 # Deploys updates.
 deploy-lambda: build
