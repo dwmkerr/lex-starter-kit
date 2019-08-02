@@ -166,3 +166,4 @@ This is a simple task list of things I need to do to restructure and update the 
 - [ ] update nodejs code to 10x (async)
 - [ ] create sample on how to create an intent
 - [ ] lex chat - show logs and errors! that would be super cool...
+- [ ] remove artifacts folder, generate as needed, remove checked in files (gunk)

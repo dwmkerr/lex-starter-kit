@@ -53,8 +53,11 @@ deploy-lex:
 deploy: deploy-lambda deploy-lex
 
 # Destroy resources created by 'setup'.
+# This still needs work, the difference between the bot and other resources is
+# seemingly arbitrary.
 destroy:
 	@./scripts/destroy.sh "$(FUNCTION)"
+	@./scripts/destroy-bot.sh destroy-bot "$(REGION)" "lex/bot/Bot.json"
 
 # Utility to show all utterances.
 utterances:
