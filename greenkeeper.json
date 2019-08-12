@@ -1,0 +1,10 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "artifacts/lambda/package.json",
+        "lambda/package.json"
+      ]
+    }
+  }
+}
