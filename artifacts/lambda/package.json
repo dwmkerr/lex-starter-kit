@@ -19,8 +19,8 @@
     "twilio": "^3.23.1"
   },
   "devDependencies": {
-    "eslint": "^5.7.0",
-    "mocha": "^5.2.0",
-    "nyc": "^13.1.0"
+    "eslint": "^6.1.0",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1"
   }
 }
