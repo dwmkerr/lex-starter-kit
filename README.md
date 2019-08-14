@@ -87,11 +87,13 @@ Here are some commands you can run to help work with the project:
 |---------|-------|
 | `make lint` | Lints the code. |
 | `make test` | Runs the unit tests. |
+| `make rename-bot` | Renames the bot - run _before_ `make setup`. |
 | `make setup` | Sets up your AWS resources. First time setup only. |
 | `make build` | Builds the lamba function and zips it up locally. |
 | `make deploy` | Deploys the code, slots and intents. |
 | `make utterances` | Helper to print out all supported utterances. Useful when building docs. |
 | `make check-dependencies` | Helper to check that the required tools are installed. |
+| `make destroy` | Destroy the bot and associated resources. |
 
 Note that for most scripts and `make` commands, you can get additional low-level information on what is happening by running setting `DEBUG=1`. For example:
 
@@ -147,7 +149,6 @@ This is a simple task list of things I need to do to restructure and update the 
 - [x] Move check dependencies code to script
 - [x] Document the usage of `DEBUG` for scripts and code
 - [x] move setup into a script
-- [ ] rename script
 - [ ] Create a simple date intent with node
 - [ ] Create a simple time intent with python
 - [ ] Create a new blog post showing how the code works
