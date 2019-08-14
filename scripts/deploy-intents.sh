@@ -12,9 +12,11 @@ shopt -s nullglob
 function deploy-intents() {
     region=$1
     functionName=$2
-    accountNo=$3
-    shift 3
+    shift 2
     search=$*
+
+    # Get the account number.
+    accountNo=`aws sts get-caller-identity --output text --query 'Account'`
 
     # Loop through each of the intent files.
 	for intentFile in $search; do

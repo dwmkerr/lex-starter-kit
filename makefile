@@ -25,30 +25,24 @@ build:
 setup: check-dependencies build
 	@./scripts/setup.sh "$(REGION)" "$(FUNCTION)" "nodejs10.x"
 
-# Set environment variables for the lambda function.
-config:
-	aws lambda update-function-configuration \
-		--region $(REGION) \
-		--function-name $(FUNCTION) \
-		--environment="Variables={COUNTRY=$(COUNTRY),REGION=sg}"
-
 # Deploys updates.
 deploy-lambda: build
 	aws lambda update-function-code \
 		--region $(REGION) \
 		--function-name $(FUNCTION) \
         --zip-file fileb://artifacts/$(FUNCTION).zip
+	
+	# These are currently dummy env vars just to show how it works...
+	aws lambda update-function-configuration \
+		--region $(REGION) \
+		--function-name $(FUNCTION) \
+		--environment="Variables={COUNTRY=$(COUNTRY),REGION=sg}"
 
 deploy-lex:
-	# Update the slots.
-	./scripts/deploy-slots.sh deploy-slots $(REGION) "lex/slots/*.json"
-
-	# Update the intents.
-	ACCOUNT_ID=`aws sts get-caller-identity --output text --query 'Account'`; \
-	./scripts/deploy-intents.sh deploy-intents "$(REGION)" "$(FUNCTION)" $$ACCOUNT_ID `find ./lex/intents -name '*.json'`
-
-	# Update the bot.
-	./scripts/deploy-bot.sh deploy-bot "$(REGION)" "lex/bot/Bot.json"
+	# Update the slots, intents and bot.
+	@./scripts/deploy-slots.sh deploy-slots $(REGION) "lex/slots/*.json"
+	@./scripts/deploy-intents.sh deploy-intents "$(REGION)" "$(FUNCTION)" `find ./lex/intents -name '*.json'`
+	@./scripts/deploy-bot.sh deploy-bot "$(REGION)" "lex/bot/Bot.json"
 
 deploy: deploy-lambda deploy-lex
 
@@ -58,6 +52,10 @@ deploy: deploy-lambda deploy-lex
 destroy:
 	@./scripts/destroy.sh "$(FUNCTION)"
 	@./scripts/destroy-bot.sh destroy-bot "$(REGION)" "lex/bot/Bot.json"
+
+# Rename a bot. Should be done BEFORE create.
+rename-bot:
+	@./scripts/rename-bot.sh rename-bot "./lex/bot/Bot.json"
 
 # Utility to show all utterances.
 utterances:

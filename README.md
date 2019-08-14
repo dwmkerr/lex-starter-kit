@@ -6,7 +6,6 @@
 
 This project is a starter kit quickly creating chatbox using AWS Lex and Lambda.
 
-
 <!-- vim-markdown-toc GFM -->
 
 * [Quick Start](#quick-start)
@@ -66,25 +65,17 @@ Install:
 
 Ensure you are logged into the AWS CLI as a user with permissions to create Lambda Functions, Buckets, Roles, Policies and Lex Models.
 
-If you change config, don't forget to run:
-
-```bash
-make config
-```
-
-Which will build the lambda function, bucket and policies.
-
 ## Deploying Changes
 
-If you change the lambda function, slots, intents or bot, just call:
+If you change the lambda function, environment variables for the lambda function, slots, intents or bot, just call:
 
 ```bash
 make deploy
 
-# or just deploy the code
+# ...or just deploy the code and variables...
 make deploy-lambda
 
-# or just deploy the lex models
+# ...or just deploy the lex models...
 make deploy-lex
 ```
 
@@ -97,7 +88,6 @@ Here are some commands you can run to help work with the project:
 | `make lint` | Lints the code. |
 | `make test` | Runs the unit tests. |
 | `make setup` | Sets up your AWS resources. First time setup only. |
-| `make config` | Sets up the config for the lambda function. Only needed if config changes. |
 | `make build` | Builds the lamba function and zips it up locally. |
 | `make deploy` | Deploys the code, slots and intents. |
 | `make utterances` | Helper to print out all supported utterances. Useful when building docs. |
@@ -157,8 +147,7 @@ This is a simple task list of things I need to do to restructure and update the 
 - [x] Move check dependencies code to script
 - [x] Document the usage of `DEBUG` for scripts and code
 - [x] move setup into a script
-- [ ] move config into a script
-- [ ] move deploy into a script
+- [ ] rename script
 - [ ] Create a simple date intent with node
 - [ ] Create a simple time intent with python
 - [ ] Create a new blog post showing how the code works
@@ -167,3 +156,9 @@ This is a simple task list of things I need to do to restructure and update the 
 - [ ] create sample on how to create an intent
 - [ ] lex chat - show logs and errors! that would be super cool...
 - [ ] remove artifacts folder, generate as needed, remove checked in files (gunk)
+- [ ] Allow the bot to easily be renamed
+- [ ] move deploy into a script
+- [ ] Simplify create/deploy, to create roles/policies/etc as needed, and then we only need a single deploy function (no setup).
+- [ ] Rename bot should also rename the lambda function
+- [ ] We should have a sample java lambda
+- [ ] We should have a sample python lambda
