@@ -3,5 +3,6 @@
 module.exports = {
   CreateIssue: require('./createIssue'),
   SendMessage: require('./sendMessage'),
-  WhatTime: require('./whatTime')
+  WhatTime: require('./whatTime'),
+  WhatDate: require('./whatDate'),
 };

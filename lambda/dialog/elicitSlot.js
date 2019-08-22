@@ -1,4 +1,3 @@
-
 /**
  * elicitSlot - For a given event, creates an 'elicit response' dialog action.
  *
