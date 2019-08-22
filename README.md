@@ -18,6 +18,9 @@ This project is a starter kit quickly creating chatbox using AWS Lex and Lambda.
 * [Build a Chatbot in 10 Minutes](#build-a-chatbot-in-10-minutes)
 * [The AWS Chatbot Challenge](#the-aws-chatbot-challenge)
 * [TODO](#todo)
+    * [Must](#must)
+    * [Nice To Have](#nice-to-have)
+    * [Publicising](#publicising)
 
 <!-- vim-markdown-toc -->
 
@@ -146,16 +149,14 @@ This project was initially based on [lex-oscarbot](https://github.com/mindmeltin
 
 This is a simple task list of things I need to do to restructure and update the code.
 
+## Must
+
 - [x] Move check dependencies code to script
 - [x] Document the usage of `DEBUG` for scripts and code
 - [x] move setup into a script
-- [ ] Create a simple date intent with node
-- [ ] Create a simple time intent with python
-- [ ] Create a new blog post showing how the code works
+- [x] Create a simple date intent with node
 - [ ] Make sure we are showing how to use environment variables.
 - [ ] update nodejs code to 10x (async)
-- [ ] create sample on how to create an intent
-- [ ] lex chat - show logs and errors! that would be super cool...
 - [ ] remove artifacts folder, generate as needed, remove checked in files (gunk)
 - [ ] Allow the bot to easily be renamed
 - [ ] move deploy into a script
@@ -163,3 +164,18 @@ This is a simple task list of things I need to do to restructure and update the 
 - [ ] Rename bot should also rename the lambda function
 - [ ] We should have a sample java lambda
 - [ ] We should have a sample python lambda
+- [ ] Pass all lamba output to a log stream, so that the chat interface can also show logs consistently
+- [ ] docs: architecture diagram
+
+## Nice To Have
+
+- [ ] Tutorial: A basic intent, no slots
+- [ ] Tutorial: A basic intent, with a built-in slot
+- [ ] Tutorial: A basic intent, with a custom slot
+- [ ] Tutorial: A basic intent, with a default slot
+
+## Publicising
+
+- [ ] Blog Post
+- [ ] Meet Up
+- [ ] Another Conference

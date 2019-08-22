@@ -28,6 +28,9 @@
             "intentName": "WhatTime"
         }, {
             "intentVersion": "$LATEST",
+            "intentName": "WhatDate"
+        }, {
+            "intentVersion": "$LATEST",
             "intentName": "SendMessage"
         }, {
             "intentVersion": "$LATEST",

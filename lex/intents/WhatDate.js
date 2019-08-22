@@ -1,8 +1,8 @@
 {
-    "name": "WhatTime",
+    "name": "WhatDate",
     "sampleUtterances": [
-        "What is the time",
-        "What time is it"
+        "What is the date",
+        "What day is it"
     ],
     "slots": [],
     "dialogCodeHook": {
