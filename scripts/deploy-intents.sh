@@ -51,6 +51,14 @@ function deploy-intents() {
         # with the latest published version. Urgh.
         SLOTTYPES=`cat $intentFile | jq -r ".slots[].slotType"`
         for SLOTTYPE in $SLOTTYPES; do
+            echo "Checking version of slot '$SLOTTYPE' for intent '$intentName'..."
+
+            # If the slot is a built-in slot, we don't need to set the version.
+            builtInSlot="^AMAZON\..*"
+            if [[ $SLOTTYPE =~ $builtInSlot ]]; then
+                echo "Slot '$SLOTTYPE' is built-in and doesn't need to be updated..."
+                continue
+            fi
 
             # Get the versions, rip out the version number of the most recent one.
             SLOTTYPEVERSION=`aws lex-models get-slot-type-versions --name $SLOTTYPE --region $region | jq -r ".slotTypes[-1].version"`
