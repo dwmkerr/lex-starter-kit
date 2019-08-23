@@ -155,6 +155,7 @@ This is a simple task list of things I need to do to restructure and update the 
 - [x] Document the usage of `DEBUG` for scripts and code
 - [x] move setup into a script
 - [x] Create a simple date intent with node
+- [ ] Create an intent with a built-in slot
 - [ ] Make sure we are showing how to use environment variables.
 - [ ] update nodejs code to 10x (async)
 - [ ] remove artifacts folder, generate as needed, remove checked in files (gunk)
@@ -166,6 +167,8 @@ This is a simple task list of things I need to do to restructure and update the 
 - [ ] We should have a sample python lambda
 - [ ] Pass all lamba output to a log stream, so that the chat interface can also show logs consistently
 - [ ] docs: architecture diagram
+- [ ] clean out the old intents/slots/code
+- [ ] move the generic lex javascript code into its own module
 
 ## Nice To Have
 
@@ -173,6 +176,7 @@ This is a simple task list of things I need to do to restructure and update the 
 - [ ] Tutorial: A basic intent, with a built-in slot
 - [ ] Tutorial: A basic intent, with a custom slot
 - [ ] Tutorial: A basic intent, with a default slot
+- [ ] Tutorial: Session data
 
 ## Publicising
 

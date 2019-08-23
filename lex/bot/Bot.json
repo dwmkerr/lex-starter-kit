@@ -31,6 +31,9 @@
             "intentName": "WhatDate"
         }, {
             "intentVersion": "$LATEST",
+            "intentName": "WhatCapitalCity"
+        }, {
+            "intentVersion": "$LATEST",
             "intentName": "SendMessage"
         }, {
             "intentVersion": "$LATEST",

@@ -12,14 +12,16 @@
     "test:debug": "mocha --inspect --inspect-brk -t 10000 './{,!(node_modules)/**/}*.spec.js'"
   },
   "dependencies": {
+    "countryjs": "^1.8.0",
     "debug": "^4.1.0",
+    "fuse.js": "^3.4.5",
     "moment": "^2.22.2",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5",
     "twilio": "^3.23.1"
   },
   "devDependencies": {
-    "eslint": "^6.1.0",
+    "eslint": "^6.2.1",
     "mocha": "^6.2.0",
     "nyc": "^14.1.1"
   }

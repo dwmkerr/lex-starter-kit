@@ -5,4 +5,5 @@ module.exports = {
   SendMessage: require('./sendMessage'),
   WhatTime: require('./whatTime'),
   WhatDate: require('./whatDate'),
+  WhatCapitalCity: require('./whatCapitalCity'),
 };
