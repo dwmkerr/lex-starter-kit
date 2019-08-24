@@ -14,6 +14,8 @@ This project is a starter kit quickly creating chatbox using AWS Lex and Lambda.
     * [Deploying Changes](#deploying-changes)
     * [Useful Commands](#useful-commands)
     * [CI/CD](#cicd)
+    * [Configuration and Environment Variables](#configuration-and-environment-variables)
+* [Troubleshooting](#troubleshooting)
 * [Useful Reading](#useful-reading)
 * [Build a Chatbot in 10 Minutes](#build-a-chatbot-in-10-minutes)
 * [The AWS Chatbot Challenge](#the-aws-chatbot-challenge)
@@ -128,6 +130,24 @@ The pipeline will:
 4. Create a Unit Test Coverage Report
 5. Update the chatbot on AWS when any version tag (e.g. `v1.2.3` is pushed
 
+## Configuration and Environment Variables
+
+You can provide configuration to the lambda functions in the form of environment variables.
+
+Check the [`lambda/config.js`](./lambda/config.js) file for an example, showing how the timezone provided in the [`makefile`](./makefile) is passed to the lambda function.
+
+# Troubleshooting
+
+Deploy never completes:
+
+```
+lexstarterkit build status is:
+lexstarterkit build status is:
+lexstarterkit build status is:
+```
+
+If this occurs, just cancel the deploy with `Ctrl+C`, then run `make deploy-lex` again.
+
 # Useful Reading
 
 - [Lambda and Lex - Input and Response Format](http://docs.aws.amazon.com/lex/latest/dg/lambda-input-response-format.html)
@@ -155,28 +175,28 @@ This is a simple task list of things I need to do to restructure and update the 
 - [x] Document the usage of `DEBUG` for scripts and code
 - [x] move setup into a script
 - [x] Create a simple date intent with node
-- [ ] Create an intent with a built-in slot
-- [ ] Make sure we are showing how to use environment variables.
-- [ ] update nodejs code to 10x (async)
-- [ ] remove artifacts folder, generate as needed, remove checked in files (gunk)
-- [ ] Allow the bot to easily be renamed
+- [x] Create an intent with a built-in slot
+- [x] Make sure we are showing how to use environment variables.
+- [x] update nodejs code to 10x (async)
+- [x] remove artifacts folder, generate as needed, remove checked in files (gunk)
 - [ ] move deploy into a script
-- [ ] Simplify create/deploy, to create roles/policies/etc as needed, and then we only need a single deploy function (no setup).
-- [ ] Rename bot should also rename the lambda function
-- [ ] We should have a sample java lambda
-- [ ] We should have a sample python lambda
-- [ ] Pass all lamba output to a log stream, so that the chat interface can also show logs consistently
 - [ ] docs: architecture diagram
 - [ ] clean out the old intents/slots/code
 - [ ] move the generic lex javascript code into its own module
-
-## Nice To Have
-
 - [ ] Tutorial: A basic intent, no slots
 - [ ] Tutorial: A basic intent, with a built-in slot
 - [ ] Tutorial: A basic intent, with a custom slot
 - [ ] Tutorial: A basic intent, with a default slot
 - [ ] Tutorial: Session data
+
+## Nice To Have
+
+- [ ] Allow the bot to easily be renamed
+- [ ] Pass all lamba output to a log stream, so that the chat interface can also show logs consistently
+- [ ] Rename bot should also rename the lambda function
+- [ ] We should have a sample java lambda
+- [ ] We should have a sample python lambda
+- [ ] refactor: remove the 'setup' recipe, and on 'deploy' just check to see if the resources need to be created
 
 ## Publicising
 

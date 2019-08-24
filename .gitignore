@@ -5,8 +5,6 @@ logs
 *.log
 npm-debug.log*
 
-# Artifacts and terraform state, plus temp file.
+# Artifacts
+artifacts
 *.zip
-functions/**/templates/**/*.html
-*.tfstate*
-*.temp

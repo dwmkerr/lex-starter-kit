@@ -15,7 +15,7 @@
     "countryjs": "^1.8.0",
     "debug": "^4.1.0",
     "fuse.js": "^3.4.5",
-    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.26",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5",
     "twilio": "^3.23.1"
