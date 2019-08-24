@@ -28,7 +28,7 @@ setup: check-dependencies build
 
 # Deploy the lambda function.
 deploy-lambda: build
-	@./scripts/deploy-lambda.sh deploy-lambda $(REGION) $(FUNCTION) "artifacts/$(FUNCTION)" "TIMEZONE=$(TIMEZONE),REGION=sg"
+	@./scripts/deploy-lambda.sh deploy-lambda $(REGION) $(FUNCTION) "artifacts/$(FUNCTION).zip" "TIMEZONE=$(TIMEZONE),REGION=sg"
 
 # Update the slots, intents and bot.
 deploy-lex:

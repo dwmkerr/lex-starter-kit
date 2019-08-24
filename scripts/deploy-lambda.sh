@@ -15,7 +15,7 @@ function deploy-lambda() {
     aws lambda update-function-code \
 		--region ${region} \
 		--function-name ${functionName} \
-        --zip-file fileb://${functionPath}.zip
+        --zip-file fileb://${functionPath}
 
 	aws lambda update-function-configuration \
 		--region ${region} \
