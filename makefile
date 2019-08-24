@@ -2,7 +2,7 @@ REGION := us-east-1
 FUNCTION := lex-starter
 
 # Variables for the actual function
-COUNTRY := sg
+TIMEZONE := "America/New_York"
 
 # Lints the lambda function.
 lint:
@@ -16,8 +16,9 @@ test:
 # can eliminate any non-production node modules.
 build:
 	$(info Building lambda function code...)
-	rm -rf ./artifacts/lambda
-	cp -R ./lambda ./artifacts/lambda
+	rm -rf ./artifacts
+	mkdir ./artifacts
+	cp -R ./lambda ./artifacts
 	rm -rf ./artifacts/lambda/node_modules
 	cd ./artifacts/lambda && npm install --production && zip -r ../$(FUNCTION).zip .
 
@@ -25,21 +26,12 @@ build:
 setup: check-dependencies build
 	@./scripts/setup.sh "$(REGION)" "$(FUNCTION)" "nodejs10.x"
 
-# Deploys updates.
+# Deploy the lambda function.
 deploy-lambda: build
-	aws lambda update-function-code \
-		--region $(REGION) \
-		--function-name $(FUNCTION) \
-        --zip-file fileb://artifacts/$(FUNCTION).zip
-	
-	# These are currently dummy env vars just to show how it works...
-	aws lambda update-function-configuration \
-		--region $(REGION) \
-		--function-name $(FUNCTION) \
-		--environment="Variables={COUNTRY=$(COUNTRY),REGION=sg}"
+	@./scripts/deploy-lambda.sh deploy-lambda $(REGION) $(FUNCTION) "artifacts/$(FUNCTION)" "TIMEZONE=$(TIMEZONE),REGION=sg"
 
+# Update the slots, intents and bot.
 deploy-lex:
-	# Update the slots, intents and bot.
 	@./scripts/deploy-slots.sh deploy-slots $(REGION) "lex/slots/*.json"
 	@./scripts/deploy-intents.sh deploy-intents "$(REGION)" "$(FUNCTION)" `find ./lex/intents -name '*.json'`
 	@./scripts/deploy-bot.sh deploy-bot "$(REGION)" "lex/bot/Bot.json"

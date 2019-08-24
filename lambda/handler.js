@@ -10,7 +10,7 @@ const session = require('./session');
  * @param callback - callback to respond to the lambda function.
  * @returns {undefined}
  */
-function handler(event, context, callback) {
+async function handler(event, context, callback) {
 
   //  Make sure if we throw anything, we will properly call the callback,
   try {
@@ -31,10 +31,8 @@ function handler(event, context, callback) {
     session.loadSessionAttributesIntoSlots(event);
 
     //  Call the intent function.
-    //  Bonus: If we don't get a promise, auto-promisify? Or throw?
-    intentHandler(event, context)
-      .then(dialogAction => callback(null, dialogAction))
-      .catch(callback);
+    const dialogAction = await intentHandler(event, context);
+    callback(null, dialogAction);
   } catch (err) {
     callback(err);
   }
