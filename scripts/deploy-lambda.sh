@@ -13,15 +13,15 @@ function deploy-lambda() {
     variables=$4
 
     aws lambda update-function-code \
-		--region ${region} \
-		--function-name ${functionName} \
+        --region ${region} \
+        --function-name ${functionName} \
         --zip-file fileb://${functionPath}
 
-	aws lambda update-function-configuration \
-		--region ${region} \
-		--function-name ${functionName} \
-		--environment="Variables={${variables}}"
-}
+    aws lambda update-function-configuration \
+        --region ${region} \
+        --function-name ${functionName} \
+        --environment="Variables={${variables}}"
+    }
 
 # Allows to call a function based on arguments passed to the script
 $*
