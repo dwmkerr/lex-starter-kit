@@ -5,7 +5,6 @@
 > Build a chatbot with AWS Lex and Lambda in minutes!
 
 This project is a starter kit quickly creating chatbox using AWS Lex and Lambda.
-
 <!-- vim-markdown-toc GFM -->
 
 * [Quick Start](#quick-start)
@@ -179,9 +178,8 @@ This is a simple task list of things I need to do to restructure and update the 
 - [x] Make sure we are showing how to use environment variables.
 - [x] update nodejs code to 10x (async)
 - [x] remove artifacts folder, generate as needed, remove checked in files (gunk)
-- [ ] move deploy into a script
-- [ ] docs: architecture diagram
-- [ ] clean out the old intents/slots/code
+- [x] move deploy into a script
+- [x] clean out the old intents/slots/code
 - [ ] move the generic lex javascript code into its own module
 - [ ] Tutorial: A basic intent, no slots
 - [ ] Tutorial: A basic intent, with a built-in slot
@@ -191,6 +189,7 @@ This is a simple task list of things I need to do to restructure and update the 
 
 ## Nice To Have
 
+- [ ] docs: architecture diagram
 - [ ] Allow the bot to easily be renamed
 - [ ] Pass all lamba output to a log stream, so that the chat interface can also show logs consistently
 - [ ] Rename bot should also rename the lambda function
